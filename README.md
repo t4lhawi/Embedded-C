@@ -42,7 +42,7 @@
 
 ## **3. Types de données utiles sur PIC18F**
 
-👉 Utiliser des **tailles fixes** (bibliothèque `<stdint.h>`) pour maîtriser la mémoire.
+ Utiliser des **tailles fixes** (bibliothèque `<stdint.h>`) pour maîtriser la mémoire.
 
 | Type       | Taille  | Exemple d’usage                   |
 | ---------- | ------- | --------------------------------- |
@@ -66,7 +66,7 @@ Chaque périphérique du PIC18F est contrôlé par des **registres** :
 * `PORTx` → lit les niveaux logiques.
 * `LATx`  → écrit sur les sorties.
 
-### 🧩 Opérations sur les bits
+- **Opérations sur les bits :**
 
 ```c
 REG |= (1 << n);   // Met le bit n à 1
@@ -111,7 +111,7 @@ void main(void) {
 }
 ```
 
-⚠️ `main()` ne se termine jamais : le microcontrôleur fonctionne en continu.
+> `main()` ne se termine jamais : le microcontrôleur fonctionne en continu.
 
 ---
 
