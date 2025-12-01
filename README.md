@@ -14,10 +14,55 @@
 
 ## **1. Manipulation des Bits**
 
-* C’est un **système électronique autonome** exécutant un programme dédié à une tâche spécifique.
-* Il fonctionne avec des **ressources limitées** : mémoire, énergie, puissance.
-* Il doit souvent réagir **en temps réel**.
-* Le **PIC18F** est un microcontrôleur typique utilisé dans ces systèmes.
+- ### **Opérations bit à bit (bitwise)**
+
+| Opération          | Symbole | Exemple (C)  | Résultat / Description                                                      |
+| ------------------ | ------- | ------------ | --------------------------------------------------------------------------- |
+| **AND bit à bit**  | `&`     | `a = x & y` | Compare bit par bit. Le résultat vaut **1 seulement si les deux bits = 1**. |
+| **OR bit à bit**   | `\|`    | `a = x \| y` | Compare bit par bit. Le résultat vaut **1 si au moins un bit = 1**.        |
+| **XOR bit à bit**  | `^`     | `a = x ^ y` | Résultat vaut **1 si les bits sont différents**.                            |
+| **NOT (négation)** | `~`     | `a = ~x`    | Inverse tous les bits (0→1, 1→0).                                           |
+
+
+- ### **Opérations courantes sur un bit précis**
+
+| Opération                     | Code                       | Explication                       |
+| ----------------------------- | -------------------------- | --------------------------------- |
+| **Mettre un bit à 1**         | `x\| = (1 << n)`          | Active le bit *n*.                |
+| **Mettre un bit à 0**         | `x &= ~(1 << n)`          | Désactive le bit *n*.             |
+| **Basculer un bit (toggle)**  | `x ^= (1 << n)`           | Change l’état du bit : 0→1 / 1→0. |
+| **Tester un bit**             | `(x >> n) & 1`             | Extrait l’état du bit (0 ou 1).   |
+| **Lire un bit**               | `if (x & (1 << n))`        | Vrai si le bit *n* vaut 1.        |
+| **Copier la valeur d’un bit** | `bit = (x & (1<<n)) != 0` | Récupère la valeur du bit.        |
+
+
+- ### **Décalages de bits**
+
+| Opération             | Symbole | Exemple  | Effet                                             |
+| --------------------- | ------- | -------- | ------------------------------------------------- |
+| **Décalage à gauche** | `<<`    | `x << 1` | Multiplie par 2 (décale les bits vers la gauche). |
+| **Décalage à droite** | `>>`    | `x >> 1` | Divise par 2 (décale vers la droite).             |
+
+
+- ### **Masques de bits (bit masks)**
+
+| Opération                          | Exemple          | Rôle                                  |
+| ---------------------------------- | ---------------- | ------------------------------------- |
+| **Créer un masque**                | `mask = 1 << n` | Masque avec seulement le bit n actif. |
+| **Garder seulement certains bits** | `x & mask`       | Filtre tout sauf les bits du masque.  |
+| **Mettre certains bits à 1**       | `x \| mask`      | Force les bits du masque à 1.         |
+| **Mettre certains bits à 0**       | `x & ~mask`      | Force les bits du masque à 0.         |
+
+
+> `|=` → mettre à **1**
+
+> `&=~` → mettre à **0**
+
+> `^=` → **toggle**
+
+> `&` → tester
+
+> `<<` / `>>` → décaler
 
 ---
 
@@ -47,8 +92,8 @@
 | `volatile` | —       | Variable modifiée par le matériel |
 
 ```c
-volatile uint8_t bouton;     // variable modifiée par interruption
-uint16_t compteurTemps;      // compteur local
+volatile uint8_t bouton     // variable modifiée par interruption
+uint16_t compteurTemps      // compteur local
 ```
 
 ---
@@ -64,9 +109,9 @@ Chaque périphérique du PIC18F est contrôlé par des **registres** :
 - **Opérations sur les bits :**
 
 ```c
-REG |= (1 << n);   // Met le bit n à 1
-REG &= ~(1 << n);  // Met le bit n à 0
-REG ^= (1 << n);   // Inverse le bit n
+REG |= (1 << n)   // Met le bit n à 1
+REG &= ~(1 << n)  // Met le bit n à 0
+REG ^= (1 << n)   // Inverse le bit n
 if (REG & (1 << n)) { ... } // Teste le bit n
 ```
 
