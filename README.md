@@ -73,23 +73,23 @@ Le **PIC18F** fait partie de la famille des microcontrôleurs 8 bits de Microchi
 
 Il repose sur deux caractéristiques clés :
 
-- ### **Architecture Harvard :**
+### **1. Architecture Harvard :**
   * Séparation entre **mémoire programme** et **mémoire données**
   * Accès parallèles permettant **plus de rapidité**
   * Pipeline matériel pour exécuter certaines instructions en un seul cycle
 
-- ### **Architecture RISC (Reduced Instruction Set Computer) :**
+### **2. Architecture RISC (Reduced Instruction Set Computer) :**
   * Ensemble d’instructions réduit, simple et optimisé
   * **Exécution rapide** : la majorité des instructions en **1 cycle**
   * Idéal pour le contrôle temps réel et les applications industrielles
 
-Le PIC18F se distingue également par :
 
-   * Des **ports d’E/S configurables** (digital/analogique)
-   * Une gestion avancée des **interruptions**
-   * Plusieurs **Timers 8/16 bits**
-   * Interfaces intégrées : **UART, SPI, I²C, PWM**
-   * Convertisseur **ADC 10 ou 12 bits** selon modèle
+> **Le PIC18F se distingue également par :**
+  > - Des **ports d’E/S configurables** (digital/analogique)
+  > - Une gestion avancée des **interruptions**
+  > - Plusieurs **Timers 8/16 bits**
+  > - Interfaces intégrées : **UART, SPI, I²C, PWM**
+  > - Convertisseur **ADC 10 ou 12 bits** selon modèle
 
 
 - ### **Pins du Microcontrôleur PIC18F45K22 :**
