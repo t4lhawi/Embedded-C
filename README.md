@@ -85,14 +85,14 @@ Il repose sur deux caractéristiques clés :
 
 Le PIC18F se distingue également par :
 
-* Des **ports d’E/S configurables** (digital/analogique)
-* Une gestion avancée des **interruptions**
-* Plusieurs **Timers 8/16 bits**
-* Interfaces intégrées : **UART, SPI, I²C, PWM**
-* Convertisseur **ADC 10 ou 12 bits** selon modèle
+   * Des **ports d’E/S configurables** (digital/analogique)
+   * Une gestion avancée des **interruptions**
+   * Plusieurs **Timers 8/16 bits**
+   * Interfaces intégrées : **UART, SPI, I²C, PWM**
+   * Convertisseur **ADC 10 ou 12 bits** selon modèle
 
 
-- ### **Pins du Microcontrôleur PIC18F45K22**
+- ### **Pins du Microcontrôleur PIC18F45K22 :**
 
 ![pic18f](https://github.com/user-attachments/assets/351a6a3f-6c42-4449-994a-32bdab107143)
 
@@ -242,4 +242,4 @@ Les périphériques sont mappés en mémoire, accessibles via des **pointeurs vo
 
 ---
 
-<h3 align="center"> 🧑🏻‍💻 | Made By : <a href="https://github.com/mohamedtalhaouii" target="_blank">Mohamed Talhaoui</a></h3>
+<h3 align="center"> 🧑🏻‍💻 | Made By : <a href="https://github.com/t4lhawi" target="_blank">Mohamed Talhaoui</a></h3>
