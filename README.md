@@ -142,23 +142,68 @@ Voici un tableau clair regroupant les broches essentielles :
 | 40      | RB7 / PGD        | Programmation ICSP        |
 
 
+
+
+
+> **ADC = “Analog Digital Converter”**
+> - Il sert à **convertir une tension analogique** (0 à 5 V) en une **valeur numérique** (0 à 1023 pour un ADC 10 bits).
+
+
+
+> **PGC = “Program Clock (Horloge de programmation)”**
+> - Donne le timing
+
+> **PGD = “Program Data (Données de programmation)”**
+   > - Transporte les valeurs 0/1 pour programmer la mémoire Flash
+
+> **Rxx = “Registres / Pins (RA0, RB5, RC6, etc.)”**
+> * **R = Register (PORT)**
+> * **A/B/C/D/E = le port**
+> * **numéro = le bit/pin**
+
+
+> **CCP2 = “Capture / Compare / PWM”**
+> - Capture : Mesurer la durée d’un signal, une fréquence…
+
+> - Compare : Déclencher un événement à un moment précis.
+
+> - PWM : Générer un signal PWM (moteurs, servos, LED dimming…)
+
+
+> **MCLR = “Master Clear (Broche Reset)**
+> * Réinitialiser (redémarrer) le PIC
+> * Activer le mode programmation (Vpp ≈ 12 V)
+> * Utilisé par Pickit/ICD
+
 ---
 
 ## **3. Ports d’Entrée/Sortie (E/S)**
 
- Utiliser des **tailles fixes** (bibliothèque `<stdint.h>`) pour maîtriser la mémoire.
+| **PORT**   | **Mode Analogique / Digital**                 | **Direction (Entrée / Sortie)**         | **Lecture de l’état** | **Écriture sur la sortie** | **Utilisation principale**           |
+| ---------- | --------------------------------------------- | --------------------------------------- | --------------------- | -------------------------- | ------------------------------------ |
+| **PORT A** | `ANSELA` : <br>0 = Digital <br>1 = Analogique | `TRISA` : <br>1 = Entrée <br>0 = Sortie | `PORTA`               | `LATA`                     | ADC (AN0–AN4), digital I/O           |
+| **PORT B** | Principalement Digital <br>(selon modèles)    | `TRISB`                                 | `PORTB`               | `LATB`                     | Interruptions (INT0/1/2), E/S        |
+| **PORT C** | Digital (UART, SPI, I2C)                      | `TRISC`                                 | `PORTC`               | `LATC`                     | Communications : UART, I²C, SPI, PWM |
+| **PORT D** | Digital                                       | `TRISD`                                 | `PORTD`               | `LATD`                     | E/S générales, LCD, bus parallèle    |
+| **PORTE**  | `ANSELE` : <br>0 = Digital <br>1 = Analogique | `TRISE`                                 | `PORTE`               | `LATE`                     | ADC (AN5–AN7), contrôle mémoire      |
 
-| Type       | Taille  | Exemple d’usage                   |
-| ---------- | ------- | --------------------------------- |
-| `uint8_t`  | 8 bits  | Lecture d’un port GPIO            |
-| `uint16_t` | 16 bits | Valeur d’un Timer                 |
-| `uint32_t` | 32 bits | Compteur logiciel                 |
-| `volatile` | —       | Variable modifiée par le matériel |
+- ### **ANSELx (ANSELA, ANSELB, ANSELE)**
+  * Sélectionne analogique ou digital
+  * 1 = Entrée analogique
+  * 0 = Digital
 
-```c
-volatile uint8_t bouton     // variable modifiée par interruption
-uint16_t compteurTemps      // compteur local
-```
+- ### **TRISx**
+  * Direction de la broche
+  * 1 = Entrée
+  * 0 = Sortie
+
+- ### **PORTx**
+  * Lit la valeur actuelle de la broche
+  * Utilisé pour lire un bouton, capteur, etc.
+
+- ### **LATx**
+  * Écrit une valeur sur la sortie
+  * Utilisé pour allumer une LED, activer un module, etc.
 
 ---
 
