@@ -16,7 +16,7 @@
 
 - ### **Opérations bit à bit (bitwise)**
 
-| Opération          | Symbole | Exemple (C)  | Résultat / Description                                                      |
+| Opération          | Symbole | Code         | Description                                                      |
 | ------------------ | ------- | ------------ | --------------------------------------------------------------------------- |
 | **AND bit à bit**  | `&`     | `a = x & y` | Compare bit par bit. Le résultat vaut **1 seulement si les deux bits = 1**. |
 | **OR bit à bit**   | `\|`    | `a = x \| y` | Compare bit par bit. Le résultat vaut **1 si au moins un bit = 1**.        |
@@ -26,7 +26,7 @@
 
 - ### **Opérations courantes sur un bit précis**
 
-| Opération                     | Code                       | Explication                       |
+| Opération                     | Code                       | Description                       |
 | ----------------------------- | -------------------------- | --------------------------------- |
 | **Mettre un bit à 1**         | `x\| = (1 << n)`          | Active le bit *n*.                |
 | **Mettre un bit à 0**         | `x &= ~(1 << n)`          | Désactive le bit *n*.             |
@@ -38,7 +38,7 @@
 
 - ### **Décalages de bits**
 
-| Opération             | Symbole | Exemple  | Effet                                             |
+| Opération             | Symbole | Code     | Description                                             |
 | --------------------- | ------- | -------- | ------------------------------------------------- |
 | **Décalage à gauche** | `<<`    | `x << 1` | Multiplie par 2 (décale les bits vers la gauche). |
 | **Décalage à droite** | `>>`    | `x >> 1` | Divise par 2 (décale vers la droite).             |
@@ -46,7 +46,7 @@
 
 - ### **Masques de bits (bit masks)**
 
-| Opération                          | Exemple          | Rôle                                  |
+| Opération                          | Code             | Description                                  |
 | ---------------------------------- | ---------------- | ------------------------------------- |
 | **Créer un masque**                | `mask = 1 << n` | Masque avec seulement le bit n actif. |
 | **Garder seulement certains bits** | `x & mask`       | Filtre tout sauf les bits du masque.  |
