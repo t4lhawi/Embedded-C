@@ -33,7 +33,7 @@
 | **Basculer un bit (toggle)**  | `x ^= (1 << n)`           | Change l’état du bit : 0→1 / 1→0. |
 | **Tester un bit**             | `(x >> n) & 1`             | Extrait l’état du bit (0 ou 1).   |
 | **Lire un bit**               | `if (x & (1 << n))`        | Vrai si le bit *n* vaut 1.        |
-| **Copier la valeur d’un bit** | `bit = (x & (1<<n)) != 0` | Récupère la valeur du bit.        |
+| **Copier la valeur d’un bit** | `bit = (x & (1 << n)) != 0` | Récupère la valeur du bit.        |
 
 
 - ### **Décalages de bits**
