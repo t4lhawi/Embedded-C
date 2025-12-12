@@ -1,16 +1,23 @@
 # **Sommaire :**
 
-- **[Manipulation des Bits](#1-manipulation-des-bits)**
+- **[Introduction aux Systèmes Embarqués](#1-introduction-aux-systèmes-embarqués)** -
+   - **[Architecture Générale](#architecture-générale)**
+   -  **[Caractéristiques d’un Système Embarqué](#caractéristiques-dun-système-embarqué)**
+   -  **[Cycle de Développement](#cycle-de-développement)**
+   -  **[Domaines d’Application](#domaines-dapplication)**
+
+
+- **[Manipulation des Bits](#2-manipulation-des-bits)**
    - **[Opérations bit à bit (bitwise)](#opérations-bit-à-bit-bitwise)**
    - **[Opérations courantes sur un bit précis](#opérations-courantes-sur-un-bit-précis)**
    - **[Décalages de bits](#décalages-de-bits)**
    - **[Masques de bits (bit masks)](#masques-de-bits-bit-masks)**
-- **[Microcontrôleur PIC18F](#2-microcontrôleur-pic18f)**
-   - **[Architecture du Microcontrôleur](#architecture-du-microcontrôleur-pic18f45k22-)**
-   - **[Pins du Microcontrôleur](#pins-du-microcontrôleur-pic18f45k22-)**
-- **[Ports d’Entrée/Sortie (E/S)](#3-ports-dentréesortie-es)**
-- **[Gestion des Interruptions](#4-gestion-des-interruptions)**
-- **[Gestion des Timers](#5-gestion-des-timers)**
+- **[Microcontrôleur PIC18F](#3-microcontrôleur-pic18f)**
+   - **[Architecture du Microcontrôleur](#architecture-du-microcontrôleur-pic18f45k22)**
+   - **[Pins du Microcontrôleur](#pins-du-microcontrôleur-pic18f45k22)**
+- **[Ports d’Entrée/Sortie (E/S)](#4-ports-dentréesortie-es)**
+- **[Gestion des Interruptions](#5-gestion-des-interruptions)**
+- **[Gestion des Timers](#6-gestion-des-timers)**
 
 ---
 
@@ -18,7 +25,64 @@
 
 ---
 
-## **1. Manipulation des Bits**
+## **1. Introduction aux Systèmes Embarqués**
+
+Un **système embarqué** est un système électronique et informatique intégré dans un dispositif plus large, dédié à une tâche précise.
+Il combine : **microcontrôleur**, **logiciel embarqué**, **interfaces**, **capteurs** et **actionneurs**.
+
+
+- ### **Architecture Générale**
+   - **Microcontrôleur / Microprocesseur**
+      – Unité centrale d’exécution (CPU)
+      – Utilise mémoire **RAM**, **Flash**, **EEPROM**
+   
+   - **Mémoire**
+      – Programme (Flash)
+      – Données (RAM)
+      – Stockage non volatile (EEPROM)
+   
+   - **Interfaces d’E/S**
+      – GPIO, ADC, DAC
+      – UART, SPI, I2C
+      – Timers, PWM
+   
+   - **Capteurs & Actionneurs**
+      – Capteurs : température, lumière, mouvement…
+      – Actionneurs : moteurs, relais, écrans, LEDs…
+
+
+- ### **Caractéristiques d’un Système Embarqué**
+
+   * **Temps réel** : respecter des délais stricts
+   * **Contraintes de ressources** : mémoire limitée, faible consommation
+   * **Fiabilité & robustesse** : fonctionnement continu
+   * **Optimisation** : code compact, énergie faible
+   * **Autonomie** : batterie, capteurs intégrés
+
+
+- ### **Cycle de Développement**
+
+   - **Analyse du besoin**
+   - **Conception (hardware + software)**
+   - **Programmation (C, C++, assembleur, RTOS)**
+   - **Tests & validation (unitaires, temps réel, consommation)**
+   - **Déploiement**
+   - **Maintenance / mises à jour**
+
+
+- ### **Domaines d’Application**
+
+   * Automobile (ESP, ABS, ECU)
+   * Aéronautique
+   * Domotique et IoT
+   * Robotique
+   * Médical
+   * Télécommunications
+   * Industrie 4.0
+
+---
+
+## **2. Manipulation des Bits**
 
 - ### **Opérations bit à bit (bitwise)**
 
@@ -72,11 +136,11 @@
 
 ---
 
-## **2. Microcontrôleur PIC18F**
+## **3. Microcontrôleur PIC18F**
 Le **PIC18F** fait partie de la famille des microcontrôleurs 8 bits de Microchip, conçus pour les systèmes embarqués nécessitant **performance**, **faible consommation**, et **contrôle bas niveau**.
 
 
-- ### **Architecture du Microcontrôleur PIC18F45K22 :**
+- ### **Architecture du Microcontrôleur PIC18F45K22**
 ![arch_pic](https://github.com/user-attachments/assets/7c2701f0-caba-4d97-b3a2-a83eb048764c)
 
 
@@ -104,7 +168,7 @@ Il repose sur deux caractéristiques clés :
   > - Convertisseur **ADC 10 ou 12 bits** selon modèle
 
 
-- ### **Pins du Microcontrôleur PIC18F45K22 :**
+- ### **Pins du Microcontrôleur PIC18F45K22**
 
 ![pic18f](https://github.com/user-attachments/assets/351a6a3f-6c42-4449-994a-32bdab107143)
 
@@ -187,7 +251,7 @@ Voici un tableau clair regroupant les broches essentielles :
 
 ---
 
-## **3. Ports d’Entrée/Sortie (E/S)**
+## **4. Ports d’Entrée/Sortie (E/S)**
 
 | **PORT**   | **Mode Analogique / Digital**                 | **Direction (Entrée / Sortie)**         | **Lecture de l’état** | **Écriture sur la sortie** | **Utilisation principale**           |
 | ---------- | --------------------------------------------- | --------------------------------------- | --------------------- | -------------------------- | ------------------------------------ |
@@ -219,7 +283,7 @@ Voici un tableau clair regroupant les broches essentielles :
 <!--
 ---
 
-## **4. Gestion des Interruptions**
+## **5. Gestion des Interruptions**
 
 Chaque périphérique du PIC18F est contrôlé par des **registres** :
 
@@ -238,7 +302,7 @@ if (REG & (1 << n)) { ... } // Teste le bit n
 
 ---
 
-## **5. Gestion des Timers**
+## **6. Gestion des Timers**
 
 Le PIC18F contient plusieurs zones mémoire :
 
