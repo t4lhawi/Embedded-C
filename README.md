@@ -86,12 +86,12 @@ Il combine : **microcontrôleur**, **logiciel embarqué**, **interfaces**, **cap
 
 - ### **Opérations bit à bit (bitwise)**
 
-| Opération          | Symbole | Code         | Description                                                      |
-| ------------------ | ------- | ------------ | --------------------------------------------------------------------------- |
-| **AND bit à bit**  | `&`     | `a = x & y` | Compare bit par bit. Le résultat vaut **1 seulement si les deux bits = 1**. |
-| **OR bit à bit**   | `\|`    | `a = x \| y` | Compare bit par bit. Le résultat vaut **1 si au moins un bit = 1**.        |
-| **XOR bit à bit**  | `^`     | `a = x ^ y` | Résultat vaut **1 si les bits sont différents**.                            |
-| **NOT (négation)** | `~`     | `a = ~x`    | Inverse tous les bits (0→1, 1→0).                                           |
+| Opération          | Symbole | Code             | Description                                                                 |
+| ------------------ | ------- | ---------------- | --------------------------------------------------------------------------- |
+| **AND bit à bit**  | `&`     | `a = x & y`      | Compare bit par bit. Le résultat vaut **1 seulement si les deux bits = 1**. |
+| **OR bit à bit**   | `\|`    | `a = x \| y`     | Compare bit par bit. Le résultat vaut **1 si au moins un bit = 1**.         |
+| **XOR bit à bit**  | `^`     | `a = x ^ y`      | Résultat vaut **1 si les bits sont différents**.                            |
+| **NOT (négation)** | `~`     | `a = ~x`         | Inverse tous les bits (0→1, 1→0).                                           |
 
 
 - ### **Opérations courantes sur un bit précis**
