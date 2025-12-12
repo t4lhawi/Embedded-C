@@ -35,23 +35,23 @@ Il combine : **microcontrôleur**, **logiciel embarqué**, **interfaces**, **cap
 
 
 - ### **Architecture Générale**
-   - **Microcontrôleur / Microprocesseur**
-      – Unité centrale d’exécution (CPU)
-      – Utilise mémoire **RAM**, **Flash**, **EEPROM**
+   - **Microcontrôleur / Microprocesseur :**
+      - Unité centrale d’exécution (CPU)
+      - Utilise mémoire **RAM**, **Flash**, **EEPROM**
    
-   - **Mémoire**
-      – Programme (Flash)
-      – Données (RAM)
-      – Stockage non volatile (EEPROM)
+   - **Mémoire :**
+      - Programme (Flash)
+      - Données (RAM)
+      - Stockage non volatile (EEPROM)
    
-   - **Interfaces d’E/S**
-      – GPIO, ADC, DAC
-      – UART, SPI, I2C
-      – Timers, PWM
+   - **Interfaces d’E/S :**
+      - GPIO, ADC, DAC
+      - UART, SPI, I2C
+      - Timers, PWM
    
-   - **Capteurs & Actionneurs**
-      – Capteurs : température, lumière, mouvement…
-      – Actionneurs : moteurs, relais, écrans, LEDs…
+   - **Capteurs & Actionneurs :**
+      - **Capteurs :** température, lumière, mouvement…
+      - **Actionneurs :** moteurs, relais, écrans, LEDs…
 
 
 - ### **Caractéristiques d’un Système Embarqué**
