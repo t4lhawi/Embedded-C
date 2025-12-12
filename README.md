@@ -16,9 +16,10 @@
    - **[Architecture du Microcontrôleur](#architecture-du-microcontrôleur-pic18f45k22)**
    - **[Pins du Microcontrôleur](#pins-du-microcontrôleur-pic18f45k22)**
 - **[Ports d’Entrée/Sortie (E/S)](#4-ports-dentréesortie-es)**
+<!--
 - **[Gestion des Interruptions](#5-gestion-des-interruptions)**
 - **[Gestion des Timers](#6-gestion-des-timers)**
-
+-->
 ---
 
 <h3 align="center"><a href="https://github.com/mohamedtalhaouii/Programmation-C" target="_blank">Lien de Programmation en Langage C</a></h3>
@@ -29,6 +30,8 @@
 
 Un **système embarqué** est un système électronique et informatique intégré dans un dispositif plus large, dédié à une tâche précise.
 Il combine : **microcontrôleur**, **logiciel embarqué**, **interfaces**, **capteurs** et **actionneurs**.
+
+![embededd](https://github.com/user-attachments/assets/1a850e38-dfcb-4afb-9675-e38c8d88605b)
 
 
 - ### **Architecture Générale**
