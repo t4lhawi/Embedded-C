@@ -1,10 +1,14 @@
 # **Sommaire :**
 
-* **[Manipulation des Bits](#1-manipulation-des-bits)**
-* **[Microcontrôleur PIC18F](#2-microcontrôleur-pic18f)**
-* **[Ports d’Entrée/Sortie (E/S)](#3-ports-dentréesortie-es)**
-* **[Gestion des Interruptions](#4-gestion-des-interruptions)**
-* **[Gestion des Timers](#5-gestion-des-timers)**
+- **[Manipulation des Bits](#1-manipulation-des-bits)**
+   - **[Opérations bit à bit (bitwise)](#opérations-bit-à-bit-bitwise)**
+   - **[Opérations courantes sur un bit précis](#opérations-courantes-sur-un-bit-précis)**
+   - **[Décalages de bits](#décalages-de-bits)**
+   - **[Masques de bits (bit masks)](#masques-de-bits-bit-masks)**
+- **[Microcontrôleur PIC18F](#2-microcontrôleur-pic18f)**
+- **[Ports d’Entrée/Sortie (E/S)](#3-ports-dentréesortie-es)**
+- **[Gestion des Interruptions](#4-gestion-des-interruptions)**
+- **[Gestion des Timers](#5-gestion-des-timers)**
 
 ---
 
