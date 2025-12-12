@@ -31,7 +31,7 @@
 Un **système embarqué** est un système électronique et informatique intégré dans un dispositif plus large, dédié à une tâche précise.
 Il combine : **microcontrôleur**, **logiciel embarqué**, **interfaces**, **capteurs** et **actionneurs**.
 
-![embededd](https://github.com/user-attachments/assets/1a850e38-dfcb-4afb-9675-e38c8d88605b)
+![embededd](https://github.com/user-attachments/assets/f6afe0d5-a655-4da9-972d-964ff238b188)
 
 
 - ### **Architecture Générale**
