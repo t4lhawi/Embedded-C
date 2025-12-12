@@ -1,6 +1,6 @@
 # **Sommaire :**
 
-- **[Introduction aux Systèmes Embarqués](#1-introduction-aux-systèmes-embarqués)** -
+- **[Introduction aux Systèmes Embarqués](#1-introduction-aux-systèmes-embarqués)**
    - **[Architecture Générale](#architecture-générale)**
    -  **[Caractéristiques d’un Système Embarqué](#caractéristiques-dun-système-embarqué)**
    -  **[Cycle de Développement](#cycle-de-développement)**
