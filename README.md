@@ -6,8 +6,8 @@
    - **[Décalages de bits](#décalages-de-bits)**
    - **[Masques de bits (bit masks)](#masques-de-bits-bit-masks)**
 - **[Microcontrôleur PIC18F](#2-microcontrôleur-pic18f)**
-   - **[Architecture du Microcontrôleur PIC18F45K22](#architecture-du-microcontrôleur-pic18f45k22-)**
-   - **[Pins du Microcontrôleur PIC18F45K22](#pins-du-microcontrôleur-pic18f45k22-)**
+   - **[Architecture du Microcontrôleur](#architecture-du-microcontrôleur-pic18f45k22-)**
+   - **[Pins du Microcontrôleur](#pins-du-microcontrôleur-pic18f45k22-)**
 - **[Ports d’Entrée/Sortie (E/S)](#3-ports-dentréesortie-es)**
 - **[Gestion des Interruptions](#4-gestion-des-interruptions)**
 - **[Gestion des Timers](#5-gestion-des-timers)**
@@ -77,7 +77,8 @@ Le **PIC18F** fait partie de la famille des microcontrôleurs 8 bits de Microchi
 
 
 - ### **Architecture du Microcontrôleur PIC18F45K22 :**
-![arch_pic](https://github.com/user-attachments/assets/6aa8d358-ec05-4020-b62b-da3f379ef18f)
+![arch_pic](https://github.com/user-attachments/assets/7c2701f0-caba-4d97-b3a2-a83eb048764c)
+
 
 Il repose sur deux caractéristiques clés :
 
@@ -85,6 +86,9 @@ Il repose sur deux caractéristiques clés :
   * Séparation entre **mémoire programme** et **mémoire données**
   * Accès parallèles permettant **plus de rapidité**
   * Pipeline matériel pour exécuter certaines instructions en un seul cycle
+
+![arch_mem_pic](https://github.com/user-attachments/assets/7c8c3a9f-9458-432b-9d27-180e6de747bd)
+
 
 **2. Architecture RISC (Au Niveau du Processeur) :**
   * Ensemble d’instructions réduit, simple et optimisé
@@ -211,6 +215,8 @@ Voici un tableau clair regroupant les broches essentielles :
   * Écrit une valeur sur la sortie
   * Utilisé pour allumer une LED, activer un module, etc.
 
+
+<!--
 ---
 
 ## **4. Gestion des Interruptions**
@@ -245,7 +251,7 @@ Les périphériques sont mappés en mémoire, accessibles via des **pointeurs vo
 ```c
 #define REGISTRE (*(volatile uint8_t*)0xF80)
 ```
-
+-->
 ---
 
 <h3 align="center"> 🧑🏻‍💻 | Made By : <a href="https://github.com/t4lhawi" target="_blank">Mohamed Talhaoui</a></h3>
