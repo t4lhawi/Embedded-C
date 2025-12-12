@@ -6,6 +6,8 @@
    - **[Décalages de bits](#décalages-de-bits)**
    - **[Masques de bits (bit masks)](#masques-de-bits-bit-masks)**
 - **[Microcontrôleur PIC18F](#2-microcontrôleur-pic18f)**
+   - **[Architecture du Microcontrôleur PIC18F45K22](#architecture-du-microcontrôleur-pic18f45k22-)**
+   - **[Pins du Microcontrôleur PIC18F45K22](#pins-du-microcontrôleur-pic18f45k22-)**
 - **[Ports d’Entrée/Sortie (E/S)](#3-ports-dentréesortie-es)**
 - **[Gestion des Interruptions](#4-gestion-des-interruptions)**
 - **[Gestion des Timers](#5-gestion-des-timers)**
@@ -73,16 +75,18 @@
 ## **2. Microcontrôleur PIC18F**
 Le **PIC18F** fait partie de la famille des microcontrôleurs 8 bits de Microchip, conçus pour les systèmes embarqués nécessitant **performance**, **faible consommation**, et **contrôle bas niveau**.
 
+
+- ### **Architecture du Microcontrôleur PIC18F45K22 :**
 ![arch_pic](https://github.com/user-attachments/assets/6aa8d358-ec05-4020-b62b-da3f379ef18f)
 
 Il repose sur deux caractéristiques clés :
 
-### **1. Architecture Harvard :**
+**1. Architecture Harvard (Au Niveau de la Mémoire) :**
   * Séparation entre **mémoire programme** et **mémoire données**
   * Accès parallèles permettant **plus de rapidité**
   * Pipeline matériel pour exécuter certaines instructions en un seul cycle
 
-### **2. Architecture RISC (Reduced Instruction Set Computer) :**
+**2. Architecture RISC (Au Niveau du Processeur) :**
   * Ensemble d’instructions réduit, simple et optimisé
   * **Exécution rapide** : la majorité des instructions en **1 cycle**
   * Idéal pour le contrôle temps réel et les applications industrielles
