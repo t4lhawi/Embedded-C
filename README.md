@@ -90,12 +90,13 @@ Il combine : **microcontrôleur**, **logiciel embarqué**, **interfaces**, **cap
 ## **2. Manipulation des Bits**
 
 - ### Représentation Binaire d’un Octet (char) :
-Un type `char` est codé sur 8 bits, numérotés de b0 (bit de poids faible – `LSB`) à b7 (bit de poids fort – `MSB`).
+Un type `char` est codé sur 8 bits, numérotés de b0 à b7.
  b7 | b6 | b5 | b4 | b3 | b2 | b1 | b0 |
  -- | -- | -- | -- | -- | -- | -- | -- |
  **MSB** |  |  |  |  |  |  | **LSB** |
 
-
+> - `LSB` : bit de poids Faible
+> - `MSB` : bit de poids Fort
 - ### **Opérations bit à bit (bitwise)**
 
 | Opération          | Symbole | Code             | Description                                                                 |
