@@ -102,7 +102,7 @@ Il combine : **microcontrôleur**, **logiciel embarqué**, **interfaces**, **cap
 
 | Opération                     | Code                       | Description                       |
 | ----------------------------- | -------------------------- | --------------------------------- |
-| **Mettre un bit à 1**         | `x\| = (1 << n)`          | Active le bit *n*.                |
+| **Mettre un bit à 1**         | `x \|= (1 << n)`          | Active le bit *n*.                |
 | **Mettre un bit à 0**         | `x &= ~(1 << n)`          | Désactive le bit *n*.             |
 | **Basculer un bit (toggle)**  | `x ^= (1 << n)`           | Change l’état du bit : 0→1 / 1→0. |
 | **Tester un bit**             | `(x >> n) & 1`             | Extrait l’état du bit (0 ou 1).   |
