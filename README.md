@@ -16,6 +16,7 @@
    - **[Architecture du Microcontrôleur](#architecture-du-microcontrôleur-pic18f45k22)**
    - **[Pins du Microcontrôleur](#pins-du-microcontrôleur-pic18f45k22)**
 - **[Ports d’Entrée/Sortie (E/S)](#4-ports-dentréesortie-es)**
+   - **[Registres de Contrôle](#registres-de-contrôle)**
 <!--
 - **[Gestion des Interruptions](#5-gestion-des-interruptions)**
 - **[Gestion des Timers](#6-gestion-des-timers)**
@@ -256,6 +257,22 @@ Voici un tableau clair regroupant les broches essentielles :
 
 ## **4. Ports d’Entrée/Sortie (E/S)**
 
+- ### Registres de Contrôle
+
+| Registre    | Fonction                                         | Configuration                                    |
+| ----------- | ------------------------------------------------ | ------------------------------------------------ |
+| **PORTx**   | Lecture/écriture logique des broches             | Entrée / Sortie                                  |
+| **LATx**    | Registre tampon (Latch) pour une écriture stable | Sortie uniquement                                |
+| **TRISx**   | Direction du port                                | 1 = Entrée<br>0 = Sortie                         |
+| **ANSELx**  | Sélection du mode analogique ou numérique        | 1 = Entrée analogique<br>0 = Numérique (digital) |
+| **SLRCONx** | Contrôle du Slew Rate (réduction des EMI)        | Sortie                                           |
+
+
+> Même si **TRISx = sortie**, une broche configurée en **ANSELx = 1** reste **analogique** → elle ne fonctionne pas correctement en digital tant que l’analogique n’est pas désactivé.
+
+
+
+
 
 - ### **PORT A :**
 
@@ -321,23 +338,6 @@ Voici un tableau clair regroupant les broches essentielles :
 | **PORT D** | Digital                                       | `TRISD`                                 | `PORTD`               | `LATD`                     | E/S générales, LCD, bus parallèle    |
 | **PORTE**  | `ANSELE` : <br>0 = Digital <br>1 = Analogique | `TRISE`                                 | `PORTE`               | `LATE`                     | ADC (AN5–AN7), contrôle mémoire      |
 
-- ### **ANSELx (ANSELA, ANSELB, ANSELE)**
-  * Sélectionne analogique ou digital
-  * 1 = Entrée analogique
-  * 0 = Digital
-
-- ### **TRISx**
-  * Direction de la broche
-  * 1 = Entrée
-  * 0 = Sortie
-
-- ### **PORTx**
-  * Lit la valeur actuelle de la broche
-  * Utilisé pour lire un bouton, capteur, etc.
-
-- ### **LATx**
-  * Écrit une valeur sur la sortie
-  * Utilisé pour allumer une LED, activer un module, etc.
 
 
 <!--
