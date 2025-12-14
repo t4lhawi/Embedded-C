@@ -264,7 +264,7 @@ Voici un tableau clair regroupant les broches essentielles :
 | **PORTx**   | Lecture/Écriture logique des broches             | Entrée / Sortie                                  |
 | **LATx**    | Registre tampon (Latch) pour une écriture stable | Sortie uniquement                                |
 | **TRISx**   | Direction du Port                                | 1 = Entrée<br>0 = Sortie                         |
-| **ANSELx**  | Sélection du Mode Analogique ou Numérique        | 1 = Entrée Analogique<br>0 = Numérique (Digital) |
+| **ANSELx**  | Sélection du Mode Analogique ou Numérique        | 1 = Analogique<br>0 = Numérique (Digital) |
 | **SLRCONx** | Contrôle du Slew Rate (réduction des EMI)        | Sortie                                           |
 
 
