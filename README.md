@@ -117,6 +117,9 @@ Un type `char` est codé sur 8 bits, numérotés de b0 à b7.
 | **Tester un bit**             | `(x >> n) & 1`             | Extrait l’état du bit (0 ou 1).   |
 | **Lire un bit**               | `if (x & (1 << n))`        | Vrai si le bit *n* vaut 1.        |
 | **Copier la valeur d’un bit** | `bit = (x & (1 << n)) != 0` | Récupère la valeur du bit.        |
+| **Échanger (swap) deux bits** | `char bi = (x >> i) & 1;`<br> `char b7 = (x >> j) & 1;`<br> `x = (x & ~((1 << i) \| (1 << j))) \| (bi << j) \| (bj << i);` | Échange les valeurs des bits *i* et *j*. |
+
+
 
 
 - ### **Décalages de bits**
