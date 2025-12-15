@@ -109,15 +109,15 @@ Un type `char` est codé sur 8 bits, numérotés de b0 à b7.
 
 - ### **Opérations courantes sur un bit précis**
 
-| Opération                     | Code                       | Description                       |
-| ----------------------------- | -------------------------- | --------------------------------- |
-| **Mettre un bit à 1**         | `x \|= (1 << n)`          | Active le bit *n*.                |
-| **Mettre un bit à 0**         | `x &= ~(1 << n)`          | Désactive le bit *n*.             |
-| **Basculer un bit (toggle)**  | `x ^= (1 << n)`           | Change l’état du bit : 0→1 / 1→0. |
-| **Tester un bit**             | `(x >> n) & 1`             | Extrait l’état du bit (0 ou 1).   |
-| **Lire un bit**               | `if (x & (1 << n))`        | Vrai si le bit *n* vaut 1.        |
-| **Copier la valeur d’un bit** | `bit = (x & (1 << n)) != 0` | Récupère la valeur du bit.        |
-| **Échanger (swap) deux bits** | `char bi = (x >> i) & 1;`<br> `char bj = (x >> j) & 1;`<br> `x = (x & ~((1 << i) \| (1 << j))) \| (bi << j) \| (bj << i);` | Échange les valeurs des bits *i* et *j*. |
+| Opération                        | Code                        | Description                       |
+| -------------------------------- | --------------------------- | --------------------------------- |
+| **Mettre un bit à 1 (SET)**      | `x \|= (1 << n)`            | Active le bit *n*.                |
+| **Mettre un bit à 0 (CLEAR)**    | `x &= ~(1 << n)`            | Désactive le bit *n*.             |
+| **Inversion d’un bit (TOGGLE)**  | `x ^= (1 << n)`             | Complémente le bit n : 0 ↔ 1.     |
+| **Extraction d’un bit**          | `(x >> n) & 1`              | Extrait l’état du bit (0 ou 1).   |
+| **Test logique d’un bit (TEST)** | `if (x & (1 << n))`         | Vrai si le bit *n* vaut 1.        |
+| **Copier la valeur d’un bit**    | `bit = (x & (1 << n)) != 0` | Copie la valeur du bit n dans une variable.  |
+| **Échange de deux bits (SWAP)**  | `char bi = (x >> i) & 1;`<br> `char bj = (x >> j) & 1;`<br> `x = (x & ~((1 << i) \| (1 << j))) \| (bi << j) \| (bj << i);` | Échange les valeurs des bits *i* et *j*. |
 
 
 
@@ -126,8 +126,8 @@ Un type `char` est codé sur 8 bits, numérotés de b0 à b7.
 
 | Opération             | Symbole | Code     | Description                                             |
 | --------------------- | ------- | -------- | ------------------------------------------------- |
-| **Décalage à gauche** | `<<`    | `x << 1` | Multiplie par 2 (décale les bits vers la gauche). |
-| **Décalage à droite** | `>>`    | `x >> 1` | Divise par 2 (décale vers la droite).             |
+| **Décalage à Gauche** | `<<`    | `x << 1` | Multiplie par 2 (décale les bits vers la gauche). |
+| **Décalage à Droite** | `>>`    | `x >> 1` | Divise par 2 (décale vers la droite).             |
 
 
 - ### **Masques de bits (bit masks)**
