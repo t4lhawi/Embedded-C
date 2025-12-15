@@ -219,8 +219,8 @@ Voici un tableau clair regroupant les broches essentielles :
 | 28      | RD5              | E/S digitale              |
 | 29      | RD6              | E/S digitale              |
 | 30      | RD7              | E/S digitale              |
-| 31      | Vss              | Masse                     |
-| 32      | Vdd              | Alimentation              |
+| 31      | Vss              | Masse (-)                 |
+| 32      | Vdd              | Alimentation (+)          |
 | 33      | RB0 / INT0       | Interruption externe      |
 | 34      | RB1 / INT1       | Interruption              |
 | 35      | RB2 / INT2       | Interruption              |
