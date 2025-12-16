@@ -12,6 +12,7 @@
    - **[Opérations bit à bit (bitwise)](#opérations-bit-à-bit-bitwise)**
    - **[Opérations courantes sur un bit précis](#opérations-courantes-sur-un-bit-précis)**
    - **[Décalages de bits](#décalages-de-bits)**
+   - **[Rotation des bits](#rotation-des-bits)**
    - **[Masques de bits (bit masks)](#masques-de-bits-bit-masks)**
 - **[Microcontrôleur PIC18F](#3-microcontrôleur-pic18f)**
    - **[Architecture du Microcontrôleur](#architecture-du-microcontrôleur-pic18f45k22)**
@@ -124,11 +125,21 @@ Un type `char` est codé sur 8 bits, numérotés de b0 à b7.
 
 - ### **Décalages de bits**
 
-| Opération             | Symbole | Code     | Description                                             |
-| --------------------- | ------- | -------- | ------------------------------------------------- |
-| **Décalage à Gauche** | `<<`    | `x << 1` | Multiplie par 2 (décale les bits vers la gauche). |
-| **Décalage à Droite** | `>>`    | `x >> 1` | Divise par 2 (décale vers la droite).             |
+| Opération             | Symbole | Code     | Description                                                        |
+| --------------------- | ------- | -------- | ------------------------------------------------------------------ |
+| **Décalage à Gauche** | `<<`    | `x << n` | Décale les bits vers la gauche (≈ multiplication par $`2^n`$).       |
+| **Décalage à Droite** | `>>`    | `x >> n` | Décale les bits vers la droite (≈ division par $`2^n`$).             |
 
+
+- ### **Rotation de bits**
+
+| Opération             | Code                         | Description                                                                 |
+| --------------------- | ---------------------------- | --------------------------------------------------------------------------- |
+| **Rotation à Gauche** | `(x << n) \| (x >> (8 - n))` | Décalage circulaire vers la gauche : les bits sortants reviennent à droite. |
+| **Rotation à Droite** | `(x >> n) \| (x << (8 - n))` | Décalage circulaire vers la droite : les bits sortants reviennent à gauche. |
+
+> - Les rotations conservent tous les bits, contrairement aux décalages.
+> - Pour un `char`, on considère **8 bits** (adapter 8 selon la taille du type).
 
 - ### **Masques de bits (bit masks)**
 
