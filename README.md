@@ -12,7 +12,7 @@
    - **[Opérations bit à bit (bitwise)](#opérations-bit-à-bit-bitwise)**
    - **[Opérations courantes sur un bit précis](#opérations-courantes-sur-un-bit-précis)**
    - **[Décalages de bits](#décalages-de-bits)**
-   - **[Rotation des bits](#rotation-de-bits)**
+   - **[Rotation des bits](#rotations-de-bits)**
    - **[Masques de bits (bit masks)](#masques-de-bits-bit-masks)**
 - **[Microcontrôleur PIC18F](#3-microcontrôleur-pic18f)**
    - **[Architecture du Microcontrôleur](#architecture-du-microcontrôleur-pic18f45k22)**
@@ -132,7 +132,7 @@ Un type `char` est codé sur 8 bits, numérotés de b0 à b7.
 
 
 
-- ### **Rotation de bits**
+- ### **Rotations de bits**
 
 | Opération             | Code                         | Description                                                            |
 | --------------------- | ---------------------------- | ---------------------------------------------------------------------- |
