@@ -12,7 +12,7 @@
    - **[Opérations bit à bit (bitwise)](#opérations-bit-à-bit-bitwise)**
    - **[Opérations courantes sur un bit précis](#opérations-courantes-sur-un-bit-précis)**
    - **[Décalages de bits](#décalages-de-bits)**
-   - **[Rotation des bits](#rotation-des-bits)**
+   - **[Rotation des bits](#rotation-de-bits)**
    - **[Masques de bits (bit masks)](#masques-de-bits-bit-masks)**
 - **[Microcontrôleur PIC18F](#3-microcontrôleur-pic18f)**
    - **[Architecture du Microcontrôleur](#architecture-du-microcontrôleur-pic18f45k22)**
@@ -125,18 +125,19 @@ Un type `char` est codé sur 8 bits, numérotés de b0 à b7.
 
 - ### **Décalages de bits**
 
-| Opération             | Symbole | Code     | Description                                                        |
-| --------------------- | ------- | -------- | ------------------------------------------------------------------ |
-| **Décalage à Gauche** | `<<`    | `x << n` | Décale les bits vers la gauche (≈ multiplication par $`2^n`$).       |
-| **Décalage à Droite** | `>>`    | `x >> n` | Décale les bits vers la droite (≈ division par $`2^n`$).             |
+| Opération             | Symbole | Code     | Description                                                                          |
+| --------------------- | ------- | -------- | ------------------------------------------------------------------------------------ |
+| **Décalage à Gauche** | `<<`    | `x << n` | Décale les bits vers la gauche (≈ $`x \times 2^{n}`$).                               |
+| **Décalage à Droite** | `>>`    | `x >> n` | Décale les bits vers la droite (≈ $`\left\lfloor \dfrac{x}{2^{n}} \right\rfloor`$).  |
+
 
 
 - ### **Rotation de bits**
 
-| Opération             | Code                         | Description                                                                 |
-| --------------------- | ---------------------------- | --------------------------------------------------------------------------- |
-| **Rotation à Gauche** | `(x << n) \| (x >> (8 - n))` | Décalage circulaire vers la gauche : les bits sortants reviennent à droite. |
-| **Rotation à Droite** | `(x >> n) \| (x << (8 - n))` | Décalage circulaire vers la droite : les bits sortants reviennent à gauche. |
+| Opération             | Code                         | Description                                                            |
+| --------------------- | ---------------------------- | ---------------------------------------------------------------------- |
+| **Rotation à Gauche** | `(x << n) \| (x >> (8 - n))` | Décalage circulaire vers la gauche (valeur conservée modulo $`2^8`$)   |
+| **Rotation à Droite** | `(x >> n) \| (x << (8 - n))` | Décalage circulaire vers la droite (valeur conservée modulo $`2^8`$)   |
 
 > - Les rotations conservent tous les bits, contrairement aux décalages.
 > - Pour un `char`, on considère **8 bits** (adapter 8 selon la taille du type).
