@@ -292,8 +292,8 @@ Voici un tableau clair regroupant les broches essentielles :
 | **ANSELx**  | Sélection du Mode Analogique ou Numérique        | 1 = Entrée Analogique<br>0 = Numérique (Digital) |
 | **SLRCONx** | Contrôle du Slew Rate (réduction des EMI)        | Sortie                                           |
 
-> Une broche configurée avec `ANSELx = 1` est forcément une entrée analogique → `TRISx` doit être à 1.
-Pour toute entrée/sortie digitale, `ANSELx` doit être à 0.
+> - Une broche configurée avec `ANSELx = 1` est forcément une entrée analogique → `TRISx` doit être à 1.
+> - Pour toute entrée/sortie digitale, `ANSELx` doit être à 0.
 
 
 | **PORT**   | **Mode Analogique / Digital**                 | **Direction (Entrée / Sortie)**         | **Lecture de l’état** | **Écriture sur la sortie** | **Utilisation principale**           |
