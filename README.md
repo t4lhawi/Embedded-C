@@ -198,7 +198,8 @@ Il repose sur deux caractéristiques clés :
 
 - ### **Pins du Microcontrôleur PIC18F45K22**
 
-![pic18f](https://github.com/user-attachments/assets/351a6a3f-6c42-4449-994a-32bdab107143)
+![pic18f](https://github.com/user-attachments/assets/f27b1d27-621b-4148-b83b-737ff575455a)
+
 
 Voici un tableau clair regroupant les broches essentielles :
 
