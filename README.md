@@ -19,11 +19,11 @@
    - **[Pins du Microcontrôleur](#pins-du-microcontrôleur-pic18f45k22)**
 - **[Ports d’Entrée/Sortie (E/S)](#4-ports-dentréesortie-es)**
    - **[Registres de Contrôle](#registres-de-contrôle)**
-   - **[Registres du PORTA](#registres-du-porta)**
-   - **[Registres du PORTB](#registres-du-portb)**
-   - **[Registres du PORTC](#registres-du-portc)**
-   - **[Registres du PORTD](#registres-du-portd)**
-   - **[Registres du PORTE](#registres-du-porte)**
+   - **[Registres associés au PORTA](#registres-associés-au-porta)**
+   - **[Registres associés au PORTB](#registres-associés-au-portb)**
+   - **[Registres associés au PORTC](#registres-associés-au-portc)**
+   - **[Registres associés au PORTD](#registres-associés-au-portd)**
+   - **[Registres associés au PORTE](#registres-associés-au-porte)**
 <!--
 - **[Gestion des Interruptions](#5-gestion-des-interruptions)**
 - **[Gestion des Timers](#6-gestion-des-timers)**
@@ -314,7 +314,7 @@ Voici un tableau clair regroupant les broches essentielles :
 
 
 
-- ### Registres du PORTA
+- ### Registres associés au PORTA
 
 | Nom          | Bit 7   | Bit 6      | Bit 5  | Bit 4  | Bit 3       | Bit 2     | Bit 1     | Bit 0  |
 | ------------ | ------- | ---------- | ------ | ------ | ----------- | --------- | --------- | ------ |
@@ -334,7 +334,7 @@ Voici un tableau clair regroupant les broches essentielles :
 
 > — = emplacements non implémentés, lus comme ‘0’.
 
-- ### Registres du PORTB
+- ### Registres associés au PORTB
 
 Voici la **réécriture du tableau en français**, en format texte clair (Markdown) :
 
@@ -364,7 +364,7 @@ Voici la **réécriture du tableau en français**, en format texte clair (Markdo
 
 
 
-- ### Registres du PORTC
+- ### Registres associés au PORTC
 
 | Nom          | Bit 7       | Bit 6       | Bit 5       | Bit 4   | Bit 3       | Bit 2      | Bit 1       | Bit 0  |
 | ------------ | ----------- | ----------- | ----------- | ------- | ----------- | ---------- | ----------- | ------ |
@@ -391,7 +391,7 @@ Voici la **réécriture du tableau en français**, en format texte clair (Markdo
 
 
 
-- ### Registres du PORTD
+- ### Registres associés au PORTD
 
 | Nom          | Bit 7    | Bit 6  | Bit 5     | Bit 4  | Bit 3     | Bit 2      | Bit 1  | Bit 0  |
 | ------------ | -------- | ------ | --------- | ------ | --------- | ---------- | ------ | ------ |
@@ -411,7 +411,7 @@ Voici la **réécriture du tableau en français**, en format texte clair (Markdo
 > — = **emplacements non implémentés, lus comme ‘0’**.
 
 
-- ### Registres du PORTE
+- ### Registres associés au PORTE
 
 | Nom         | Bit 7 | Bit 6   | Bit 5   | Bit 4   | Bit 3 | Bit 2   | Bit 1   | Bit 0   |
 | ----------- | ----- | ------- | ------- | ------- | ----- | ------- | ------- | ------- |
