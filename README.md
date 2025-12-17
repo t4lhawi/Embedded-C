@@ -267,13 +267,13 @@ Voici un tableau clair regroupant les broches essentielles :
 > * **numéro = le bit/pin**
 
 
-> **CCP2 = “Capture / Compare / PWM”**
+> **CCP = “Capture / Compare / PWM”**
 > - **Capture :** Mesurer la durée d’un signal, une fréquence…
 > - **Compare :** Déclencher un événement à un moment précis.
 > - **PWM :** Générer un signal PWM (moteurs, servos, LED dimming…)
 
 
-> **MCLR = “Master Clear (Broche Reset)**
+> **MCLR = “Master Clear (Broche Reset)”**
 > * Réinitialiser (redémarrer) le PIC
 > * Activer le mode programmation (Vpp ≈ 12 V)
 > * Utilisé par Pickit/ICD
