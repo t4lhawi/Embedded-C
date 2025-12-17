@@ -301,19 +301,6 @@ Voici un tableau clair regroupant les broches essentielles :
 > - Pour toute entrée/sortie digitale, `ANSELx` doit être à 0.
 
 
-
-
-
-| **PORT**   | **Mode Analogique / Digital**                 | **Direction (Entrée / Sortie)**         | **Lecture de l’état** | **Écriture sur la sortie** | **Utilisation principale**           |
-| ---------- | --------------------------------------------- | --------------------------------------- | --------------------- | -------------------------- | ------------------------------------ |
-| **PORT A** | `ANSELA` : <br>0 = Digital <br>1 = Analogique | `TRISA` : <br>1 = Entrée <br>0 = Sortie | `PORTA`               | `LATA`                     | ADC (AN0–AN4), digital I/O           |
-| **PORT B** | Principalement Digital <br>(selon modèles)    | `TRISB`                                 | `PORTB`               | `LATB`                     | Interruptions (INT0/1/2), E/S        |
-| **PORT C** | Digital (UART, SPI, I2C)                      | `TRISC`                                 | `PORTC`               | `LATC`                     | Communications : UART, I²C, SPI, PWM |
-| **PORT D** | Digital                                       | `TRISD`                                 | `PORTD`               | `LATD`                     | E/S générales, LCD, bus parallèle    |
-| **PORTE**  | `ANSELE` : <br>0 = Digital <br>1 = Analogique | `TRISE`                                 | `PORTE`               | `LATE`                     | ADC (AN5–AN7), contrôle mémoire      |
-
-
-
 - ### Registres associés au PORTA
 
 | Nom          | Bit 7   | Bit 6      | Bit 5  | Bit 4  | Bit 3       | Bit 2     | Bit 1     | Bit 0  |
