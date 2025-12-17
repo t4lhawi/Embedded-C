@@ -296,6 +296,9 @@ Voici un tableau clair regroupant les broches essentielles :
 > - Pour toute entrée/sortie digitale, `ANSELx` doit être à 0.
 
 
+
+
+
 | **PORT**   | **Mode Analogique / Digital**                 | **Direction (Entrée / Sortie)**         | **Lecture de l’état** | **Écriture sur la sortie** | **Utilisation principale**           |
 | ---------- | --------------------------------------------- | --------------------------------------- | --------------------- | -------------------------- | ------------------------------------ |
 | **PORT A** | `ANSELA` : <br>0 = Digital <br>1 = Analogique | `TRISA` : <br>1 = Entrée <br>0 = Sortie | `PORTA`               | `LATA`                     | ADC (AN0–AN4), digital I/O           |
@@ -306,41 +309,85 @@ Voici un tableau clair regroupant les broches essentielles :
 
 
 
+- ### PORTA
+
+| Nom          | Bit 7   | Bit 6      | Bit 5  | Bit 4  | Bit 3       | Bit 2     | Bit 1     | Bit 0  |
+| ------------ | ------- | ---------- | ------ | ------ | ----------- | --------- | --------- | ------ |
+| **ANSELA**   | —       | —          | ANSA5  | —      | ANSA3       | ANSA2     | ANSA1     | ANSA0  |
+| **CM1CON0**  | C1ON    | C1OUT      | C1OE   | C1POL  | C1SP        | C1R       | C1CH<1:0> |        |
+| **CM2CON0**  | C2ON    | C2OUT      | C2OE   | C2POL  | C2SP        | C2R       | C2CH<1:0> |        |
+| **LATA**     | LATA7   | LATA6      | LATA5  | LATA4  | LATA3       | LATA2     | LATA1     | LATA0  |
+| **VREFCON1** | DACEN   | DACLPS     | DACOE  | —      | DACPSS<1:0> | —         | —         | DACNSS |
+| **VREFCON2** | —       | —          | —      | —      | DACR<4:0>   |           |           |        |
+| **HLVDCON**  | VDIRMAG | BGVST      | IRVST  | HLVDEN | HLVDC<3:0>  |           |           |        |
+| **PORTA**    | RA7     | RA6        | RA5    | RA4    | RA3         | RA2       | RA1       | RA0    |
+| **SLRCON**   | —       | —          | —      | SLRE   | SLRD        | SLRC      | SLRB      | SLRA   |
+| **SRCON0**   | SRLEN   | SRCLK<2:0> | SRQEN  | SRNQEN | SRPS        | SRPR      |           |        |
+| **SSP1CON1** | WCOL    | SSPOV      | SSPEN  | CKP    | SSPM<3:0>   |           |           |        |
+| **T0CON**    | TMR0ON  | T08BIT     | T0CS   | T0SE   | PSA         | T0PS<2:0> |           |        |
+| **TRISA**    | TRISA7  | TRISA6     | TRISA5 | TRISA4 | TRISA3      | TRISA2    | TRISA1    | TRISA0 |
+
+> — = emplacements non implémentés, lus comme ‘0’.
+
+- ### PORTB
+
+Voici la **réécriture du tableau en français**, en format texte clair (Markdown) :
+
+| Nom         | Bit 7       | Bit 6       | Bit 5       | Bit 4   | Bit 3       | Bit 2      | Bit 1       | Bit 0  |
+| ----------- | ----------- | ----------- | ----------- | ------- | ----------- | ---------- | ----------- | ------ |
+| **ANSELB**  | —           | —           | ANSB5       | ANSB4   | ANSB3       | ANSB2      | ANSB1       | ANSB0  |
+| **ECCP2AS** | CCP2ASE     | CCP2AS<2:0> |             |         | PSS2AC<1:0> |            | PSS2BD<1:0> |        |
+| **CCP2CON** | P2M<1:0>    |             | DC2B<1:0>   |         |             | CCP2M<3:0> |             |        |
+| **ECCP3AS** | CCP3ASE     | CCP3AS<2:0> |             |         | PSS3AC<1:0> |            | PSS3BD<1:0> |        |
+| **CCP3CON** | P3M<1:0>    |             | DC3B<1:0>   |         |             | CCP3M<3:0> |             |        |
+| **INTCON**  | GIE/GIEH    | PEIE/GIEL   | TMR0IE      | INT0IE  | RBIE        | TMR0IF     | INT0IF      | RBIF   |
+| **INTCON2** | RBPU        | INTEDG0     | INTEDG1     | INTEDG2 | —           | TMR0IP     | —           | RBIP   |
+| **INTCON3** | INT2IP      | INT1IP      | —           | INT2IE  | INT1IE      | —          | INT2IF      | INT1IF |
+| **IOCB**    | IOCB7       | IOCB6       | IOCB5       | IOCB4   | —           | —          | —           | —      |
+| **LATB**    | LATB7       | LATB6       | LATB5       | LATB4   | LATB3       | LATB2      | LATB1       | LATB0  |
+| **PORTB**   | RB7         | RB6         | RB5         | RB4     | RB3         | RB2        | RB1         | RB0    |
+| **SLRCON**  | —           | —           | —           | SLRE(1) | SLRD(1)     | SLRC       | SLRB        | SLRA   |
+| **T1GCON**  | TMR1GE      | T1GPOL      | T1GTM       | T1GSPM  | $`T1GGO/\bar{DONE}`$  | T1GVAL     | T1GSS<1:0>  |        |
+| **T3CON**   | TMR3CS<1:0> |             | T3CKPS<1:0> |         | T3SOSCEN    | $`\bar{T3SYNC}`$     | T3RD16      | TMR3ON |
+| **T5CON**   | TMR5GE      | T5GPOL      | T5GTM       | T5GSPM  | $`T5GGO/\bar{DONE}`$  | T5GVAL     | T5GSS<1:0>  |        |
+| **TRISB**   | TRISB7      | TRISB6      | TRISB5      | TRISB4  | TRISB3      | TRISB2     | TRISB1      | TRISB0 |
+| **WPUB**    | WPUB7       | WPUB6       | WPUB5       | WPUB4   | WPUB3       | WPUB2      | WPUB1       | WPUB0  |
+
+> - — = **emplacements non implémentés, lus comme ‘0’**.
+> - Les **bits grisés ne sont pas utilisés pour PORTB**.
+
+
+
+
+- ### PORTC
+
+
+
+
+
+
+- ### PORTD
+
+
+
+
+
+- ### PORTE
+
+
+
+
+
+
 <!--
 ---
 
 ## **5. Gestion des Interruptions**
 
-Chaque périphérique du PIC18F est contrôlé par des **registres** :
-
-* `TRISx` → définit la direction (entrée/sortie).
-* `PORTx` → lit les niveaux logiques.
-* `LATx`  → écrit sur les sorties.
-
-- **Opérations sur les bits :**
-
-```c
-REG |= (1 << n)   // Met le bit n à 1
-REG &= ~(1 << n)  // Met le bit n à 0
-REG ^= (1 << n)   // Inverse le bit n
-if (REG & (1 << n)) { ... } // Teste le bit n
-```
-
 ---
 
 ## **6. Gestion des Timers**
 
-Le PIC18F contient plusieurs zones mémoire :
-
-* **Programme (Flash)** → contient le code C compilé.
-* **RAM (Données)** → variables temporaires.
-* **EEPROM** → données conservées après coupure d’alimentation.
-
-Les périphériques sont mappés en mémoire, accessibles via des **pointeurs volatiles**.
-
-```c
-#define REGISTRE (*(volatile uint8_t*)0xF80)
-```
 -->
 ---
 
