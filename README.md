@@ -192,7 +192,7 @@ Un type `char` est codé sur 8 bits, numérotés de b0 à b7.
 
 ---
 
-## **3. Microcontrôleur PIC18F**
+## **3. [Microcontrôleur PIC18F&sup1;](https://en.wikipedia.org/wiki/PIC_microcontrollers)**
 Le **PIC18F** fait partie de la famille des microcontrôleurs 8 bits de Microchip, conçus pour les systèmes embarqués nécessitant **performance**, **faible consommation**, et **contrôle bas niveau**.
 
 
@@ -202,7 +202,7 @@ Le **PIC18F** fait partie de la famille des microcontrôleurs 8 bits de Microchi
 
 Il repose sur deux caractéristiques clés :
 
-**1. Architecture Harvard (Au Niveau de la Mémoire) :**
+**1. [Architecture Harvard&sup2;](https://en.wikipedia.org/wiki/Harvard_architecture) (Au Niveau de la Mémoire) :**
   * Séparation entre **mémoire programme** et **mémoire données**
   * Accès parallèles permettant **plus de rapidité**
   * Pipeline matériel pour exécuter certaines instructions en un seul cycle
@@ -210,7 +210,7 @@ Il repose sur deux caractéristiques clés :
 ![arch_mem_pic](https://github.com/user-attachments/assets/7c8c3a9f-9458-432b-9d27-180e6de747bd)
 
 
-**2. Architecture RISC (Au Niveau du Processeur) :**
+**2. [Architecture RISC&sup3;](https://en.wikipedia.org/wiki/Reduced_instruction_set_computer) (Au Niveau du Processeur) :**
   * Ensemble d’instructions réduit, simple et optimisé
   * **Exécution rapide** : la majorité des instructions en **1 cycle**
   * Idéal pour le contrôle temps réel et les applications industrielles
