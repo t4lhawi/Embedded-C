@@ -192,8 +192,8 @@ Un type `char` est codé sur 8 bits, numérotés de b0 à b7.
 
 ---
 
-## **3. [Microcontrôleur PIC18F&sup1;](https://en.wikipedia.org/wiki/PIC_microcontrollers)**
-Le **PIC18F** fait partie de la famille des microcontrôleurs 8 bits de Microchip, conçus pour les systèmes embarqués nécessitant **performance**, **faible consommation**, et **contrôle bas niveau**.
+## **3. Microcontrôleur PIC18F**
+Le **[PIC18F&sup1;](https://en.wikipedia.org/wiki/PIC_microcontrollers)** fait partie de la famille des microcontrôleurs 8 bits de Microchip, conçus pour les systèmes embarqués nécessitant **performance**, **faible consommation**, et **contrôle bas niveau**.
 
 
 - ### **Architecture du Microcontrôleur PIC18F45K22**
