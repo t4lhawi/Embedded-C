@@ -261,7 +261,6 @@ Il repose sur deux caractéristiques clés :
 > - Il sert à **convertir une tension analogique** (0 à 5 V) en une **valeur numérique** (0 à 1023 pour un ADC 10 bits).
 
 
-
 > **PGC = “Program Clock (Horloge de programmation)”**
 > - Donne le timing
 
@@ -272,7 +271,6 @@ Il repose sur deux caractéristiques clés :
 > * **R = Register (PORT)**
 > * **A/B/C/D/E = le port**
 > * **numéro = le bit/pin**
-
 
 > **CCP = “Capture / Compare / PWM”**
 > - **Capture :** Mesurer la durée d’un signal, une fréquence…
@@ -342,9 +340,9 @@ Il repose sur deux caractéristiques clés :
 | **LATB**    | LATB7       | LATB6       | LATB5       | LATB4   | LATB3       | LATB2      | LATB1       | LATB0  |
 | **PORTB**   | RB7         | RB6         | RB5         | RB4     | RB3         | RB2        | RB1         | RB0    |
 | **SLRCON**  | —           | —           | —           | SLRE(1) | SLRD(1)     | SLRC       | SLRB        | SLRA   |
-| **T1GCON**  | TMR1GE      | T1GPOL      | T1GTM       | T1GSPM  | $`T1GGO/\bar{DONE}`$  | T1GVAL     | T1GSS<1:0>  |        |
-| **T3CON**   | TMR3CS<1:0> |             | T3CKPS<1:0> |         | T3SOSCEN    | $`\bar{T3SYNC}`$     | T3RD16      | TMR3ON |
-| **T5CON**   | TMR5GE      | T5GPOL      | T5GTM       | T5GSPM  | $`T5GGO/\bar{DONE}`$  | T5GVAL     | T5GSS<1:0>  |        |
+| **T1GCON**  | TMR1GE      | T1GPOL      | T1GTM       | T1GSPM  | $`T1GGO/\overline{\text{DONE}}`$  | T1GVAL     | T1GSS<1:0>  |        |
+| **T3CON**   | TMR3CS<1:0> |             | T3CKPS<1:0> |         | T3SOSCEN    | $`\overline{\text{T3SYNC}}`$     | T3RD16      | TMR3ON |
+| **T5CON**   | TMR5GE      | T5GPOL      | T5GTM       | T5GSPM  | $`T5GGO/\overline{\text{DONE}}`$  | T5GVAL     | T5GSS<1:0>  |        |
 | **TRISB**   | TRISB7      | TRISB6      | TRISB5      | TRISB4  | TRISB3      | TRISB2     | TRISB1      | TRISB0 |
 | **WPUB**    | WPUB7       | WPUB6       | WPUB5       | WPUB4   | WPUB3       | WPUB2      | WPUB1       | WPUB0  |
 
@@ -371,10 +369,10 @@ Il repose sur deux caractéristiques clés :
 | **RCSTA1**   | SPEN        | RX9         | SREN        | CREN    | ADDEN       | FERR       | OERR        | RX9D   |
 | **SLRCON**   | —           | —           | —           | SLRE(1) | SLRD(1)     | SLRC       | SLRB        | SLRA   |
 | **SSP1CON1** | WCOL        | SSPOV       | SSPEN       | CKP     | SSPM<3:0>   |            |             |        |
-| **T1CON**    | TMR1CS<1:0> |             | T1CKPS<1:0> |         | T1SOSCEN    | $`\bar{T1SYNC}`$     | T1RD16      | TMR1ON |
-| **T3CON**    | TMR3CS<1:0> |             | T3CKPS<1:0> |         | T3SOSCEN    | $`\bar{T3SYNC}`$     | T3RD16      | TMR3ON |
-| **T3GCON**   | TMR3GE      | T3GPOL      | T3GTM       | T3GSPM  | $`T3GGO/\bar{DONE}`$  | T3GVAL     | T3GSS<1:0>  |        |
-| **T5CON**    | TMR5CS<1:0> |             | T5CKPS<1:0> |         | T5SOSCEN    | $`\bar{T5SYNC}`$     | T5RD16      | TMR5ON |
+| **T1CON**    | TMR1CS<1:0> |             | T1CKPS<1:0> |         | T1SOSCEN    | $`\overline{\text{T1SYNC}}`$     | T1RD16      | TMR1ON |
+| **T3CON**    | TMR3CS<1:0> |             | T3CKPS<1:0> |         | T3SOSCEN    | $`\overline{\text{T3SYNC}}`$     | T3RD16      | TMR3ON |
+| **T3GCON**   | TMR3GE      | T3GPOL      | T3GTM       | T3GSPM  | $`T3GGO/\overline{\text{DONE}}`$  | T3GVAL     | T3GSS<1:0>  |        |
+| **T5CON**    | TMR5CS<1:0> |             | T5CKPS<1:0> |         | T5SOSCEN    | $`\overline{\text{T5SYNC}}`$     | T5RD16      | TMR5ON |
 | **TRISC**    | TRISC7      | TRISC6      | TRISC5      | TRISC4  | TRISC3      | TRISC2     | TRISC1      | TRISC0 |
 | **TXSTA1**   | CSRC        | TX9         | TXEN        | SYNC    | SENDB       | BRGH       | TRMT        | TX9D   |
 
@@ -410,7 +408,7 @@ Il repose sur deux caractéristiques clés :
 | Nom         | Bit 7 | Bit 6   | Bit 5   | Bit 4   | Bit 3 | Bit 2   | Bit 1   | Bit 0   |
 | ----------- | ----- | ------- | ------- | ------- | ----- | ------- | ------- | ------- |
 | **ANSELE¹** | —     | —       | —       | —       | —     | ANSE2   | ANSE1   | ANSE0   |
-| **INTCON2** | $`\bar{RBPU}`$  | INTEDG0 | INTEDG1 | INTEDG2 | —     | TMR0IP  | —       | RBIP    |
+| **INTCON2** | $`\overline{\text{RBPU}}`$  | INTEDG0 | INTEDG1 | INTEDG2 | —     | TMR0IP  | —       | RBIP    |
 | **LATE**   | —     | —       | —       | —       | —     | LATE2   | LATE1   | LATE0   |
 | **PORTE**   | —     | —       | —       | —       | RE3   | RE2    | RE1    | RE0    |
 | **SLRCON**  | —     | —       | —       | SLRE   | SLRD | SLRC    | SLRB    | SLRA    |
