@@ -386,17 +386,17 @@ Il repose sur deux caractéristiques clés :
 
 | Nom          | Bit 7    | Bit 6  | Bit 5     | Bit 4  | Bit 3     | Bit 2      | Bit 1  | Bit 0  |
 | ------------ | -------- | ------ | --------- | ------ | --------- | ---------- | ------ | ------ |
-| **ANSELD¹**  | ANSD7    | ANSD6  | ANSD5     | ANSD4  | ANSD3     | ANSD2      | ANSD1  | ANSD0  |
+| **ANSELD**  | ANSD7    | ANSD6  | ANSD5     | ANSD4  | ANSD3     | ANSD2      | ANSD1  | ANSD0  |
 | **BAUDCON2** | ABDOVF   | RCIDL  | DTRXP     | CKTXP  | BRG16     | —          | WUE    | ABDEN  |
 | **CCP1CON**  | P1M<1:0> |        | DC1B<1:0> |        |           | CCP1M<3:0> |        |        |
 | **CCP2CON**  | P2M<1:0> |        | DC2B<1:0> |        |           | CCP2M<3:0> |        |        |
 | **CCP4CON**  | —        | —      | DC4B<1:0> |        |           | CCP4M<3:0> |        |        |
-| **LATD¹**    | LATD7    | LATD6  | LATD5     | LATD4  | LATD3     | LATD2      | LATD1  | LATD0  |
-| **PORTD¹**   | RD7      | RD6    | RD5       | RD4    | RD3       | RD2        | RD1    | RD0    |
+| **LATD**    | LATD7    | LATD6  | LATD5     | LATD4  | LATD3     | LATD2      | LATD1  | LATD0  |
+| **PORTD**   | RD7      | RD6    | RD5       | RD4    | RD3       | RD2        | RD1    | RD0    |
 | **RCSTA2**   | SPEN     | RX9    | SREN      | CREN   | ADDEN     | FERR       | OERR   | RX9D   |
-| **SLRCON¹**  | —        | —      | —         | SLRE   | SLRD      | SLRC       | SLRB   | SLRA   |
+| **SLRCON**  | —        | —      | —         | SLRE   | SLRD      | SLRC       | SLRB   | SLRA   |
 | **SSP2CON1** | WCOL     | SSPOV  | SSPEN     | CKP    | SSPM<3:0> |            |        |        |
-| **TRISD¹**   | TRISD7   | TRISD6 | TRISD5    | TRISD4 | TRISD3    | TRISD2     | TRISD1 | TRISD0 |
+| **TRISD**   | TRISD7   | TRISD6 | TRISD5    | TRISD4 | TRISD3    | TRISD2     | TRISD1 | TRISD0 |
 
 > - — = **emplacements non implémentés, lus comme ‘0’**.
 > - **`<n:m>` → on prend tous les bits du bit n jusqu’au bit m, inclus.**
@@ -407,7 +407,7 @@ Il repose sur deux caractéristiques clés :
 
 | Nom         | Bit 7 | Bit 6   | Bit 5   | Bit 4   | Bit 3 | Bit 2   | Bit 1   | Bit 0   |
 | ----------- | ----- | ------- | ------- | ------- | ----- | ------- | ------- | ------- |
-| **ANSELE¹** | —     | —       | —       | —       | —     | ANSE2   | ANSE1   | ANSE0   |
+| **ANSELE** | —     | —       | —       | —       | —     | ANSE2   | ANSE1   | ANSE0   |
 | **INTCON2** | $`\overline{\text{RBPU}}`$  | INTEDG0 | INTEDG1 | INTEDG2 | —     | TMR0IP  | —       | RBIP    |
 | **LATE**   | —     | —       | —       | —       | —     | LATE2   | LATE1   | LATE0   |
 | **PORTE**   | —     | —       | —       | —       | RE3   | RE2    | RE1    | RE0    |
