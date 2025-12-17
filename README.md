@@ -595,8 +595,8 @@ Il repose sur deux caractéristiques clés :
       <td>—</td>
       <td>—</td>
       <td>—</td>
-      <td>SLRE (1)</td>
-      <td>SLRD (1)</td>
+      <td>SLRE</td>
+      <td>SLRD</td>
       <td>SLRC</td>
       <td>SLRB</td>
       <td>SLRA</td>
