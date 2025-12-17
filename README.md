@@ -19,6 +19,11 @@
    - **[Pins du Microcontrôleur](#pins-du-microcontrôleur-pic18f45k22)**
 - **[Ports d’Entrée/Sortie (E/S)](#4-ports-dentréesortie-es)**
    - **[Registres de Contrôle](#registres-de-contrôle)**
+   - **[Registres du PORTA](#registres-du-porta)**
+   - **[Registres du PORTB](#registres-du-portb)**
+   - **[Registres du PORTC](#registres-du-portc)**
+   - **[Registres du PORTD](#registres-du-portd)**
+   - **[Registres du PORTE](#registres-du-porte)**
 <!--
 - **[Gestion des Interruptions](#5-gestion-des-interruptions)**
 - **[Gestion des Timers](#6-gestion-des-timers)**
@@ -309,7 +314,7 @@ Voici un tableau clair regroupant les broches essentielles :
 
 
 
-- ### PORTA
+- ### Registres du PORTA
 
 | Nom          | Bit 7   | Bit 6      | Bit 5  | Bit 4  | Bit 3       | Bit 2     | Bit 1     | Bit 0  |
 | ------------ | ------- | ---------- | ------ | ------ | ----------- | --------- | --------- | ------ |
@@ -329,7 +334,7 @@ Voici un tableau clair regroupant les broches essentielles :
 
 > — = emplacements non implémentés, lus comme ‘0’.
 
-- ### PORTB
+- ### Registres du PORTB
 
 Voici la **réécriture du tableau en français**, en format texte clair (Markdown) :
 
@@ -359,24 +364,66 @@ Voici la **réécriture du tableau en français**, en format texte clair (Markdo
 
 
 
-- ### PORTC
+- ### Registres du PORTC
+
+| Nom          | Bit 7       | Bit 6       | Bit 5       | Bit 4   | Bit 3       | Bit 2      | Bit 1       | Bit 0  |
+| ------------ | ----------- | ----------- | ----------- | ------- | ----------- | ---------- | ----------- | ------ |
+| **ANSELC**   | ANSC7       | ANSC6       | ANSC5       | ANSC4   | ANSC3       | ANSC2      | —           | —      |
+| **ECCP1AS**  | CCP1ASE     | CCP1AS<2:0> |             |         | PSS1AC<1:0> |            | PSS1BD<1:0> |        |
+| **CCP1CON**  | P1M<1:0>    |             | DC1B<1:0>   |         |             | CCP1M<3:0> |             |        |
+| **ECCP2AS**  | CCP2ASE     | CCP2AS<2:0> |             |         | PSS2AC<1:0> |            | PSS2BD<1:0> |        |
+| **CCP2CON**  | P2M<1:0>    |             | DC2B<1:0>   |         |             | CCP2M<3:0> |             |        |
+| **CTMUCONH** | CTMUEN      | —           | CTMUSIDL    | TGEN    | EDGEN       | EDGSEQEN   | IDISSEN     | CTTRIG |
+| **LATC**     | LATC7       | LATC6       | LATC5       | LATC4   | LATC3       | LATC2      | LATC1       | LATC0  |
+| **PORTC**    | RC7         | RC6         | RC5         | RC4     | RC3         | RC2        | RC1         | RC0    |
+| **RCSTA1**   | SPEN        | RX9         | SREN        | CREN    | ADDEN       | FERR       | OERR        | RX9D   |
+| **SLRCON**   | —           | —           | —           | SLRE(1) | SLRD(1)     | SLRC       | SLRB        | SLRA   |
+| **SSP1CON1** | WCOL        | SSPOV       | SSPEN       | CKP     | SSPM<3:0>   |            |             |        |
+| **T1CON**    | TMR1CS<1:0> |             | T1CKPS<1:0> |         | T1SOSCEN    | $`\bar{T1SYNC}`$     | T1RD16      | TMR1ON |
+| **T3CON**    | TMR3CS<1:0> |             | T3CKPS<1:0> |         | T3SOSCEN    | $`\bar{T3SYNC}`$     | T3RD16      | TMR3ON |
+| **T3GCON**   | TMR3GE      | T3GPOL      | T3GTM       | T3GSPM  | $`T3GGO/\bar{DONE}`$  | T3GVAL     | T3GSS<1:0>  |        |
+| **T5CON**    | TMR5CS<1:0> |             | T5CKPS<1:0> |         | T5SOSCEN    | $`\bar{T5SYNC}`$     | T5RD16      | TMR5ON |
+| **TRISC**    | TRISC7      | TRISC6      | TRISC5      | TRISC4  | TRISC3      | TRISC2     | TRISC1      | TRISC0 |
+| **TXSTA1**   | CSRC        | TX9         | TXEN        | SYNC    | SENDB       | BRGH       | TRMT        | TX9D   |
+
+> - — = **emplacements non implémentés, lus comme ‘0’**.
+> - Les **bits grisés ne sont pas utilisés pour PORTC**.
 
 
 
+- ### Registres du PORTD
+
+| Nom          | Bit 7    | Bit 6  | Bit 5     | Bit 4  | Bit 3     | Bit 2      | Bit 1  | Bit 0  |
+| ------------ | -------- | ------ | --------- | ------ | --------- | ---------- | ------ | ------ |
+| **ANSELD¹**  | ANSD7    | ANSD6  | ANSD5     | ANSD4  | ANSD3     | ANSD2      | ANSD1  | ANSD0  |
+| **BAUDCON2** | ABDOVF   | RCIDL  | DTRXP     | CKTXP  | BRG16     | —          | WUE    | ABDEN  |
+| **CCP1CON**  | P1M<1:0> |        | DC1B<1:0> |        |           | CCP1M<3:0> |        |        |
+| **CCP2CON**  | P2M<1:0> |        | DC2B<1:0> |        |           | CCP2M<3:0> |        |        |
+| **CCP4CON**  | —        | —      | DC4B<1:0> |        |           | CCP4M<3:0> |        |        |
+| **LATD¹**    | LATD7    | LATD6  | LATD5     | LATD4  | LATD3     | LATD2      | LATD1  | LATD0  |
+| **PORTD¹**   | RD7      | RD6    | RD5       | RD4    | RD3       | RD2        | RD1    | RD0    |
+| **RCSTA2**   | SPEN     | RX9    | SREN      | CREN   | ADDEN     | FERR       | OERR   | RX9D   |
+| **SLRCON¹**  | —        | —      | —         | SLRE   | SLRD      | SLRC       | SLRB   | SLRA   |
+| **SSP2CON1** | WCOL     | SSPOV  | SSPEN     | CKP    | SSPM<3:0> |            |        |        |
+| **TRISD¹**   | TRISD7   | TRISD6 | TRISD5    | TRISD4 | TRISD3    | TRISD2     | TRISD1 | TRISD0 |
 
 
-
-- ### PORTD
-
+> — = **emplacements non implémentés, lus comme ‘0’**.
 
 
+- ### Registres du PORTE
 
+| Nom         | Bit 7 | Bit 6   | Bit 5   | Bit 4   | Bit 3 | Bit 2   | Bit 1   | Bit 0   |
+| ----------- | ----- | ------- | ------- | ------- | ----- | ------- | ------- | ------- |
+| **ANSELE¹** | —     | —       | —       | —       | —     | ANSE2   | ANSE1   | ANSE0   |
+| **INTCON2** | $`\bar{RBPU}`$  | INTEDG0 | INTEDG1 | INTEDG2 | —     | TMR0IP  | —       | RBIP    |
+| **LATE¹**   | —     | —       | —       | —       | —     | LATE2   | LATE1   | LATE0   |
+| **PORTE**   | —     | —       | —       | —       | RE3   | RE2¹    | RE1¹    | RE0¹    |
+| **SLRCON**  | —     | —       | —       | SLRE¹   | SLRD¹ | SLRC    | SLRB    | SLRA    |
+| **TRISE**   | WPUE3 | —       | —       | —       | —     | TRISE2¹ | TRISE1¹ | TRISE0¹ |
 
-- ### PORTE
-
-
-
-
+> - — = **emplacements non implémentés, lus comme ‘0’**.
+> - Les **bits grisés ne sont pas utilisés pour PORTC**.
 
 
 <!--
