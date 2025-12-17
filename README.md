@@ -210,8 +210,6 @@ Il repose sur deux caractéristiques clés :
 ![pic18f](https://github.com/user-attachments/assets/f27b1d27-621b-4148-b83b-737ff575455a)
 
 
-Voici un tableau clair regroupant les broches essentielles :
-
 | **Pin** | **Nom**          | **Fonction principale**   |
 | ------- | ---------------- | ------------------------- |
 | 1       | MCLR / Vpp / RE3 | Reset + programmation     |
@@ -329,8 +327,6 @@ Voici un tableau clair regroupant les broches essentielles :
 >    - `m` = bit le moins significatif (à droite) du champ
 
 - ### Registres associés au PORTB
-
-Voici la **réécriture du tableau en français**, en format texte clair (Markdown) :
 
 | Nom         | Bit 7       | Bit 6       | Bit 5       | Bit 4   | Bit 3       | Bit 2      | Bit 1       | Bit 0  |
 | ----------- | ----------- | ----------- | ----------- | ------- | ----------- | ---------- | ----------- | ------ |
