@@ -323,7 +323,10 @@ Voici un tableau clair regroupant les broches essentielles :
 | **T0CON**    | TMR0ON  | T08BIT     | T0CS   | T0SE   | PSA         | T0PS<2:0> |           |        |
 | **TRISA**    | TRISA7  | TRISA6     | TRISA5 | TRISA4 | TRISA3      | TRISA2    | TRISA1    | TRISA0 |
 
-> — = emplacements non implémentés, lus comme ‘0’.
+> - — = emplacements non implémentés, lus comme ‘0’.
+> - **`<n:m>` → on prend tous les bits du bit n jusqu’au bit m, inclus.**
+>    - `n` = bit le plus significatif (à gauche) du champ
+>    - `m` = bit le moins significatif (à droite) du champ
 
 - ### Registres associés au PORTB
 
@@ -349,9 +352,11 @@ Voici la **réécriture du tableau en français**, en format texte clair (Markdo
 | **TRISB**   | TRISB7      | TRISB6      | TRISB5      | TRISB4  | TRISB3      | TRISB2     | TRISB1      | TRISB0 |
 | **WPUB**    | WPUB7       | WPUB6       | WPUB5       | WPUB4   | WPUB3       | WPUB2      | WPUB1       | WPUB0  |
 
-> - — = **emplacements non implémentés, lus comme ‘0’**.
+> - — = emplacements non implémentés, lus comme ‘0’.
 > - Les **bits grisés ne sont pas utilisés pour PORTB**.
-
+> - **`<n:m>` → on prend tous les bits du bit n jusqu’au bit m, inclus.**
+>    - `n` = bit le plus significatif (à gauche) du champ
+>    - `m` = bit le moins significatif (à droite) du champ
 
 
 
@@ -379,8 +384,9 @@ Voici la **réécriture du tableau en français**, en format texte clair (Markdo
 
 > - — = **emplacements non implémentés, lus comme ‘0’**.
 > - Les **bits grisés ne sont pas utilisés pour PORTC**.
-
-
+> - **`<n:m>` → on prend tous les bits du bit n jusqu’au bit m, inclus.**
+>    - `n` = bit le plus significatif (à gauche) du champ
+>    - `m` = bit le moins significatif (à droite) du champ
 
 - ### Registres associés au PORTD
 
@@ -398,9 +404,10 @@ Voici la **réécriture du tableau en français**, en format texte clair (Markdo
 | **SSP2CON1** | WCOL     | SSPOV  | SSPEN     | CKP    | SSPM<3:0> |            |        |        |
 | **TRISD¹**   | TRISD7   | TRISD6 | TRISD5    | TRISD4 | TRISD3    | TRISD2     | TRISD1 | TRISD0 |
 
-
-> — = **emplacements non implémentés, lus comme ‘0’**.
-
+> - — = **emplacements non implémentés, lus comme ‘0’**.
+> - **`<n:m>` → on prend tous les bits du bit n jusqu’au bit m, inclus.**
+>    - `n` = bit le plus significatif (à gauche) du champ
+>    - `m` = bit le moins significatif (à droite) du champ
 
 - ### Registres associés au PORTE
 
@@ -408,13 +415,14 @@ Voici la **réécriture du tableau en français**, en format texte clair (Markdo
 | ----------- | ----- | ------- | ------- | ------- | ----- | ------- | ------- | ------- |
 | **ANSELE¹** | —     | —       | —       | —       | —     | ANSE2   | ANSE1   | ANSE0   |
 | **INTCON2** | $`\bar{RBPU}`$  | INTEDG0 | INTEDG1 | INTEDG2 | —     | TMR0IP  | —       | RBIP    |
-| **LATE¹**   | —     | —       | —       | —       | —     | LATE2   | LATE1   | LATE0   |
-| **PORTE**   | —     | —       | —       | —       | RE3   | RE2¹    | RE1¹    | RE0¹    |
-| **SLRCON**  | —     | —       | —       | SLRE¹   | SLRD¹ | SLRC    | SLRB    | SLRA    |
-| **TRISE**   | WPUE3 | —       | —       | —       | —     | TRISE2¹ | TRISE1¹ | TRISE0¹ |
+| **LATE**   | —     | —       | —       | —       | —     | LATE2   | LATE1   | LATE0   |
+| **PORTE**   | —     | —       | —       | —       | RE3   | RE2    | RE1    | RE0    |
+| **SLRCON**  | —     | —       | —       | SLRE   | SLRD | SLRC    | SLRB    | SLRA    |
+| **TRISE**   | WPUE3 | —       | —       | —       | —     | TRISE2 | TRISE1 | TRISE0 |
 
 > - — = **emplacements non implémentés, lus comme ‘0’**.
 > - Les **bits grisés ne sont pas utilisés pour PORTC**.
+
 
 
 <!--
