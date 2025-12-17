@@ -303,21 +303,150 @@ Il repose sur deux caractéristiques clés :
 
 - ### Registres associés au PORTA
 
-| Nom          | Bit 7   | Bit 6      | Bit 5  | Bit 4  | Bit 3       | Bit 2     | Bit 1     | Bit 0  |
-| ------------ | ------- | ---------- | ------ | ------ | ----------- | --------- | --------- | ------ |
-| **ANSELA**   | —       | —          | ANSA5  | —      | ANSA3       | ANSA2     | ANSA1     | ANSA0  |
-| **CM1CON0**  | C1ON    | C1OUT      | C1OE   | C1POL  | C1SP        | C1R       | C1CH<1:0> |        |
-| **CM2CON0**  | C2ON    | C2OUT      | C2OE   | C2POL  | C2SP        | C2R       | C2CH<1:0> |        |
-| **LATA**     | LATA7   | LATA6      | LATA5  | LATA4  | LATA3       | LATA2     | LATA1     | LATA0  |
-| **VREFCON1** | DACEN   | DACLPS     | DACOE  | —      | DACPSS<1:0> | —         | —         | DACNSS |
-| **VREFCON2** | —       | —          | —      | —      | DACR<4:0>   |           |           |        |
-| **HLVDCON**  | VDIRMAG | BGVST      | IRVST  | HLVDEN | HLVDC<3:0>  |           |           |        |
-| **PORTA**    | RA7     | RA6        | RA5    | RA4    | RA3         | RA2       | RA1       | RA0    |
-| **SLRCON**   | —       | —          | —      | SLRE   | SLRD        | SLRC      | SLRB      | SLRA   |
-| **SRCON0**   | SRLEN   | SRCLK<2:0> | SRQEN  | SRNQEN | SRPS        | SRPR      |           |        |
-| **SSP1CON1** | WCOL    | SSPOV      | SSPEN  | CKP    | SSPM<3:0>   |           |           |        |
-| **T0CON**    | TMR0ON  | T08BIT     | T0CS   | T0SE   | PSA         | T0PS<2:0> |           |        |
-| **TRISA**    | TRISA7  | TRISA6     | TRISA5 | TRISA4 | TRISA3      | TRISA2    | TRISA1    | TRISA0 |
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Bit 7</th>
+      <th>Bit 6</th>
+      <th>Bit 5</th>
+      <th>Bit 4</th>
+      <th>Bit 3</th>
+      <th>Bit 2</th>
+      <th>Bit 1</th>
+      <th>Bit 0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ANSELA</td>
+      <td>—</td>
+      <td>—</td>
+      <td>ANSA5</td>
+      <td>—</td>
+      <td>ANSA3</td>
+      <td>ANSA2</td>
+      <td>ANSA1</td>
+      <td>ANSA0</td>
+    </tr>
+    <tr>
+      <td>CM1CON0</td>
+      <td>C1ON</td>
+      <td>C1OUT</td>
+      <td>C1OE</td>
+      <td>C1POL</td>
+      <td>C1SP</td>
+      <td>C1R</td>
+      <td colspan="2">C1CH&lt;1:0&gt;</td>
+    </tr>
+    <tr>
+      <td>CM2CON0</td>
+      <td>C2ON</td>
+      <td>C2OUT</td>
+      <td>C2OE</td>
+      <td>C2POL</td>
+      <td>C2SP</td>
+      <td>C2R</td>
+      <td colspan="2">C2CH&lt;1:0&gt;</td>
+    </tr>
+    <tr>
+      <td>LATA</td>
+      <td>LATA7</td>
+      <td>LATA6</td>
+      <td>LATA5</td>
+      <td>LATA4</td>
+      <td>LATA3</td>
+      <td>LATA2</td>
+      <td>LATA1</td>
+      <td>LATA0</td>
+    </tr>
+    <tr>
+      <td>VREFCON1</td>
+      <td>DACEN</td>
+      <td>DACLPS</td>
+      <td>DACOE</td>
+      <td>—</td>
+      <td colspan="2">DACPSS&lt;1:0&gt;</td>
+      <td>—</td>
+      <td>DACNSS</td>
+    </tr>
+    <tr>
+      <td>VREFCON2</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td colspan="5">DACR&lt;4:0&gt;</td>
+    </tr>
+    <tr>
+      <td>HVLDCON</td>
+      <td>VDRMAG</td>
+      <td>BGVST</td>
+      <td>IRVST</td>
+      <td>HLVDEN</td>
+      <td colspan="4">HLVDL&lt;3:0&gt;</td>
+    </tr>
+    <tr>
+      <td>PORTA</td>
+      <td>RA7</td>
+      <td>RA6</td>
+      <td>RA5</td>
+      <td>RA4</td>
+      <td>RA3</td>
+      <td>RA2</td>
+      <td>RA1</td>
+      <td>RA0</td>
+    </tr>
+    <tr>
+      <td>SLRCON</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>SLRE</td>
+      <td>SLRD</td>
+      <td>SLRC</td>
+      <td>SLRB</td>
+      <td>SLRA</td>
+    </tr>
+    <tr>
+      <td>SRCON0</td>
+      <td>SRLEN</td>
+      <td colspan="3">SRCLK&lt;2:0&gt;</td>
+      <td>SRQEN</td>
+      <td>SRNQEN</td>
+      <td>SRPS</td>
+      <td>SRPR</td>
+    </tr>
+    <tr>
+      <td>SSP1CON1</td>
+      <td>WCOL</td>
+      <td>SSPOV</td>
+      <td>SSPEN</td>
+      <td>CKP</td>
+      <td colspan="4">SSPM&lt;3:0&gt;</td>
+    </tr>
+    <tr>
+      <td>T0CON</td>
+      <td>TMR0ON</td>
+      <td>T08BIT</td>
+      <td>T0CS</td>
+      <td>T0SE</td>
+      <td>PSA</td>
+      <td colspan="3">T0PS&lt;2:0&gt;</td>
+    </tr>
+    <tr>
+      <td>TRISA</td>
+      <td>TRISA7</td>
+      <td>TRISA6</td>
+      <td>TRISA5</td>
+      <td>TRISA4</td>
+      <td>TRISA3</td>
+      <td>TRISA2</td>
+      <td>TRISA1</td>
+      <td>TRISA0</td>
+    </tr>
+  </tbody>
+</table>
+
 
 > - — = emplacements non implémentés, lus comme ‘0’.
 > - **`<n:m>` → on prend tous les bits du bit n jusqu’au bit m, inclus.**
@@ -326,25 +455,189 @@ Il repose sur deux caractéristiques clés :
 
 - ### Registres associés au PORTB
 
-| Nom         | Bit 7       | Bit 6       | Bit 5       | Bit 4   | Bit 3       | Bit 2      | Bit 1       | Bit 0  |
-| ----------- | ----------- | ----------- | ----------- | ------- | ----------- | ---------- | ----------- | ------ |
-| **ANSELB**  | —           | —           | ANSB5       | ANSB4   | ANSB3       | ANSB2      | ANSB1       | ANSB0  |
-| **ECCP2AS** | CCP2ASE     | CCP2AS<2:0> |             |         | PSS2AC<1:0> |            | PSS2BD<1:0> |        |
-| **CCP2CON** | P2M<1:0>    |             | DC2B<1:0>   |         |             | CCP2M<3:0> |             |        |
-| **ECCP3AS** | CCP3ASE     | CCP3AS<2:0> |             |         | PSS3AC<1:0> |            | PSS3BD<1:0> |        |
-| **CCP3CON** | P3M<1:0>    |             | DC3B<1:0>   |         |             | CCP3M<3:0> |             |        |
-| **INTCON**  | GIE/GIEH    | PEIE/GIEL   | TMR0IE      | INT0IE  | RBIE        | TMR0IF     | INT0IF      | RBIF   |
-| **INTCON2** | RBPU        | INTEDG0     | INTEDG1     | INTEDG2 | —           | TMR0IP     | —           | RBIP   |
-| **INTCON3** | INT2IP      | INT1IP      | —           | INT2IE  | INT1IE      | —          | INT2IF      | INT1IF |
-| **IOCB**    | IOCB7       | IOCB6       | IOCB5       | IOCB4   | —           | —          | —           | —      |
-| **LATB**    | LATB7       | LATB6       | LATB5       | LATB4   | LATB3       | LATB2      | LATB1       | LATB0  |
-| **PORTB**   | RB7         | RB6         | RB5         | RB4     | RB3         | RB2        | RB1         | RB0    |
-| **SLRCON**  | —           | —           | —           | SLRE(1) | SLRD(1)     | SLRC       | SLRB        | SLRA   |
-| **T1GCON**  | TMR1GE      | T1GPOL      | T1GTM       | T1GSPM  | $`T1GGO/\overline{\text{DONE}}`$  | T1GVAL     | T1GSS<1:0>  |        |
-| **T3CON**   | TMR3CS<1:0> |             | T3CKPS<1:0> |         | T3SOSCEN    | $`\overline{\text{T3SYNC}}`$     | T3RD16      | TMR3ON |
-| **T5CON**   | TMR5GE      | T5GPOL      | T5GTM       | T5GSPM  | $`T5GGO/\overline{\text{DONE}}`$  | T5GVAL     | T5GSS<1:0>  |        |
-| **TRISB**   | TRISB7      | TRISB6      | TRISB5      | TRISB4  | TRISB3      | TRISB2     | TRISB1      | TRISB0 |
-| **WPUB**    | WPUB7       | WPUB6       | WPUB5       | WPUB4   | WPUB3       | WPUB2      | WPUB1       | WPUB0  |
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Bit 7</th>
+      <th>Bit 6</th>
+      <th>Bit 5</th>
+      <th>Bit 4</th>
+      <th>Bit 3</th>
+      <th>Bit 2</th>
+      <th>Bit 1</th>
+      <th>Bit 0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>ANSELB</strong></td>
+      <td>—</td>
+      <td>—</td>
+      <td>ANSB5</td>
+      <td>ANSB4</td>
+      <td>ANSB3</td>
+      <td>ANSB2</td>
+      <td>ANSB1</td>
+      <td>ANSB0</td>
+    </tr>
+    <tr>
+      <td><strong>ECCP2AS</strong></td>
+      <td>CCP2ASE</td>
+      <td colspan="3">CCP2AS&lt;2:0&gt;</td>
+      <td colspan="2">PSS2AC&lt;1:0&gt;</td>
+      <td colspan="2">PSS2BD&lt;1:0&gt;</td>
+    </tr>
+    <tr>
+      <td><strong>CCP2CON</strong></td>
+      <td colspan="2">P2M&lt;1:0&gt;</td>
+      <td colspan="2">DC2B&lt;1:0&gt;</td>
+      <td colspan="4">CCP2M&lt;3:0&gt;</td>
+    </tr>
+    <tr>
+      <td><strong>ECCP3AS</strong></td>
+      <td>CCP3ASE</td>
+      <td colspan="3">CCP3AS&lt;2:0&gt;</td>
+      <td colspan="2">PSS3AC&lt;1:0&gt;</td>
+      <td colspan="2">PSS3BD&lt;1:0&gt;</td>
+    </tr>
+    <tr>
+      <td><strong>CCP3CON</strong></td>
+      <td colspan="2">P3M&lt;1:0&gt;</td>
+      <td colspan="2">DC3B&lt;1:0&gt;</td>
+      <td colspan="4">CCP3M&lt;3:0&gt;</td>
+    </tr>
+    <tr>
+      <td><strong>INTCON</strong></td>
+      <td>GIE / GIEH</td>
+      <td>PEIE / GIEL</td>
+      <td>TMR0IE</td>
+      <td>INT0IE</td>
+      <td>RBIE</td>
+      <td>TMR0IF</td>
+      <td>INT0IF</td>
+      <td>RBIF</td>
+    </tr>
+    <tr>
+      <td><strong>INTCON2</strong></td>
+      <td>RBPU</td>
+      <td>INTEDG0</td>
+      <td>INTEDG1</td>
+      <td>INTEDG2</td>
+      <td>—</td>
+      <td>TMR0IP</td>
+      <td>—</td>
+      <td>RBIP</td>
+    </tr>
+    <tr>
+      <td><strong>INTCON3</strong></td>
+      <td>INT2IP</td>
+      <td>INT1IP</td>
+      <td>—</td>
+      <td>INT2IE</td>
+      <td>INT1IE</td>
+      <td>—</td>
+      <td>INT2IF</td>
+      <td>INT1IF</td>
+    </tr>
+    <tr>
+      <td><strong>IOCB</strong></td>
+      <td>IOCB7</td>
+      <td>IOCB6</td>
+      <td>IOCB5</td>
+      <td>IOCB4</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><strong>LATB</strong></td>
+      <td>LATB7</td>
+      <td>LATB6</td>
+      <td>LATB5</td>
+      <td>LATB4</td>
+      <td>LATB3</td>
+      <td>LATB2</td>
+      <td>LATB1</td>
+      <td>LATB0</td>
+    </tr>
+    <tr>
+      <td><strong>PORTB</strong></td>
+      <td>RB7</td>
+      <td>RB6</td>
+      <td>RB5</td>
+      <td>RB4</td>
+      <td>RB3</td>
+      <td>RB2</td>
+      <td>RB1</td>
+      <td>RB0</td>
+    </tr>
+    <tr>
+      <td><strong>SLRCON</strong></td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>SLRE (1)</td>
+      <td>SLRD (1)</td>
+      <td>SLRC</td>
+      <td>SLRB</td>
+      <td>SLRA</td>
+    </tr>
+    <tr>
+      <td><strong>T1GCON</strong></td>
+      <td>TMR1GE</td>
+      <td>T1GPOL</td>
+      <td>T1GTM</td>
+      <td>T1GSPM</td>
+      <td>T1GGO / ¬DONE</td>
+      <td>T1GVAL</td>
+      <td colspan="2">T1GSS&lt;1:0&gt;</td>
+    </tr>
+    <tr>
+      <td><strong>T3CON</strong></td>
+      <td colspan="2">TMR3CS&lt;1:0&gt;</td>
+      <td colspan="2">T3CKPS&lt;1:0&gt;</td>
+      <td>T3SOSCEN</td>
+      <td>¬T3SYNC</td>
+      <td>T3RD16</td>
+      <td>TMR3ON</td>
+    </tr>
+    <tr>
+      <td><strong>T5CON</strong></td>
+      <td>TMR5GE</td>
+      <td>T5GPOL</td>
+      <td>T5GTM</td>
+      <td>T5GSPM</td>
+      <td>T5GGO / ¬DONE</td>
+      <td>T5GVAL</td>
+      <td colspan="2">T5GSS&lt;1:0&gt;</td>
+    </tr>
+    <tr>
+      <td><strong>TRISB</strong></td>
+      <td>TRISB7</td>
+      <td>TRISB6</td>
+      <td>TRISB5</td>
+      <td>TRISB4</td>
+      <td>TRISB3</td>
+      <td>TRISB2</td>
+      <td>TRISB1</td>
+      <td>TRISB0</td>
+    </tr>
+    <tr>
+      <td><strong>WPUB</strong></td>
+      <td>WPUB7</td>
+      <td>WPUB6</td>
+      <td>WPUB5</td>
+      <td>WPUB4</td>
+      <td>WPUB3</td>
+      <td>WPUB2</td>
+      <td>WPUB1</td>
+      <td>WPUB0</td>
+    </tr>
+  </tbody>
+</table>
+
 
 > - — = emplacements non implémentés, lus comme ‘0’.
 > - Les **bits grisés ne sont pas utilisés pour PORTB**.
@@ -356,25 +649,180 @@ Il repose sur deux caractéristiques clés :
 
 - ### Registres associés au PORTC
 
-| Nom          | Bit 7       | Bit 6       | Bit 5       | Bit 4   | Bit 3       | Bit 2      | Bit 1       | Bit 0  |
-| ------------ | ----------- | ----------- | ----------- | ------- | ----------- | ---------- | ----------- | ------ |
-| **ANSELC**   | ANSC7       | ANSC6       | ANSC5       | ANSC4   | ANSC3       | ANSC2      | —           | —      |
-| **ECCP1AS**  | CCP1ASE     | CCP1AS<2:0> |             |         | PSS1AC<1:0> |            | PSS1BD<1:0> |        |
-| **CCP1CON**  | P1M<1:0>    |             | DC1B<1:0>   |         |             | CCP1M<3:0> |             |        |
-| **ECCP2AS**  | CCP2ASE     | CCP2AS<2:0> |             |         | PSS2AC<1:0> |            | PSS2BD<1:0> |        |
-| **CCP2CON**  | P2M<1:0>    |             | DC2B<1:0>   |         |             | CCP2M<3:0> |             |        |
-| **CTMUCONH** | CTMUEN      | —           | CTMUSIDL    | TGEN    | EDGEN       | EDGSEQEN   | IDISSEN     | CTTRIG |
-| **LATC**     | LATC7       | LATC6       | LATC5       | LATC4   | LATC3       | LATC2      | LATC1       | LATC0  |
-| **PORTC**    | RC7         | RC6         | RC5         | RC4     | RC3         | RC2        | RC1         | RC0    |
-| **RCSTA1**   | SPEN        | RX9         | SREN        | CREN    | ADDEN       | FERR       | OERR        | RX9D   |
-| **SLRCON**   | —           | —           | —           | SLRE(1) | SLRD(1)     | SLRC       | SLRB        | SLRA   |
-| **SSP1CON1** | WCOL        | SSPOV       | SSPEN       | CKP     | SSPM<3:0>   |            |             |        |
-| **T1CON**    | TMR1CS<1:0> |             | T1CKPS<1:0> |         | T1SOSCEN    | $`\overline{\text{T1SYNC}}`$     | T1RD16      | TMR1ON |
-| **T3CON**    | TMR3CS<1:0> |             | T3CKPS<1:0> |         | T3SOSCEN    | $`\overline{\text{T3SYNC}}`$     | T3RD16      | TMR3ON |
-| **T3GCON**   | TMR3GE      | T3GPOL      | T3GTM       | T3GSPM  | $`T3GGO/\overline{\text{DONE}}`$  | T3GVAL     | T3GSS<1:0>  |        |
-| **T5CON**    | TMR5CS<1:0> |             | T5CKPS<1:0> |         | T5SOSCEN    | $`\overline{\text{T5SYNC}}`$     | T5RD16      | TMR5ON |
-| **TRISC**    | TRISC7      | TRISC6      | TRISC5      | TRISC4  | TRISC3      | TRISC2     | TRISC1      | TRISC0 |
-| **TXSTA1**   | CSRC        | TX9         | TXEN        | SYNC    | SENDB       | BRGH       | TRMT        | TX9D   |
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Bit 7</th>
+      <th>Bit 6</th>
+      <th>Bit 5</th>
+      <th>Bit 4</th>
+      <th>Bit 3</th>
+      <th>Bit 2</th>
+      <th>Bit 1</th>
+      <th>Bit 0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>ANSELC</strong></td>
+      <td>ANSC7</td>
+      <td>ANSC6</td>
+      <td>ANSC5</td>
+      <td>ANSC4</td>
+      <td>ANSC3</td>
+      <td>ANSC2</td>
+      <td colspan="2">—</td>
+    </tr>
+    <tr>
+      <td><strong>ECCP1AS</strong></td>
+      <td>CCP1ASE</td>
+      <td colspan="3">CCP1AS&lt;2:0&gt;</td>
+      <td colspan="2">PSS1AC&lt;1:0&gt;</td>
+      <td colspan="2">PSS1BD&lt;1:0&gt;</td>
+    </tr>
+    <tr>
+      <td><strong>CCP1CON</strong></td>
+      <td colspan="2">P1M&lt;1:0&gt;</td>
+      <td colspan="2">DC1B&lt;1:0&gt;</td>
+      <td colspan="4">CCP1M&lt;3:0&gt;</td>
+    </tr>
+    <tr>
+      <td><strong>ECCP2AS</strong></td>
+      <td>CCP2ASE</td>
+      <td colspan="3">CCP2AS&lt;2:0&gt;</td>
+      <td colspan="2">PSS2AC&lt;1:0&gt;</td>
+      <td colspan="2">PSS2BD&lt;1:0&gt;</td>
+    </tr>
+    <tr>
+      <td><strong>CCP2CON</strong></td>
+      <td colspan="2">P2M&lt;1:0&gt;</td>
+      <td colspan="2">DC2B&lt;1:0&gt;</td>
+      <td colspan="4">CCP2M&lt;3:0&gt;</td>
+    </tr>
+    <tr>
+      <td><strong>CTMUCONH</strong></td>
+      <td>CTMUEN</td>
+      <td>—</td>
+      <td>CTMUSIDL</td>
+      <td>TGEN</td>
+      <td>EDGEN</td>
+      <td>EDGSEQEN</td>
+      <td>IDISSEN</td>
+      <td>CTTRIG</td>
+    </tr>
+    <tr>
+      <td><strong>LATC</strong></td>
+      <td>LATC7</td>
+      <td>LATC6</td>
+      <td>LATC5</td>
+      <td>LATC4</td>
+      <td>LATC3</td>
+      <td>LATC2</td>
+      <td>LATC1</td>
+      <td>LATC0</td>
+    </tr>
+    <tr>
+      <td><strong>PORTC</strong></td>
+      <td>RC7</td>
+      <td>RC6</td>
+      <td>RC5</td>
+      <td>RC4</td>
+      <td>RC3</td>
+      <td>RC2</td>
+      <td>RC1</td>
+      <td>RC0</td>
+    </tr>
+    <tr>
+      <td><strong>RCSTA1</strong></td>
+      <td>SPEN</td>
+      <td>RX9</td>
+      <td>SREN</td>
+      <td>CREN</td>
+      <td>ADDEN</td>
+      <td>FERR</td>
+      <td>OERR</td>
+      <td>RX9D</td>
+    </tr>
+    <tr>
+      <td><strong>SLRCON</strong></td>
+      <td colspan="3">—</td>
+      <td>SLRE (1)</td>
+      <td>SLRD (1)</td>
+      <td>SLRC</td>
+      <td>SLRB</td>
+      <td>SLRA</td>
+    </tr>
+    <tr>
+      <td><strong>SSP1CON1</strong></td>
+      <td>WCOL</td>
+      <td>SSPOV</td>
+      <td>SSPEN</td>
+      <td>CKP</td>
+      <td colspan="4">SSPM&lt;3:0&gt;</td>
+    </tr>
+    <tr>
+      <td><strong>T1CON</strong></td>
+      <td colspan="2">TMR1CS&lt;1:0&gt;</td>
+      <td colspan="2">T1CKPS&lt;1:0&gt;</td>
+      <td>T1SOSCEN</td>
+      <td>¬T1SYNC</td>
+      <td>T1RD16</td>
+      <td>TMR1ON</td>
+    </tr>
+    <tr>
+      <td><strong>T3CON</strong></td>
+      <td colspan="2">TMR3CS&lt;1:0&gt;</td>
+      <td colspan="2">T3CKPS&lt;1:0&gt;</td>
+      <td>T3SOSCEN</td>
+      <td>¬T3SYNC</td>
+      <td>T3RD16</td>
+      <td>TMR3ON</td>
+    </tr>
+    <tr>
+      <td><strong>T3GCON</strong></td>
+      <td>TMR3GE</td>
+      <td>T3GPOL</td>
+      <td>T3GTM</td>
+      <td>T3GSPM</td>
+      <td>T3GGO / ¬DONE</td>
+      <td>T3GVAL</td>
+      <td colspan="2">T3GSS&lt;1:0&gt;</td>
+    </tr>
+    <tr>
+      <td><strong>T5CON</strong></td>
+      <td colspan="2">TMR5CS&lt;1:0&gt;</td>
+      <td colspan="2">T5CKPS&lt;1:0&gt;</td>
+      <td>T5SOSCEN</td>
+      <td>¬T5SYNC</td>
+      <td>T5RD16</td>
+      <td>TMR5ON</td>
+    </tr>
+    <tr>
+      <td><strong>TRISC</strong></td>
+      <td>TRISC7</td>
+      <td>TRISC6</td>
+      <td>TRISC5</td>
+      <td>TRISC4</td>
+      <td>TRISC3</td>
+      <td>TRISC2</td>
+      <td>TRISC1</td>
+      <td>TRISC0</td>
+    </tr>
+    <tr>
+      <td><strong>TXSTA1</strong></td>
+      <td>CSRC</td>
+      <td>TX9</td>
+      <td>TXEN</td>
+      <td>SYNC</td>
+      <td>SENDB</td>
+      <td>BRGH</td>
+      <td>TRMT</td>
+      <td>TX9D</td>
+    </tr>
+  </tbody>
+</table>
+
 
 > - — = **emplacements non implémentés, lus comme ‘0’**.
 > - Les **bits grisés ne sont pas utilisés pour PORTC**.
@@ -384,19 +832,130 @@ Il repose sur deux caractéristiques clés :
 
 - ### Registres associés au PORTD
 
-| Nom          | Bit 7    | Bit 6  | Bit 5     | Bit 4  | Bit 3     | Bit 2      | Bit 1  | Bit 0  |
-| ------------ | -------- | ------ | --------- | ------ | --------- | ---------- | ------ | ------ |
-| **ANSELD**  | ANSD7    | ANSD6  | ANSD5     | ANSD4  | ANSD3     | ANSD2      | ANSD1  | ANSD0  |
-| **BAUDCON2** | ABDOVF   | RCIDL  | DTRXP     | CKTXP  | BRG16     | —          | WUE    | ABDEN  |
-| **CCP1CON**  | P1M<1:0> |        | DC1B<1:0> |        |           | CCP1M<3:0> |        |        |
-| **CCP2CON**  | P2M<1:0> |        | DC2B<1:0> |        |           | CCP2M<3:0> |        |        |
-| **CCP4CON**  | —        | —      | DC4B<1:0> |        |           | CCP4M<3:0> |        |        |
-| **LATD**    | LATD7    | LATD6  | LATD5     | LATD4  | LATD3     | LATD2      | LATD1  | LATD0  |
-| **PORTD**   | RD7      | RD6    | RD5       | RD4    | RD3       | RD2        | RD1    | RD0    |
-| **RCSTA2**   | SPEN     | RX9    | SREN      | CREN   | ADDEN     | FERR       | OERR   | RX9D   |
-| **SLRCON**  | —        | —      | —         | SLRE   | SLRD      | SLRC       | SLRB   | SLRA   |
-| **SSP2CON1** | WCOL     | SSPOV  | SSPEN     | CKP    | SSPM<3:0> |            |        |        |
-| **TRISD**   | TRISD7   | TRISD6 | TRISD5    | TRISD4 | TRISD3    | TRISD2     | TRISD1 | TRISD0 |
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Bit 7</th>
+      <th>Bit 6</th>
+      <th>Bit 5</th>
+      <th>Bit 4</th>
+      <th>Bit 3</th>
+      <th>Bit 2</th>
+      <th>Bit 1</th>
+      <th>Bit 0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>ANSELD</strong></td>
+      <td>ANSD7</td>
+      <td>ANSD6</td>
+      <td>ANSD5</td>
+      <td>ANSD4</td>
+      <td>ANSD3</td>
+      <td>ANSD2</td>
+      <td>ANSD1</td>
+      <td>ANSD0</td>
+    </tr>
+    <tr>
+      <td><strong>BAUDCON2</strong></td>
+      <td>ABDOVF</td>
+      <td>RCIDL</td>
+      <td>DTRXP</td>
+      <td>CKTXP</td>
+      <td>BRG16</td>
+      <td>—</td>
+      <td>WUE</td>
+      <td>ABDEN</td>
+    </tr>
+    <tr>
+      <td><strong>CCP1CON</strong></td>
+      <td colspan="2">P1M&lt;1:0&gt;</td>
+      <td colspan="2">DC1B&lt;1:0&gt;</td>
+      <td colspan="4">CCP1M&lt;3:0&gt;</td>
+    </tr>
+    <tr>
+      <td><strong>CCP2CON</strong></td>
+      <td colspan="2">P2M&lt;1:0&gt;</td>
+      <td colspan="2">DC2B&lt;1:0&gt;</td>
+      <td colspan="4">CCP2M&lt;3:0&gt;</td>
+    </tr>
+    <tr>
+      <td><strong>CCP4CON</strong></td>
+       <td>—</td>
+       <td>—</td>
+       <td>—</td>
+      <td colspan="2">DC4B&lt;1:0&gt;</td>
+      <td colspan="4">CCP4M&lt;3:0&gt;</td>
+    </tr>
+    <tr>
+      <td><strong>LATD</strong></td>
+      <td>LATD7</td>
+      <td>LATD6</td>
+      <td>LATD5</td>
+      <td>LATD4</td>
+      <td>LATD3</td>
+      <td>LATD2</td>
+      <td>LATD1</td>
+      <td>LATD0</td>
+    </tr>
+    <tr>
+      <td><strong>PORTD</strong></td>
+      <td>RD7</td>
+      <td>RD6</td>
+      <td>RD5</td>
+      <td>RD4</td>
+      <td>RD3</td>
+      <td>RD2</td>
+      <td>RD1</td>
+      <td>RD0</td>
+    </tr>
+    <tr>
+      <td><strong>RCSTA2</strong></td>
+      <td>SPEN</td>
+      <td>RX9</td>
+      <td>SREN</td>
+      <td>CREN</td>
+      <td>ADDEN</td>
+      <td>FERR</td>
+      <td>OERR</td>
+      <td>RX9D</td>
+    </tr>
+    <tr>
+      <td><strong>SLRCON</strong></td>
+       <td>—</td>
+       <td>—</td>
+       <td>—</td>
+      <td>SLRE</td>
+      <td>SLRD</td>
+      <td>SLRC</td>
+      <td>SLRB</td>
+      <td>SLRA</td>
+    </tr>
+    <tr>
+      <td><strong>SSP2CON1</strong></td>
+      <td>WCOL</td>
+      <td>SSPOV</td>
+      <td>SSPEN</td>
+      <td>CKP</td>
+      <td colspan="4">SSPM&lt;3:0&gt;</td>
+    </tr>
+    <tr>
+      <td><strong>TRISD</strong></td>
+      <td>TRISD7</td>
+      <td>TRISD6</td>
+      <td>TRISD5</td>
+      <td>TRISD4</td>
+      <td>TRISD3</td>
+      <td>TRISD2</td>
+      <td>TRISD1</td>
+      <td>TRISD0</td>
+    </tr>
+
+  </tbody>
+</table>
+
 
 > - — = **emplacements non implémentés, lus comme ‘0’**.
 > - **`<n:m>` → on prend tous les bits du bit n jusqu’au bit m, inclus.**
@@ -405,14 +964,91 @@ Il repose sur deux caractéristiques clés :
 
 - ### Registres associés au PORTE
 
-| Nom         | Bit 7 | Bit 6   | Bit 5   | Bit 4   | Bit 3 | Bit 2   | Bit 1   | Bit 0   |
-| ----------- | ----- | ------- | ------- | ------- | ----- | ------- | ------- | ------- |
-| **ANSELE** | —     | —       | —       | —       | —     | ANSE2   | ANSE1   | ANSE0   |
-| **INTCON2** | $`\overline{\text{RBPU}}`$  | INTEDG0 | INTEDG1 | INTEDG2 | —     | TMR0IP  | —       | RBIP    |
-| **LATE**   | —     | —       | —       | —       | —     | LATE2   | LATE1   | LATE0   |
-| **PORTE**   | —     | —       | —       | —       | RE3   | RE2    | RE1    | RE0    |
-| **SLRCON**  | —     | —       | —       | SLRE   | SLRD | SLRC    | SLRB    | SLRA    |
-| **TRISE**   | WPUE3 | —       | —       | —       | —     | TRISE2 | TRISE1 | TRISE0 |
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Bit 7</th>
+      <th>Bit 6</th>
+      <th>Bit 5</th>
+      <th>Bit 4</th>
+      <th>Bit 3</th>
+      <th>Bit 2</th>
+      <th>Bit 1</th>
+      <th>Bit 0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>ANSELE</strong></td>
+       <td>—</td>
+       <td>—</td>
+       <td>—</td>
+       <td>—</td>
+       <td>—</td>
+      <td>ANSE2</td>
+      <td>ANSE1</td>
+      <td>ANSE0</td>
+    </tr>
+    <tr>
+      <td><strong>INTCON2</strong></td>
+      <td>¬RBPU</td>
+      <td>INTEDG0</td>
+      <td>INTEDG1</td>
+      <td>INTEDG2</td>
+      <td>—</td>
+      <td>TMR0IP</td>
+      <td>—</td>
+      <td>RBIP</td>
+    </tr>
+    <tr>
+      <td><strong>LATE</strong></td>
+       <td>—</td>
+       <td>—</td>
+       <td>—</td>
+       <td>—</td>
+       <td>—</td>
+      <td>LATE2</td>
+      <td>LATE1</td>
+      <td>LATE0</td>
+    </tr>
+    <tr>
+      <td><strong>PORTE</strong></td>
+       <td>—</td>
+       <td>—</td>
+       <td>—</td>
+       <td>—</td>
+      <td>RE3</td>
+      <td>RE2</td>
+      <td>RE1</td>
+      <td>RE0</td>
+    </tr>
+    <tr>
+      <td><strong>SLRCON</strong></td>
+       <td>—</td>
+       <td>—</td>
+       <td>—</td>
+      <td>SLRE</td>
+      <td>SLRD</td>
+      <td>SLRC</td>
+      <td>SLRB</td>
+      <td>SLRA</td>
+    </tr>
+    <tr>
+      <td><strong>TRISE</strong></td>
+      <td>WPUE3</td>
+       <td>—</td>
+       <td>—</td>
+       <td>—</td>
+       <td>—</td>
+      <td>TRISE2</td>
+      <td>TRISE1</td>
+      <td>TRISE0</td>
+    </tr>
+
+  </tbody>
+</table>
+
 
 > - — = **emplacements non implémentés, lus comme ‘0’**.
 > - Les **bits grisés ne sont pas utilisés pour PORTC**.
