@@ -687,7 +687,8 @@ Il repose sur deux caractéristiques clés :
       <td>ANSC4</td>
       <td>ANSC3</td>
       <td>ANSC2</td>
-      <td colspan="2">—</td>
+      <td>—</td>
+       <td>—</td>
     </tr>
     <tr>
       <td><strong>ECCP1AS</strong></td>
@@ -761,9 +762,11 @@ Il repose sur deux caractéristiques clés :
     </tr>
     <tr>
       <td><strong>SLRCON</strong></td>
-      <td colspan="3">—</td>
-      <td>SLRE (1)</td>
-      <td>SLRD (1)</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>SLRE</td>
+      <td>SLRD</td>
       <td>SLRC</td>
       <td>SLRB</td>
       <td>SLRA</td>
@@ -937,9 +940,9 @@ Il repose sur deux caractéristiques clés :
     </tr>
     <tr>
       <td><strong>SLRCON</strong></td>
-       <td>—</td>
-       <td>—</td>
-       <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
       <td>SLRE</td>
       <td>SLRD</td>
       <td>SLRC</td>
