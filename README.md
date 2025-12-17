@@ -291,68 +291,8 @@ Voici un tableau clair regroupant les broches essentielles :
 | **ANSELx**  | Sélection du Mode Analogique ou Numérique        | 1 = Entrée Analogique<br>0 = Numérique (Digital) |
 | **SLRCONx** | Contrôle du Slew Rate (réduction des EMI)        | Sortie                                           |
 
-
-> Une broche configurée avec ANSELx = 1 est forcément une entrée analogique → TRISx doit être à 1.
-Pour toute entrée/sortie digitale, ANSELx doit être à 0.
-
-
-
-
-
-- ### **PORT A :**
-
-| Nom de la broche                            | Fonction | TRIS | ANSEL | Type broche | Type buffer | Description                                             |
-| ------------------------------------------- | -------- | ---- | ----- | ----------- | ----------- | ------------------------------------------------------- |
-| **RA0 / C12IN0- / AN0**                     | RA0      | 0    | 0     | O           | DIG         | Sortie LATA<0>, non affectée par l’entrée analogique    |
-|                                             |          | 1    | 0     | I           | TTL         | Entrée PORTA<0>, désactivée si analogique activé        |
-|                                             | C12IN0-  | 1    | 1     | I           | AN          | Entrée inverse des comparateurs C1 et C2                |
-|                                             | AN0      | 1    | 1     | I           | AN          | Entrée analogique 0                                     |
-| **RA1 / C12IN1- / AN1**                     | RA1      | 0    | 0     | O           | DIG         | Sortie LATA<1>, non affectée par l’entrée analogique    |
-|                                             |          | 1    | 0     | I           | TTL         | Entrée PORTA<1>, désactivée si analogique activé        |
-|                                             | C12IN1-  | 1    | 1     | I           | AN          | Entrée inverse des comparateurs C1 et C2                |
-|                                             | AN1      | 1    | 1     | I           | AN          | Entrée analogique 1                                     |
-| **RA2 / C2IN+ / AN2 / DACOUT / VREF-**      | RA2      | 0    | 0     | O           | DIG         | Sortie LATA<2>, désactivée si DACOUT activé             |
-|                                             |          | 1    | 0     | I           | TTL         | Entrée PORTA<2>, désactivée si analogique ou DAC activé |
-|                                             | C2IN+    | 1    | 1     | I           | AN          | Entrée non-inverse du comparateur C2                    |
-|                                             | AN2      | 1    | 1     | I           | AN          | Entrée analogique 2                                     |
-|                                             | DACOUT   | x    | 1     | O           | AN          | Sortie de référence DAC                                 |
-|                                             | VREF-    | 1    | 1     | I           | AN          | Référence basse ADC                                     |
-| **RA3 / C1IN+ / AN3 / VREF+**               | RA3      | 0    | 0     | O           | DIG         | Sortie LATA<3>, non affectée par l’analogique           |
-|                                             |          | 1    | 0     | I           | TTL         | Entrée PORTA<3>, désactivée si analogique activé        |
-|                                             | C1IN+    | 1    | 1     | I           | AN          | Entrée non-inverse du comparateur C1                    |
-|                                             | AN3      | 1    | 1     | I           | AN          | Entrée analogique 3                                     |
-|                                             | VREF+    | 1    | 1     | I           | AN          | Référence haute ADC                                     |
-| **RA4 / CCP5 / C1OUT / SRQ / T0CKI**        | RA4      | 0    | —     | O           | DIG         | Sortie LATA<4>                                          |
-|                                             |          | 1    | —     | I           | ST          | Entrée PORTA<4>, configuration par défaut au reset      |
-|                                             | CCP5     | 0    | —     | O           | DIG         | Sortie Capture/Compare/PWM 5                            |
-|                                             |          | 1    | —     | I           | ST          | Entrée Capture 5 / Compare 5 / PWM 5                    |
-|                                             | C1OUT    | 0    | —     | O           | DIG         | Sortie comparateur C1                                   |
-|                                             | SRQ      | 0    | —     | O           | DIG         | Sortie latch SR (prioritaire)                           |
-|                                             | T0CKI    | 1    | —     | I           | ST          | Entrée horloge externe Timer0                           |
-| **RA5 / C2OUT / SRNQ / SS1 / HLVDIN / AN4** | RA5      | 0    | 0     | O           | DIG         | Sortie LATA<5>, non affectée par l’analogique           |
-|                                             |          | 1    | 0     | I           | TTL         | Entrée PORTA<5>, désactivée si analogique activé        |
-|                                             | C2OUT    | 0    | 0     | O           | DIG         | Sortie comparateur C2                                   |
-|                                             | SRNQ     | 0    | 0     | O           | DIG         | Sortie latch SR                                         |
-|                                             | SS1      | 1    | 0     | I           | TTL         | Sélection esclave SPI (MSSP1)                           |
-|                                             | HLVDIN   | 1    | 1     | I           | AN          | Entrée détection haute/basse tension                    |
-|                                             | AN4      | 1    | 1     | I           | AN          | Entrée analogique 4                                     |
-| **RA6 / CLKO / OSC2**                       | RA6      | 0    | —     | O           | DIG         | Sortie LATA<6> (INTOSC, CLKO désactivé)                 |
-|                                             |          | 1    | —     | I           | TTL         | Entrée PORTA<6> (INTOSC)                                |
-|                                             | CLKO     | x    | —     | O           | DIG         | Sortie CLKO = Fosc/4 (mode RC)                          |
-|                                             | OSC2     | x    | —     | O           | XTAL        | Sortie oscillateur (quartz/résonateur)                  |
-| **RA7 / CLKI / OSC1**                       | RA7      | 0    | —     | O           | DIG         | Sortie LATA<7>, désactivée en mode oscillateur externe  |
-|                                             |          | 1    | —     | I           | TTL         | Entrée PORTA<7>, désactivée en mode oscillateur externe |
-|                                             | CLKI     | x    | —     | I           | AN          | Entrée horloge externe                                  |
-|                                             | OSC1     | x    | —     | I           | XTAL        | Entrée oscillateur (quartz ou source externe)           |
-
-
-> * **RA3, RA5** : limitations selon fonctions analogiques
-> * **RA6, RA7** : réservées à l’oscillateur
-> * **ANSEL = 1 → PORT désactivé**
-> * Toujours écrire avec **LATx**, lire avec **PORTx**
-
-
-
+> Une broche configurée avec `ANSELx = 1` est forcément une entrée analogique → `TRISx` doit être à 1.
+Pour toute entrée/sortie digitale, `ANSELx` doit être à 0.
 
 
 | **PORT**   | **Mode Analogique / Digital**                 | **Direction (Entrée / Sortie)**         | **Lecture de l’état** | **Écriture sur la sortie** | **Utilisation principale**           |
