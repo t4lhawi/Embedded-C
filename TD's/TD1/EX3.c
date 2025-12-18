@@ -1,3 +1,5 @@
+// Nom : Mohamed Talhaoui
+// Filière : GSEIR3 (S1) | 2025/2026
 #include <stdio.h>
 
 int main() {
