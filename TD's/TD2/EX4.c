@@ -26,10 +26,10 @@ void main() {
 
 
     while(1){
-        if(PORTA <= 30){
+        if(PORTA < 30){
             Ib = 1;
         } 
-        if(PORTB >= 250){
+        if(PORTB > 250){
             Ih = 1;
         }
 
