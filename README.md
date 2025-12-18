@@ -316,7 +316,7 @@ Il repose sur deux caractéristiques clés :
 | **ANSELx**  | Sélection du Mode Analogique ou Numérique            | 1 = Entrée Analogique<br>0 = Numérique (Digital) |
 | **SLRCONx** | Contrôle du Slew Rate (réduction des EMI)            | Sortie (selon port / MCU)                        |
 
-> - **Lire** avec `PORTx`, **écrire** avec `LATx`, (Évite Risque de **Read-Modify-Write**)
+> - **Lire** avec `PORTx`, **écrire** avec `LATx` pour Évite Risque de **Read-Modify-Write (RMW)**
 > - `ANSELx = 1` ⇒ entrée analogique ⇒ `TRISx = 1` **obligatoire**
 > - Pour toute E/S digitale ⇒ `ANSELx = 0`
 > - Manipulation des sorties **Toujours via `LATx`**
