@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 int main() {
-    signed char p1 = 0;
+    unsigned char p1 = 0;
 
     // Q1
     p1 |= (1 << 2);
