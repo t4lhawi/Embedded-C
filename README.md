@@ -308,16 +308,18 @@ Il repose sur deux caractéristiques clés :
 
 - ### Registres de Contrôle
 
-| Registre    | Fonction                                         | Configuration                                    |
-| ----------- | ------------------------------------------------ | ------------------------------------------------ |
-| **PORTx**   | Lecture/Écriture logique des broches             | Entrée / Sortie                                  |
-| **LATx**    | Registre tampon (Latch) pour une écriture stable | Sortie uniquement                                |
-| **TRISx**   | Direction du Port                                | 1 = Entrée<br>0 = Sortie                         |
-| **ANSELx**  | Sélection du Mode Analogique ou Numérique        | 1 = Entrée Analogique<br>0 = Numérique (Digital) |
-| **SLRCONx** | Contrôle du Slew Rate (réduction des EMI)        | Sortie                                           |
+| Registre    | Fonction                                             | Configuration                                    |
+| ----------- | ---------------------------------------------------- | ------------------------------------------------ |
+| **PORTx**   | Lecture/Écriture logique réel des broches            | Entrée / Sortie                                  |
+| **LATx**    | Registre tampon (Latch) pour une écriture **Stable** | Sortie Uniquement                                |
+| **TRISx**   | Direction du Port                                    | 1 = Entrée<br>0 = Sortie                         |
+| **ANSELx**  | Sélection du Mode Analogique ou Numérique            | 1 = Entrée Analogique<br>0 = Numérique (Digital) |
+| **SLRCONx** | Contrôle du Slew Rate (réduction des EMI)            | Sortie (selon port / MCU)                        |
 
-> - Une broche configurée avec `ANSELx = 1` est forcément une entrée analogique → `TRISx` doit être à 1.
-> - Pour toute entrée/sortie digitale, `ANSELx` doit être à 0.
+> - **Lire** avec `PORTx`, **écrire** avec `LATx`, (Évite Risque de **Read-Modify-Write**)
+> - `ANSELx = 1` ⇒ entrée analogique ⇒ `TRISx = 1` **obligatoire**
+> - Pour toute E/S digitale ⇒ `ANSELx = 0`
+> - Manipulation des sorties **Toujours via `LATx`**
 
 
 - ### Registres associés au PORTA
