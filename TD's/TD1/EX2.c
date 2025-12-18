@@ -3,8 +3,7 @@
 #include <stdio.h>
 
 int main() {
-    char nb = 123; // Exemple : valeur quelconque (0–255)
-
+    char nb = 123;
     int centaines = nb / 100;       // Extraction des centaines
     int dizaines  = (nb / 10) % 10; // Extraction des dizaines
     int unites    = nb % 10;        // Extraction des unités
