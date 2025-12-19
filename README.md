@@ -340,7 +340,7 @@ Il repose sur deux caractéristiques clés :
   </thead>
   <tbody>
     <tr>
-      <td>ANSELA</td>
+      <td><strong>ANSELA</strong></td>
       <td>—</td>
       <td>—</td>
       <td>ANSA5</td>
@@ -351,7 +351,7 @@ Il repose sur deux caractéristiques clés :
       <td>ANSA0</td>
     </tr>
     <tr>
-      <td>CM1CON0</td>
+      <td><strong>CM1CON0</strong></td>
       <td>C1ON</td>
       <td>C1OUT</td>
       <td>C1OE</td>
@@ -361,7 +361,7 @@ Il repose sur deux caractéristiques clés :
       <td colspan="2">C1CH&lt;1:0&gt;</td>
     </tr>
     <tr>
-      <td>CM2CON0</td>
+      <td><strong>CM2CON0</strong></td>
       <td>C2ON</td>
       <td>C2OUT</td>
       <td>C2OE</td>
@@ -371,7 +371,7 @@ Il repose sur deux caractéristiques clés :
       <td colspan="2">C2CH&lt;1:0&gt;</td>
     </tr>
     <tr>
-      <td>LATA</td>
+      <td><strong>LATA</strong></td>
       <td>LATA7</td>
       <td>LATA6</td>
       <td>LATA5</td>
@@ -382,7 +382,7 @@ Il repose sur deux caractéristiques clés :
       <td>LATA0</td>
     </tr>
     <tr>
-      <td>VREFCON1</td>
+      <td><strong>VREFCON1</strong></td>
       <td>DACEN</td>
       <td>DACLPS</td>
       <td>DACOE</td>
@@ -392,14 +392,14 @@ Il repose sur deux caractéristiques clés :
       <td>DACNSS</td>
     </tr>
     <tr>
-      <td>VREFCON2</td>
+      <td><strong>VREFCON2</strong></td>
       <td>—</td>
       <td>—</td>
       <td>—</td>
       <td colspan="5">DACR&lt;4:0&gt;</td>
     </tr>
     <tr>
-      <td>HVLDCON</td>
+      <td><strong>HVLDCON</strong></td>
       <td>VDRMAG</td>
       <td>BGVST</td>
       <td>IRVST</td>
@@ -407,7 +407,7 @@ Il repose sur deux caractéristiques clés :
       <td colspan="4">HLVDL&lt;3:0&gt;</td>
     </tr>
     <tr>
-      <td>PORTA</td>
+      <td><strong>PORTA</strong></td>
       <td>RA7</td>
       <td>RA6</td>
       <td>RA5</td>
@@ -418,7 +418,7 @@ Il repose sur deux caractéristiques clés :
       <td>RA0</td>
     </tr>
     <tr>
-      <td>SLRCON</td>
+      <td><strong>SLRCON</strong></td>
       <td>—</td>
       <td>—</td>
       <td>—</td>
@@ -429,7 +429,7 @@ Il repose sur deux caractéristiques clés :
       <td>SLRA</td>
     </tr>
     <tr>
-      <td>SRCON0</td>
+      <td><strong>SRCON0</strong></td>
       <td>SRLEN</td>
       <td colspan="3">SRCLK&lt;2:0&gt;</td>
       <td>SRQEN</td>
@@ -438,7 +438,7 @@ Il repose sur deux caractéristiques clés :
       <td>SRPR</td>
     </tr>
     <tr>
-      <td>SSP1CON1</td>
+      <td><strong>SSP1CON1</strong></td>
       <td>WCOL</td>
       <td>SSPOV</td>
       <td>SSPEN</td>
@@ -446,7 +446,7 @@ Il repose sur deux caractéristiques clés :
       <td colspan="4">SSPM&lt;3:0&gt;</td>
     </tr>
     <tr>
-      <td>T0CON</td>
+      <td><strong>T0CON</strong></td>
       <td>TMR0ON</td>
       <td>T08BIT</td>
       <td>T0CS</td>
@@ -455,7 +455,7 @@ Il repose sur deux caractéristiques clés :
       <td colspan="3">T0PS&lt;2:0&gt;</td>
     </tr>
     <tr>
-      <td>TRISA</td>
+      <td><strong>TRISA</strong></td>
       <td>TRISA7</td>
       <td>TRISA6</td>
       <td>TRISA5</td>
