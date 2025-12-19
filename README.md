@@ -977,8 +977,6 @@ Il repose sur deux caractéristiques clés :
 
 > - — = **emplacements non implémentés, lus comme ‘0’**.
 > - **`<n:m>` → on prend tous les bits du bit n jusqu’au bit m, inclus.**
->    - `n` = bit le plus significatif (à gauche) du champ
->    - `m` = bit le moins significatif (à droite) du champ
 
 - ### Registres associés au PORTE
 
