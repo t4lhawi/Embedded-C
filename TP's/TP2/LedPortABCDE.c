@@ -1,3 +1,4 @@
+// Annexe : Code LedPortABCDE.c
 char counter;
 void main() {
     TRISA = 0x00; LATA = 0x00;
@@ -25,4 +26,5 @@ void main() {
             delay_ms(200);
         }
     }
+
 }
