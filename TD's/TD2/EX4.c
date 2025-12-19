@@ -3,59 +3,37 @@
 // mikroC PRO for PIC (PIC18F)
 
 void main() {
-    // Bus d’entrée Ib : PORTA
-    unsigned char Ib = 0;
+    // Bus d’entrée Ib et Ih : PORTA
     TRISA = 0xFF;
-    ANSELA = 0xFF;
-    // Bus d’entrée Ih : PORTB
-    unsigned char Ih = 0;
-    TRISB = 0xFF;
-    ANSELB = 0xFF;
+    ANSELA = 0;
+
+    unsigned char Ib = PORTA & 0x01;
+    unsigned char Ih = PORTA & 0x02;
     
-    // Bus de sortie LED B : PORTC
-    TRISC = 0;
-    LATC = 0;
-
-    // Bus de sortie LED H : PORTD
-    TRISD = 0;
-    LATD = 0;
-
-    // Bus de sortie LED E : PORTE
-    TRISE = 0;
-    LATE = 0;
+    // Bus de sortie LEDs B, H et E : PORTB
+    // LED B : 0b00000001 = 0x01
+    // LED H : 0b00000010 = 0x02
+    // LED E : 0b00000100 = 0x04
+    TRISB = 0;
+    LATB = 0;
 
 
     while(1){
-        if(PORTA < 30){
-            Ib = 1;
-        } 
-        if(PORTB > 250){
-            Ih = 1;
-        }
-
         // Niveau normal (30 cm <= niveau <= 250 cm)
         if (Ib == 0 && Ih == 0) {
-            LATC = 0; // LED B
-            LATD = 0; // LED H
-            LATE = 0; // LED E
-        } 
+            LATB = 0; // Aucune LED allumée
+        }
         // Niveau faible (< 30 cm)
         else if (Ib == 1 && Ih == 0) {
-            LATC = 0xFF; // LED B
-            LATD = 0; // LED H
-            LATE = 0; // LED E
+            LATB |= 0x01; // LED B
         }
-        // Niveau eleve (> 250 cm)
+        // Niveau haut (> 250 cm)
         else if (Ib == 0 && Ih == 1) {
-            LATC = 0; // LED B
-            LATD = 0xFF; // LED H
-            LATE = 0; // LED E
+            LATB |= 0x02; // LED H
         }
         // Cas incoherent
         else if (Ib == 1 && Ih == 1) {
-            LATC = 0; // LED B
-            LATD = 0; // LED H
-            LATE = 0xFF; // LED E
+            LATB |= 0x04; // LED E
         }
     }
 }
