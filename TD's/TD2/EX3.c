@@ -46,6 +46,14 @@ void main() {
 
 // Version avec les Tableaux
 void main(){
+    // Bus d’entrée : PORTA
+    TRISA = 0xFF;
+    ANSELA = 0;
+
+    // Bus de sortie : PORTB
+    TRISB = 0;
+    LATB = 0;
+    
     char Entree[4] = {0, 1, 2, 3};
     char Sortie[4] = {0b11000011, 0b10011001, 0b10101010, 0b11111111};
     
