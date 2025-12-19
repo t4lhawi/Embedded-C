@@ -609,7 +609,7 @@ Il repose sur deux caractéristiques clés :
       <td>T1GPOL</td>
       <td>T1GTM</td>
       <td>T1GSPM</td>
-      <td>T1GGO / ¬DONE</td>
+      <td>T1GGO / ¬<span style="text-decoration: overline">DONE</span></td>
       <td>T1GVAL</td>
       <td colspan="2">T1GSS&lt;1:0&gt;</td>
     </tr>
