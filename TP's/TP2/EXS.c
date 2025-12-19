@@ -2,7 +2,7 @@
 // Filière : GSEIR3 (S1) | 2025/2026
 // mikroC PRO for PIC (PIC18F)
 
-// Q1
+//---------------------| Q1 |---------------------//
 void main() {
     TRISB = 0;
     LATB = 0;
@@ -13,7 +13,7 @@ void main() {
     }
 }
 
-// Q2
+//---------------------| Q2 |---------------------//
 void main() {
     TRISD = 0;
     LATD = 0;
@@ -29,7 +29,7 @@ void main() {
     }
 }
 
-// Q3
+//---------------------| Q3 |---------------------//
 void main() {
     TRISA |= 0b00000010; // RA1 en entrée
     ANSELA &= 0b11111101;
@@ -47,7 +47,7 @@ void main() {
     }
 }
 
-// Q4
+//---------------------| Q4 |---------------------//
 void main() {
     // Bus d’entrée : PORTA
     TRISA = 0xFF;
@@ -90,7 +90,7 @@ void main() {
     }
 }
 
-// Q5
+//---------------------| Q5 |---------------------//
 void main() {
     // PORTA 3bits : Entree (Operation)
     TRISA |= 0b00000111;
