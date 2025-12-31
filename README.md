@@ -14,9 +14,11 @@
    - **[Décalages de bits](#décalages-de-bits)**
    - **[Rotation des bits](#rotations-de-bits)**
    - **[Masques de bits (bit masks)](#masques-de-bits-bit-masks)**
+
 - **[Microcontrôleur PIC18F](#3-microcontrôleur-pic18f)**
    - **[Architecture du Microcontrôleur](#architecture-du-microcontrôleur-pic18f45k22)**
    - **[Pins du Microcontrôleur](#pins-du-microcontrôleur-pic18f45k22)**
+
 - **[Ports d’Entrée/Sortie (E/S)](#4-ports-dentréesortie-es)**
    - **[Registres de Contrôle](#registres-de-contrôle)**
    - **[Registres associés au PORTA](#registres-associés-au-porta)**
@@ -24,10 +26,12 @@
    - **[Registres associés au PORTC](#registres-associés-au-portc)**
    - **[Registres associés au PORTD](#registres-associés-au-portd)**
    - **[Registres associés au PORTE](#registres-associés-au-porte)**
-<!--
+
 - **[Gestion des Interruptions](#5-gestion-des-interruptions)**
+
 - **[Gestion des Timers](#6-gestion-des-timers)**
--->
+
+- **[Gestion de CAN](#7-gestion-de-can)**
 ---
 
 <h3 align="center"><a href="https://github.com/mohamedtalhaouii/Programmation-C" target="_blank">Lien de Programmation en C</a></h3>
@@ -1069,18 +1073,20 @@ Il repose sur deux caractéristiques clés :
 > - — = **emplacements non implémentés, lus comme ‘0’**.
 > - Les **bits grisés ne sont pas utilisés pour PORTC**.
 
-
-
-<!--
 ---
 
 ## **5. Gestion des Interruptions**
+
+
 
 ---
 
 ## **6. Gestion des Timers**
 
--->
+
+---
+## **7. Gestion de CAN**
+
 ---
 
 <h3 align="center"> 🧑🏻‍💻 | Made By : <a href="https://github.com/t4lhawi" target="_blank">Mohamed Talhaoui</a></h3>
