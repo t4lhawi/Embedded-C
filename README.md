@@ -28,6 +28,10 @@
    - **[Registres associés au PORTE](#registres-associés-au-porte)**
 
 - **[Gestion des Interruptions](#5-gestion-des-interruptions)**
+   -  **[Types d’interruptions](#domaines-dapplication)**
+   -  **[Registres d’interruptions](#domaines-dapplication)**
+   -  **[Routine d’interruption (ISR)](#domaines-dapplication)**
+
 
 - **[Gestion des Timers](#6-gestion-des-timers)**
 
