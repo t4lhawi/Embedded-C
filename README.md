@@ -1086,7 +1086,7 @@ Une **interruption** provoque l’**arrêt** du programme principal pour aller e
 
 - ### Logique d’interruption du PIC18
 ![interrupt_diag](https://github.com/user-attachments/assets/9ec4bac7-ec19-4170-bf94-0515fc5612ee)
- > **(1)** : L’interruption **RBIF** nécessite également l’activation individuelle des broches **IOCB**.
+ > **`(1)`** : L’interruption **RBIF** nécessite également l’activation individuelle des broches **IOCB**.
 
 - ### Types d’Interruptions (Sources)
 
@@ -1102,7 +1102,7 @@ Une **interruption** provoque l’**arrêt** du programme principal pour aller e
 
    - #### **Interruptions Internes**
 
-   <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%; text-align: center;">
+   <table>
      <thead>
        <tr>
          <th>Catégorie</th>
