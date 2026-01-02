@@ -28,7 +28,8 @@
    - **[Registres associés au PORTE](#registres-associés-au-porte)**
 
 - **[Gestion des Interruptions](#5-gestion-des-interruptions)**
-   -  **[Types d’interruptions](#domaines-dapplication)**
+   -  **[Logique d’interruption](#logique-dinterruption-du-pic18)**
+   -  **[Types d’Interruptions](#domaines-dapplication)**
    -  **[Registres d’interruptions](#domaines-dapplication)**
    -  **[Routine d’interruption (ISR)](#domaines-dapplication)**
 
@@ -1080,7 +1081,99 @@ Il repose sur deux caractéristiques clés :
 ---
 
 ## **5. Gestion des Interruptions**
+Une **interruption** provoque l’**arrêt** du programme principal pour aller exécuter une fonction d'interruption. 
+À la fin de cette fonction, le microcontrôleur reprend le programme principal à l’endroit où il l’a laissé.
 
+- ### Logique d’interruption du PIC18
+![interrupt_diag](https://github.com/user-attachments/assets/9ec4bac7-ec19-4170-bf94-0515fc5612ee)
+ > **(1)** : L’interruption **RBIF** nécessite également l’activation individuelle des broches **IOCB**.
+
+- ### Types d’Interruptions (Sources)
+
+   - #### **Interruptions Externes**
+
+   | Source | Broche  | Description                         |
+   | ------ | ------- | ----------------------------------- |
+   | INT0   | RB0     | Interruption sur front externe      |
+   | INT1   | RB1     | Interruption sur front externe      |
+   | INT2   | RB2     | Interruption sur front externe      |
+   | RBIF   | RB4–RB7 | Changement d’état des broches PORTB |
+
+
+   - #### **Interruptions Internes**
+
+   <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%; text-align: center;">
+     <thead>
+       <tr>
+         <th>Catégorie</th>
+         <th>Source</th>
+         <th>Description</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr>
+         <td rowspan="4">Timers</td>
+         <td>Timer0</td>
+         <td>Débordement du Timer0</td>
+       </tr>
+       <tr>
+         <td>Timer1</td>
+         <td>Débordement du Timer1</td>
+       </tr>
+       <tr>
+         <td>Timer2</td>
+         <td>Débordement du Timer2</td>
+       </tr>
+       <tr>
+         <td>Timer3</td>
+         <td>Débordement du Timer3</td>
+       </tr>
+       <tr>
+         <td rowspan="3">Analogiques</td>
+         <td>ADC</td>
+         <td>Fin de conversion A/N</td>
+       </tr>
+       <tr>
+         <td>Comparateurs</td>
+         <td>Interruption comparateur</td>
+       </tr>
+       <tr>
+         <td>HLVD</td>
+         <td>Détection basse tension</td>
+       </tr>
+       <tr>
+         <td rowspan="3">Communication</td>
+         <td>USART RX</td>
+         <td>Réception série</td>
+       </tr>
+       <tr>
+         <td>USART TX</td>
+         <td>Fin d’émission</td>
+       </tr>
+       <tr>
+         <td>SSP</td>
+         <td>SPI / I²C</td>
+       </tr>
+       <tr>
+         <td rowspan="2">Contrôle</td>
+         <td>CCP1</td>
+         <td>Capture / Compare / PWM</td>
+       </tr>
+       <tr>
+         <td>CCP2</td>
+         <td>Capture / Compare / PWM</td>
+       </tr>
+       <tr>
+         <td rowspan="2">Mémoire / Bus</td>
+         <td>EEPROM / FLASH</td>
+         <td>Fin d’écriture</td>
+       </tr>
+       <tr>
+         <td>Bus Collision</td>
+         <td>Collision sur le bus</td>
+       </tr>
+     </tbody>
+   </table>
 
 
 ---
