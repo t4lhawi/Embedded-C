@@ -28,9 +28,9 @@
    - **[Registres associés au PORTE](#registres-associés-au-porte)**
 
 - **[Gestion des Interruptions](#5-gestion-des-interruptions)**
-   -  **[Logique d’interruption](#logique-dinterruption-du-pic18)**
-   -  **[Types d’Interruptions](#domaines-dapplication)**
-   -  **[Registres d’interruptions](#domaines-dapplication)**
+   -  **[Logique des Interruptions](#logique-des-interruptions-du-pic18)**
+   -  **[Types des Interruptions](#types-des-interruptions-sources)**
+   -  **[Priorité des interruptions](#priorité-des-interruptions)**
    -  **[Routine d’interruption (ISR)](#domaines-dapplication)**
 
 
@@ -1084,11 +1084,11 @@ Il repose sur deux caractéristiques clés :
 Une **interruption** provoque l’**arrêt** du programme principal pour aller exécuter une fonction d'interruption. 
 À la fin de cette fonction, le microcontrôleur reprend le programme principal à l’endroit où il l’a laissé.
 
-- ### Logique d’interruption du PIC18
+- ### Logique des interruptions du PIC18
 ![interrupt_diag](https://github.com/user-attachments/assets/9ec4bac7-ec19-4170-bf94-0515fc5612ee)
  > **`(1)`** : L’interruption **RBIF** nécessite également l’activation individuelle des broches **IOCB**.
 
-- ### Types d’Interruptions (Sources)
+- ### Types des Interruptions (Sources)
 
    - #### **Interruptions Externes**
 
@@ -1174,6 +1174,9 @@ Une **interruption** provoque l’**arrêt** du programme principal pour aller e
        </tr>
      </tbody>
    </table>
+
+
+- ### Priorité des interruptions
 
 
 ---
