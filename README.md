@@ -28,10 +28,10 @@
    - **[Registres associés au PORTE](#registres-associés-au-porte)**
 
 - **[Gestion des Interruptions](#5-gestion-des-interruptions)**
+   -  **[Niveaux de Priorité](#niveaux-de-priorité)**
+   -  **[Mécanisme de Contrôle](#mécanisme-de-contrôle)**
    -  **[Logique des Interruptions](#logique-des-interruptions-du-pic18)**
    -  **[Types des Interruptions](#types-des-interruptions-sources)**
-   -  **[Priorité des interruptions](#priorité-des-interruptions)**
-   -  **[Routine d’interruption (ISR)](#domaines-dapplication)**
 
 
 - **[Gestion des Timers](#6-gestion-des-timers)**
@@ -1094,7 +1094,7 @@ Le PIC18 gère deux niveaux de priorité pour les interruptions :
 > - **Exception :** l’interruption `INT0` ne possède pas de bit de priorité → toujours **haute priorité**.
 
 - ###  Mécanisme de Contrôle
-- Les microcontrôleurs PIC18, utilisent **19 registres** pour le contrôle des interruptions :
+Les microcontrôleurs PIC18, utilisent **19 registres** pour le contrôle des interruptions :
 
 | **Registre**                 | **Rôle**                                                                                                                                                                                                            |
 | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1105,8 +1105,7 @@ Le PIC18 gère deux niveaux de priorité pour les interruptions :
 | **RCON**                     | Registre de contrôle du système : active/désactive le **mode priorité des interruptions** et fournit des informations système (reset, watchdog, etc.).                                                              |
 
 
-
-- Chaque source d’interruption est contrôlée par **3 bits** :
+Chaque source d’interruption est contrôlée par **3 bits** :
 
 | Bit    | Nom                | Rôle                                  |
 | ------ | ------------------ | ------------------------------------- |
