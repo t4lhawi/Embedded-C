@@ -1094,24 +1094,37 @@ Le PIC18 gère deux niveaux de priorité pour les interruptions :
 > - **Exception :** l’interruption `INT0` ne possède pas de bit de priorité → toujours **haute priorité**.
 
 - ###  Mécanisme de Contrôle
-Les microcontrôleurs PIC18, utilisent **19 registres** pour le contrôle des interruptions :
 
-| **Registre**                 | **Rôle**                                                                                                                                                                                                            |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **INTCON, INTCON2, INTCON3** | Gestion globale des interruptions : activation/désactivation des interruptions, configuration des interruptions externes (INT0, INT1, INT2), sélection du front (montant/descendant) et indicateurs d’interruption. |
-| **PIR1 – PIR5**              | *Peripheral Interrupt Request* : contiennent les **flags** indiquant qu’une interruption périphérique a eu lieu (timers, ADC, UART, CCP, etc.).                                                                     |
-| **PIE1 – PIE5**              | *Peripheral Interrupt Enable* : permettent **d’activer ou désactiver** chaque interruption périphérique individuellement.                                                                                           |
-| **IPR1 – IPR5**              | *Interrupt Priority* : définissent le **niveau de priorité** (haute ou basse) des interruptions périphériques (si le système de priorité est activé).                                                               |
-| **RCON**                     | Registre de contrôle du système : active/désactive le **mode priorité des interruptions** et fournit des informations système (reset, watchdog, etc.).                                                              |
+   - #### Registres de Contrôle
+   Les microcontrôleurs PIC18, utilisent **19 registres** pour le contrôle des interruptions :
+
+   | **Registre**                 | **Rôle**                                                                                                                                                                                                            |
+   | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | **INTCON, INTCON2, INTCON3** | Gestion globale des interruptions : activation/désactivation des interruptions, configuration des interruptions externes (INT0, INT1, INT2), sélection du front (montant/descendant) et indicateurs d’interruption. |
+   | **PIR1 – PIR5**              | *Peripheral Interrupt Request* : contiennent les **flags** indiquant qu’une interruption périphérique a eu lieu (timers, ADC, UART, CCP, etc.).                                                                     |
+   | **PIE1 – PIE5**              | *Peripheral Interrupt Enable* : permettent **d’activer ou désactiver** chaque interruption périphérique individuellement.                                                                                           |
+   | **IPR1 – IPR5**              | *Interrupt Priority* : définissent le **niveau de priorité** (haute ou basse) des interruptions périphériques (si le système de priorité est activé).                                                               |
+   | **RCON**                     | Registre de contrôle du système : active/désactive le **mode priorité des interruptions** et fournit des informations système (reset, watchdog, etc.).                                                              |
 
 
-Chaque source d’interruption est contrôlée par **3 bits** :
+   - #### 3 bits Globaux
+   Les interruptions globales sont contrôlées par **3 bits globaux** :
+  
+   | Bit             | Nom                                                       | Fonction                                                   |
+   | --------------- | --------------------------------------------------------- | ---------------------------------------------------------- |
+   | **IPEN**        | Interrupt Priority Enable                                 | Active ou désactive le mode **priorité des interruptions** |
+   | **GIEL / PEIE** | Global Interrupt Enable Low / Peripheral Interrupt Enable | Active les interruptions **basses** ou **périphériques**   |
+   | **GIEH / GIE**  | Global Interrupt Enable High / Global Interrupt Enable    | Active les interruptions **hautes** ou **globales**        |
 
-| Bit    | Nom                | Rôle                                  |
-| ------ | ------------------ | ------------------------------------- |
-| **IE** | Interrupt Enable   | Autorise ou Non l’interruption        |
-| **IF** | Interrupt Flag     | Indique qu’un événement s’est produit |
-| **IP** | Interrupt Priority | Définit le niveau (Haut / Bas)        |
+
+   - #### 3 bits Spécifiques 
+   Chaque source d’interruption est contrôlée par **3 bits spécifiques** :
+  
+   | Bit    | Nom                | Rôle                                  |
+   | ------ | ------------------ | ------------------------------------- |
+   | **IE** | Interrupt Enable   | Autorise ou Non l’interruption        |
+   | **IF** | Interrupt Flag     | Indique qu’un événement s’est produit |
+   | **IP** | Interrupt Priority | Définit le niveau (Haut / Bas)        |
 
 
 - ### Logique des Interruptions du PIC18
