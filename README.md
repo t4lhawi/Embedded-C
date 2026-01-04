@@ -28,10 +28,10 @@
    - **[Registres associés au PORTE](#registres-associés-au-porte)**
 
 - **[Gestion des Interruptions](#5-gestion-des-interruptions)**
-   -  **[Niveaux de Priorité](#niveaux-de-priorité)**
-   -  **[Mécanisme de Contrôle](#mécanisme-de-contrôle)**
    -  **[Logique des Interruptions](#logique-des-interruptions-du-pic18)**
    -  **[Types des Interruptions](#types-des-interruptions-sources)**
+   -  **[Mécanisme de Contrôle](#mécanisme-de-contrôle)**
+   -  **[Priorité des interruptions](#priorité-des-interruptions)**
 
 
 - **[Gestion des Timers](#6-gestion-des-timers)**
@@ -1179,8 +1179,6 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
 - ###  Mécanisme de Contrôle
 
    - #### Registres de Contrôle
-   Les microcontrôleurs PIC18, utilisent **19 registres** pour le contrôle des interruptions :
-
    | **Catégorie** | **Registres** | **Fonction** | **Description** |
    |-------------|--------------|--------------|--------------------------------|
    | **Contrôle Central** | `INTCON`, `INTCON2`, `INTCON3` | Interruptions de Base et Contrôle Global | **Bits GIE/PEIE :** <br>`0` = Interruptions désactivées <br>`1` = Interruptions activées<br><br>**Bits IE :** <br>`0` = Source désactivée <br>`1` = Source activée<br><br>**Bits IF :** <br>`0` = Pas d'événement <br>`1` = Événement détecté |
@@ -1195,34 +1193,32 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
    > - **IPR** = **I**nterrupt **P**riority **R**egister
    > - **RCON** = **R**eset **CON**trol
 
-   - #### Contrôle Global (Bits Système)
-   Ces bits gouvernent l'ensemble du système d'interruptions :
-  
+
+   - #### Contrôle Global (Bits Système)  
    | Bit | Registre | Nom | Fonction | Description |
    |-----|----------|-----|----------|-------------|
    | **IPEN** | `RCON<7>` | Interrupt Priority Enable | Définit l'architecture d'interruption | `0` = Mode priorité unique<br>`1` = Mode deux priorités |
    | **GIEH/GIE** | `INTCON<7>` | Global Interrupt Enable (High) | Gardien principal (nom change selon IPEN) | `0` = Interruptions désactivées<br>`1` = Interruptions activées |
    | **GIEL/PEIE** | `INTCON<6>` | Global Interrupt Enable Low | Contrôle secondaire (nom change selon IPEN) | `0` = Périphériques désactivés<br>`1` = Périphériques activés |
 
-   - #### Contrôle par Source (Bits Spécifiques)
-   Chaque périphérique possède son propre jeu de contrôle :
-  
+
+   - #### Contrôle par Source (Bits Spécifiques)  
    | Bit | Symbole | Localisation | Fonction | Description |
    |-----|---------|--------------|----------|-------------|
    | **IE** | `PIE1<bit>` | Registres PIE1-PIE5 | Autorise l'interruption pour ce périphérique spécifique | `0` = Source masquée<br>`1` = Source autorisée |
    | **IF** | `PIR1<bit>` | Registres PIR1-PIR5 | Indicateur matériel d'événement (set automatiquement) | `0` = Pas d'événement<br>`1` = Événement détecté (à effacer) |
    | **IP** | `IPR1<bit>` | Registres IPR1-IPR5 | Définit la priorité (seulement si IPEN=1) | `0` = Priorité basse<br>`1` = Priorité haute |
 
+
 - ### Priorité des interruptions
    - #### Niveaux de Priorité
-   Le PIC18 gère deux niveaux de priorité pour les interruptions :
    | Priorité           | Adresse vecteur | Routine                |
    | ------------------ | --------------- | ---------------------- |
    | **Haute priorité** | `0008h`         | `void interrupt()`     |
    | **Basse priorité** | `0018h`         | `void interrupt_low()` |
    
-   > - La gestion des priorités est assurée par les registres `IPRx`.
-   > - **Exception :** l’interruption `INT0` ne possède pas de bit de priorité → toujours **haute priorité**.
+   >  - La gestion des priorités est assurée par les registres `IPRx`.
+   >  - **Exception :** l’interruption `INT0` ne possède pas de bit de priorité → toujours **haute priorité**.
 
    - #### Modes de Fonctionnement
    | Configuration | INTCON<7>        | INTCON<6>         |
