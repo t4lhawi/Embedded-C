@@ -1112,24 +1112,32 @@ Le PIC18 gère deux niveaux de priorité pour les interruptions :
    > - **IPR** = **I**nterrupt **P**riority **R**egister
    > - **RCON** = **R**eset **CON**trol
 
-   - #### 3 bits Globaux
-   Les interruptions globales sont contrôlées par **3 bits globaux** :
+   - #### Contrôle Global (Bits Système)
+   Ces bits gouvernent l'ensemble du système d'interruptions :
   
-   | Bit             | Nom                                                       | Fonction                                                   |
-   | --------------- | --------------------------------------------------------- | ---------------------------------------------------------- |
-   | **IPEN**        | Interrupt Priority Enable                                 | Active ou désactive le mode **priorité des interruptions** |
-   | **GIEL / PEIE** | Global Interrupt Enable Low / Peripheral Interrupt Enable | Active les interruptions **basses** ou **périphériques**   |
-   | **GIEH / GIE**  | Global Interrupt Enable High / Global Interrupt Enable    | Active les interruptions **hautes** ou **globales**        |
+   | Bit | Registre | Nom | Fonction | Description |
+   |-----|----------|-----|----------|-------------|
+   | **IPEN** | `RCON<7>` | Interrupt Priority Enable | Définit l'architecture d'interruption | `0` = Mode priorité unique<br>`1` = Mode deux priorités |
+   | **GIEH/GIE** | `INTCON<7>` | Global Interrupt Enable (High) | Gardien principal (nom change selon IPEN) | `0` = Interruptions désactivées<br>`1` = Interruptions activées |
+   | **GIEL/PEIE** | `INTCON<6>` | Global Interrupt Enable Low | Contrôle secondaire (nom change selon IPEN) | `0` = Périphériques désactivés<br>`1` = Périphériques activés |
 
-
-   - #### 3 bits Spécifiques 
-   Chaque source d’interruption est contrôlée par **3 bits spécifiques** :
+   - #### Contrôle par Source (Bits Spécifiques)
+   Chaque périphérique possède son propre jeu de contrôle :
   
-   | Bit    | Nom                | Rôle                                  |
-   | ------ | ------------------ | ------------------------------------- |
-   | **IE** | Interrupt Enable   | Autorise ou Non l’interruption        |
-   | **IF** | Interrupt Flag     | Indique qu’un événement s’est produit |
-   | **IP** | Interrupt Priority | Définit le niveau (Haut / Bas)        |
+   | Bit | Symbole | Localisation | Fonction | Description |
+   |-----|---------|--------------|----------|-------------|
+   | **IE** | `PIE1<bit>` | Registres PIE1-PIE5 | Autorise l'interruption pour ce périphérique spécifique | `0` = Source masquée<br>`1` = Source autorisée |
+   | **IF** | `PIR1<bit>` | Registres PIR1-PIR5 | Indicateur matériel d'événement (set automatiquement) | `0` = Pas d'événement<br>`1` = Événement détecté (à effacer) |
+   | **IP** | `IPR1<bit>` | Registres IPR1-IPR5 | Définit la priorité (seulement si IPEN=1) | `0` = Priorité basse<br>`1` = Priorité haute |
+
+- ### Priorité des interruptions
+   - **Si IPEN = 0 (Mode simple)** : `INTCON<7>` = **GIE**, `INTCON<6>` = **PEIE**
+      - **GIE** Active TOUTES les interruptions si = 1
+      - **PEIE** Active les interruptions périphériques si = 1
+   - **Si IPEN = 1 (Mode priorité)** : `INTCON<7>` = **GIEH**, `INTCON<6>` = **GIEL**
+      - **GIEH** Active uniquement les interruptions Haute priorité
+      - **GIEL** Active uniquement les interruptions Basse priorité
+
 
 
 - ### Logique des Interruptions du PIC18
@@ -1222,10 +1230,6 @@ Le PIC18 gère deux niveaux de priorité pour les interruptions :
        </tr>
      </tbody>
    </table>
-
-
-- ### Priorité des interruptions
-
 
 
 
