@@ -28,7 +28,7 @@
    - **[Registres associés au PORTE](#registres-associés-au-porte)**
 
 - **[Gestion des Interruptions](#5-gestion-des-interruptions)**
-   -  **[Logique des Interruptions](#logique-des-interruptions-du-pic18)**
+   -  **[Logique des Interruptions (Diagram)](#logique-des-interruptions-du-pic18)**
    -  **[Types des Interruptions](#types-des-interruptions-sources)**
    -  **[Mécanisme de Contrôle](#mécanisme-de-contrôle)**
    -  **[Priorité des interruptions](#priorité-des-interruptions)**
