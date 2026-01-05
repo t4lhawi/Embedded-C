@@ -32,6 +32,7 @@
    -  **[Types des Interruptions](#types-des-interruptions-sources)**
    -  **[Mécanisme de Contrôle](#mécanisme-de-contrôle)**
    -  **[Priorité des interruptions](#priorité-des-interruptions)**
+   -  **[Registres de Gestion d'Interruption](#registres-de-gestion-dinterruption)**
 
 
 - **[Gestion des Timers](#6-gestion-des-timers)**
@@ -1225,6 +1226,126 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
    |-----|------------------------|--------------------------|
    | **INTCON<7> :** `(GIE/GIEH)` | `GIE = 1` : Active **Tout**<br>`GIE = 0` : Désactive Tout | `GIEH = 1` : Active **Haute Priorité**<br>`GIEH = 0` : Désactive Tout |
    | **INTCON<6> :** `(PEIE/GIEL)` | `PEIE = 1` : Active **Périphériques**<br>`PEIE = 0` : Désactive Périphériques | `GIEL = 1` : Active **Basse Priorité**<br>`GIEL = 0` : Désactive Basse Priorité |
+
+
+- ### Registres de Gestion d'Interruption
+
+   - #### **Registres de Contrôle Global**
+   
+      - **INTCON - Contrôle Interruptions de Base**
+      
+         | Bit 7 | Bit 6 | Bit 5 | Bit 4 | Bit 3 | Bit 2 | Bit 1 | Bit 0 |
+         |-------|-------|-------|-------|-------|-------|-------|-------|
+         | **GIE/GIEH** | **PEIE/GIEL** | **TMR0IE** | **INT0IE** | **RBIE** | **TMR0IF** | **INT0IF** | **RBIF** |
+      
+      > - **Bits 7-6** : Contrôle global (noms changent selon IPEN)
+      > - **Bits 5-3** : Activation des interruptions de base
+      > - **Bits 2-0** : Flags d'interruption de base
+      
+      - **INTCON2 - Configuration Interruptions Externes**
+      
+         | Bit 7 | Bit 6 | Bit 5 | Bit 4 | Bit 3 | Bit 2 | Bit 1 | Bit 0 |
+         |-------|-------|-------|-------|-------|-------|-------|-------|
+         | **RBPU** | **INTEDG0** | **INTEDG1** | **INTEDG2** | — | **TMR0IP** | — | **RBIP** |
+      
+      - **INTCON3 - Interruptions Externes 1 & 2**
+   
+         | Bit 7 | Bit 6 | Bit 5 | Bit 4 | Bit 3 | Bit 2 | Bit 1 | Bit 0 |
+         |-------|-------|-------|-------|-------|-------|-------|-------|
+         | **INT2IP** | **INT1IP** | — | **INT2IE** | **INT1IE** | — | **INT2IF** | **INT1IF** |
+   
+   
+   - #### **Registres de Priorité (IPR1 à IPR5)**
+   
+      - **IPR1 - Priorités Périphériques (Groupe 1)**
+      
+         | Bit 7 | Bit 6 | Bit 5 | Bit 4 | Bit 3 | Bit 2 | Bit 1 | Bit 0 |
+         |-------|-------|-------|-------|-------|-------|-------|-------|
+         | — | **ADIP** | **RC1IP** | **TX1IP** | **SSP1IP** | **CCP1IP** | **TMR2IP** | **TMR1IP** |
+      
+      - **IPR2 - Priorités Périphériques (Groupe 2)**
+      
+         | Bit 7 | Bit 6 | Bit 5 | Bit 4 | Bit 3 | Bit 2 | Bit 1 | Bit 0 |
+         |-------|-------|-------|-------|-------|-------|-------|-------|
+         | **OSCFIP** | **C1IP** | **C2IP** | **EEIP** | **BCL1IP** | **HLVDIP** | **TMR3IP** | **CCP2IP** |
+      
+      - **IPR3 - Priorités Périphériques (Groupe 3)**
+      
+         | Bit 7 | Bit 6 | Bit 5 | Bit 4 | Bit 3 | Bit 2 | Bit 1 | Bit 0 |
+         |-------|-------|-------|-------|-------|-------|-------|-------|
+         | **SSP2IP** | **BCL2IP** | **RC2IP** | **TX2IP** | **CTMUIP** | **TMR5GIP** | **TMR3GIP** | **TMR1GIP** |
+      
+      - **IPR4 - Priorités Périphériques (Groupe 4)**
+      
+         | Bit 7 | Bit 6 | Bit 5 | Bit 4 | Bit 3 | Bit 2 | Bit 1 | Bit 0 |
+         |-------|-------|-------|-------|-------|-------|-------|-------|
+         | — | — | — | — | — | **CCP5IP** | **CCP4IP** | **CCP3IP** |
+      
+      - **IPR5 - Priorités Périphériques (Groupe 5)**
+      
+         | Bit 7 | Bit 6 | Bit 5 | Bit 4 | Bit 3 | Bit 2 | Bit 1 | Bit 0 |
+         |-------|-------|-------|-------|-------|-------|-------|-------|
+         | — | — | — | — | — | **TMR6IP** | **TMR5IP** | **TMR4IP** |
+      
+      > **Valeurs IP bits :** `0` = Basse priorité, `1` = Haute priorité (si IPEN=1)
+   
+   
+   - #### **Registres d'Activation (PIE1 à PIE5)**
+   
+      - **PIE1 - Activation Périphériques (Groupe 1)**
+      
+         | Bit 7 | Bit 6 | Bit 5 | Bit 4 | Bit 3 | Bit 2 | Bit 1 | Bit 0 |
+         |-------|-------|-------|-------|-------|-------|-------|-------|
+         | — | **ADIE** | **RC1IE** | **TX1IE** | **SSP1IE** | **CCP1IE** | **TMR2IE** | **TMR1IE** |
+      
+      - **PIE2 - Activation Périphériques (Groupe 2)**
+      
+         | Bit 7 | Bit 6 | Bit 5 | Bit 4 | Bit 3 | Bit 2 | Bit 1 | Bit 0 |
+         |-------|-------|-------|-------|-------|-------|-------|-------|
+         | **OSCFIE** | **C1IE** | **C2IE** | **EEIE** | **BCL1IE** | **HLVDIE** | **TMR3IE** | **CCP2IE** |
+      
+      - **PIE3 à PIE5** - Structure identique à IPR3-IPR5 mais avec suffixe **IE**
+      
+
+      > **Valeurs IE bits :** `0` = Désactivé, `1` = Activé
+   
+   
+   - #### **Registres de Flags (PIR1 à PIR5)**
+   
+      - **PIR1 - Flags Périphériques (Groupe 1)**
+      
+         | Bit 7 | Bit 6 | Bit 5 | Bit 4 | Bit 3 | Bit 2 | Bit 1 | Bit 0 |
+         |-------|-------|-------|-------|-------|-------|-------|-------|
+         | — | **ADIF** | **RC1IF** | **TX1IF** | **SSP1IF** | **CCP1IF** | **TMR2IF** | **TMR1IF** |
+      
+      - **PIR2 à PIR5** - Structure identique à PIE2-PIE5 mais avec suffixe **IF**
+      
+      > **Valeurs IF bits :** `0` = Pas d'événement, `1` = Événement détecté (à effacer manuellement)
+      
+   
+   - #### **Registres de Configuration Port**
+   
+      - **ANSELB - Configuration Analogique/Digital**
+      
+         | Bit 7 | Bit 6 | Bit 5 | Bit 4 | Bit 3 | Bit 2 | Bit 1 | Bit 0 |
+         |-------|-------|-------|-------|-------|-------|-------|-------|
+         | — | — | **ANSB5** | **ANSB4** | **ANSB3** | **ANSB2** | **ANSB1** | **ANSB0** |
+      
+      - **IOCB - Interrupt-on-Change Port B**
+      
+         | Bit 7 | Bit 6 | Bit 5 | Bit 4 | Bit 3 | Bit 2 | Bit 1 | Bit 0 |
+         |-------|-------|-------|-------|-------|-------|-------|-------|
+         | **IOCB7** | **IOCB6** | **IOCB5** | **IOCB4** | — | — | — | — |
+      
+      
+      - **RCON - Registre de Contrôle Système**
+      
+         | Bit 7 | Bit 6 | Bit 5 | Bit 4 | Bit 3 | Bit 2 | Bit 1 | Bit 0 |
+         |-------|-------|-------|-------|-------|-------|-------|-------|
+         | **IPEN** | **SBOREN** | — | **RI** | **TO** | **PD** | **POR** | **BOR** |
+      
+      > - **Bit 7 (IPEN)** : `0`=Mode simple, `1`=Mode deux priorités
+      > - **Bits 4-0** : Indicateurs de reset (Power-on, Brown-out, etc.)
 
 
 ---
