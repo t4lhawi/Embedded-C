@@ -1220,11 +1220,11 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
    >  - La gestion des priorités est assurée par les registres `IPRx`.
    >  - **Exception :** l’interruption `INT0` ne possède pas de bit de priorité → toujours **haute priorité**.
 
-   - #### Modes de Fonctionnement
-   | Configuration | INTCON<7>        | INTCON<6>         |
-   |---------------|-------------------|-------------------|
-   | **Mode Simple** : `RCON.IPEN = 0` | `GIE = 1` → Active Tout | `PEIE = 1` → Active Périphériques |
-   | **Mode Priorité** : `RCON.IPEN = 1` | `GIEH = 1` → Active Haute Priorité | `GIEL = 1` → Active Basse Priorité |
+   - #### Modes de Fonctionnement   
+   | Bit | IPEN = 0 (Mode Simple) | IPEN = 1 (Mode Priorité) |
+   |-----|------------------------|--------------------------|
+   | **INTCON<7> :** `(GIE/GIEH)` | `GIE = 1` : Active **tout**<br>`GIE = 0` : Désactive tout | `GIEH = 1` : Active **haute priorité**<br>`GIEH = 0` : Désactive tout |
+   | **INTCON<6> :** `(PEIE/GIEL)` | `PEIE = 1` : Active **périphériques**<br>`PEIE = 0` : Désactive périphériques | `GIEL = 1` : Active **basse priorité**<br>`GIEL = 0` : Désactive basse priorité |
 
 
 ---
