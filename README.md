@@ -1223,8 +1223,8 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
    - #### Modes de Fonctionnement   
    | Bit | IPEN = 0 (Mode Simple) | IPEN = 1 (Mode Priorité) |
    |-----|------------------------|--------------------------|
-   | **INTCON<7> :** `(GIE/GIEH)` | `GIE = 1` : Active **tout**<br>`GIE = 0` : Désactive tout | `GIEH = 1` : Active **haute priorité**<br>`GIEH = 0` : Désactive tout |
-   | **INTCON<6> :** `(PEIE/GIEL)` | `PEIE = 1` : Active **périphériques**<br>`PEIE = 0` : Désactive périphériques | `GIEL = 1` : Active **basse priorité**<br>`GIEL = 0` : Désactive basse priorité |
+   | **INTCON<7> :** `(GIE/GIEH)` | `GIE = 1` : Active **Tout**<br>`GIE = 0` : Désactive Tout | `GIEH = 1` : Active **Haute Priorité**<br>`GIEH = 0` : Désactive Tout |
+   | **INTCON<6> :** `(PEIE/GIEL)` | `PEIE = 1` : Active **Périphériques**<br>`PEIE = 0` : Désactive Périphériques | `GIEL = 1` : Active **Basse Priorité**<br>`GIEL = 0` : Désactive Basse Priorité |
 
 
 ---
