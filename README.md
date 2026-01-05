@@ -1184,8 +1184,8 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
    | **Contrôle Central** | `INTCON`, `INTCON2`, `INTCON3` | Interruptions de Base et Contrôle Global | **Bits GIE/PEIE :** <br>`0` = Interruptions désactivées <br>`1` = Interruptions activées<br><br>**Bits IE :** <br>`0` = Source désactivée <br>`1` = Source activée<br><br>**Bits IF :** <br>`0` = Pas d'événement <br>`1` = Événement détecté |
    | **Flags** | `PIR1` à `PIR5` | Indicateurs d'Événements Périphériques | **Bits IFx :** <br>`0` = Événement non survenu <br>`1` = Événement survenu (à effacer manuellement) |
    | **Activation** | `PIE1` à `PIE5` | Masques d'Activation Individuelle | **Bits IEx :** <br>`0` = Interruption masquée <br>`1` = Interruption autorisée |
-   | **Priorité** | `IPR1` à `IPR5` | Niveaux de Priorité **(si IPEN=1)** | **Bits IPx :** <br>`0` = Priorité basse <br>`1` = Priorité haute (uniquement valide si IPEN=1) |
-   | **Configuration** | `RCON` | Choix du Mode | **Bit IPEN :** <br>`0` = Mode priorité unique (GIE/PEIE) <br>`1` = Mode deux priorités (GIEH/GIEL) |
+   | **Priorité** | `IPR1` à `IPR5` | Niveaux de Priorité **(si IPEN=1)** | **Bits IPx :** <br>`0` = Priorité basse <br>`1` = Priorité haute (uniquement valide si `IPEN=1`) |
+   | **Configuration** | `RCON` | Choix du Mode | **Bit IPEN :** <br>`0` = Mode priorité unique `(GIE/PEIE)` <br>`1` = Mode deux priorités `(GIEH/GIEL)` |
 
    > - **INTCON** = **INT**errupt **CON**trol
    > - **PIR** = **P**eripheral **I**nterrupt **R**equest
@@ -1205,9 +1205,9 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
    - #### Contrôle par Source (Bits Spécifiques)  
    | Bit | Symbole | Localisation | Fonction | Description |
    |-----|---------|--------------|----------|-------------|
-   | **IE** | `PIE1<bit>` | Registres PIE1-PIE5 | Autorise l'interruption pour ce périphérique spécifique | `0` = Source masquée<br>`1` = Source autorisée |
-   | **IF** | `PIR1<bit>` | Registres PIR1-PIR5 | Indicateur matériel d'événement (set automatiquement) | `0` = Pas d'événement<br>`1` = Événement détecté (à effacer) |
-   | **IP** | `IPR1<bit>` | Registres IPR1-IPR5 | Définit la priorité (seulement si IPEN=1) | `0` = Priorité basse<br>`1` = Priorité haute |
+   | **IE** | `PIE1<bit>` | Registres `PIE1-PIE5` | Autorise l'interruption pour ce périphérique spécifique | `0` = Source masquée<br>`1` = Source autorisée |
+   | **IF** | `PIR1<bit>` | Registres `PIR1-PIR5` | Indicateur matériel d'événement (set automatiquement) | `0` = Pas d'événement<br>`1` = Événement détecté (à effacer) |
+   | **IP** | `IPR1<bit>` | Registres `IPR1-IPR5` | Définit la priorité (seulement si `IPEN=1`) | `0` = Priorité basse<br>`1` = Priorité haute |
 
 
 - ### Priorité des interruptions
