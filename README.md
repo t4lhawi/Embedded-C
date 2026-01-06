@@ -1182,16 +1182,16 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
    - #### Registres de Contrôle
    | **Catégorie** | **Registres** | **Fonction** | **Description** |
    |-------------|--------------|--------------|--------------------------------|
-   | **Contrôle Central** | `INTCON`, `INTCON2`, `INTCON3` | Interruptions de Base et Contrôle Global | **Bits GIE/PEIE :** <br>`0` = Interruptions désactivées <br>`1` = Interruptions activées<br><br>**Bits IE :** <br>`0` = Source désactivée <br>`1` = Source activée<br><br>**Bits IF :** <br>`0` = Pas d'événement <br>`1` = Événement détecté |
-   | **Flags** | `PIR1` à `PIR5` | Indicateurs d'Événements Périphériques | **Bits IFx :** <br>`0` = Événement non survenu <br>`1` = Événement survenu (à effacer manuellement) |
-   | **Activation** | `PIE1` à `PIE5` | Masques d'Activation Individuelle | **Bits IEx :** <br>`0` = Interruption masquée <br>`1` = Interruption autorisée |
-   | **Priorité** | `IPR1` à `IPR5` | Niveaux de Priorité **(si IPEN=1)** | **Bits IPx :** <br>`0` = Priorité basse <br>`1` = Priorité haute (uniquement valide si `IPEN=1`) |
-   | **Configuration** | `RCON` | Choix du Mode | **Bit IPEN :** <br>`0` = Mode Priorité Unique (GIE/PEIE) <br>`1` = Mode Deux Priorités (GIEH/GIEL) |
+   | **[Contrôle Global](#registres-de-contrôle-global)** | `INTCON`, `INTCON2`, `INTCON3` | Interruptions de Base et Contrôle Global | **Bits GIE/PEIE :** <br>`0` = Interruptions désactivées <br>`1` = Interruptions activées<br><br>**Bits IE :** <br>`0` = Source désactivée <br>`1` = Source activée<br><br>**Bits IF :** <br>`0` = Pas d'événement <br>`1` = Événement détecté |
+   | **[Priorité](#registres-de-priorité-ipr1-à-ipr5)** | `IPR1` à `IPR5` | Niveaux de Priorité **([si IPEN=1](#modes-de-fonctionnement))** | **Bits IPx :** <br>`0` = Priorité basse <br>`1` = Priorité haute (uniquement valide si `IPEN=1`) |
+   | **[Activation](#registres-dactivation-pie1-à-pie5)** | `PIE1` à `PIE5` | Masques d'Activation Individuelle | **Bits IEx :** <br>`0` = Interruption masquée <br>`1` = Interruption autorisée |
+   | **[Flags](#registres-de-flags-pir1-à-pir5)** | `PIR1` à `PIR5` | Indicateurs d'Événements Périphériques | **Bits IFx :** <br>`0` = Événement non survenu <br>`1` = Événement survenu (à effacer manuellement) |
+   | **[Configuration](#egistres-de-configuration)** | `RCON` | Choix du Mode | **Bit IPEN :** <br>`0` = Mode Priorité Unique (GIE/PEIE) <br>`1` = Mode Deux Priorités (GIEH/GIEL) |
 
    > - **INTCON** = **INT**errupt **CON**trol
-   > - **PIR** = **P**eripheral **I**nterrupt **R**equest
-   > - **PIE** = **P**eripheral **I**nterrupt **E**nable  
    > - **IPR** = **I**nterrupt **P**riority **R**egister
+   > - **PIE** = **P**eripheral **I**nterrupt **E**nable  
+   > - **PIR** = **P**eripheral **I**nterrupt **R**equest
    > - **RCON** = **R**eset **CON**trol
 
 
@@ -1323,7 +1323,7 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
       > **Valeurs IF bits :** `0` = Pas d'événement, `1` = Événement détecté (à effacer manuellement)
       
    
-   - #### **Registres de Configuration Port**
+   - #### **Registres de Configuration**
    
       - **ANSELB - Configuration Analogique/Digital**
       
