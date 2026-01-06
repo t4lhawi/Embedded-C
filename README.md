@@ -1186,7 +1186,7 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
    | **[Priorité](#registres-de-priorité-ipr1-à-ipr5)** | `IPR1` à `IPR5` | Niveaux de Priorité **([si IPEN=1](#modes-de-fonctionnement))** | **Bits IPx :** <br>`0` = Priorité basse <br>`1` = Priorité haute (uniquement valide si `IPEN=1`) |
    | **[Activation](#registres-dactivation-pie1-à-pie5)** | `PIE1` à `PIE5` | Masques d'Activation Individuelle | **Bits IEx :** <br>`0` = Interruption masquée <br>`1` = Interruption autorisée |
    | **[Flags](#registres-de-flags-pir1-à-pir5)** | `PIR1` à `PIR5` | Indicateurs d'Événements Périphériques | **Bits IFx :** <br>`0` = Événement non survenu <br>`1` = Événement survenu (à effacer manuellement) |
-   | **[Configuration](#egistres-de-configuration)** | `RCON` | Choix du Mode | **Bit IPEN :** <br>`0` = Mode Priorité Unique (GIE/PEIE) <br>`1` = Mode Deux Priorités (GIEH/GIEL) |
+   | **[Configuration](#registres-de-configuration)** | `RCON` | Choix du Mode | **Bit IPEN :** <br>`0` = Mode Priorité Unique (GIE/PEIE) <br>`1` = Mode Deux Priorités (GIEH/GIEL) |
 
    > - **INTCON** = **INT**errupt **CON**trol
    > - **IPR** = **I**nterrupt **P**riority **R**egister
