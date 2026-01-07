@@ -1,4 +1,4 @@
-# **Sommaire :**
+# **Plan du Contenu :**
 
 - **[Introduction aux Systèmes Embarqués](#1-introduction-aux-systèmes-embarqués)**
    - **[Architecture Générale](#architecture-générale)**
