@@ -1095,10 +1095,10 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
 
    | Source | Broche  | Description                         |
    | ------ | ------- | ----------------------------------- |
-   | INT0   | RB0     | Interruption sur front externe      |
-   | INT1   | RB1     | Interruption sur front externe      |
-   | INT2   | RB2     | Interruption sur front externe      |
-   | RBIF   | RB4–RB7 | Changement d’état des broches PORTB |
+   | INT0   | `RB0`     | Interruption sur front externe      |
+   | INT1   | `RB1`     | Interruption sur front externe      |
+   | INT2   | `RB2`     | Interruption sur front externe      |
+   | RBIF   | `RB4` à `RB7` | Changement d’état des broches PORTB |
 
 
    - #### **Interruptions Internes**
@@ -1113,7 +1113,7 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
      </thead>
      <tbody>
        <tr>
-         <td rowspan="4">Timers</td>
+         <td rowspan="4"><strong>Timers</strong></td>
          <td>Timer0</td>
          <td>Débordement du Timer0</td>
        </tr>
@@ -1130,7 +1130,7 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
          <td>Débordement du Timer3</td>
        </tr>
        <tr>
-         <td rowspan="3">Analogiques</td>
+         <td rowspan="3"><strong>Analogiques</strong></td>
          <td>ADC</td>
          <td>Fin de conversion A/N</td>
        </tr>
@@ -1143,7 +1143,7 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
          <td>Détection basse tension</td>
        </tr>
        <tr>
-         <td rowspan="3">Communication</td>
+         <td rowspan="3"><strong>Communication</strong></td>
          <td>USART RX</td>
          <td>Réception série</td>
        </tr>
@@ -1156,7 +1156,7 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
          <td>SPI / I²C</td>
        </tr>
        <tr>
-         <td rowspan="2">Contrôle</td>
+         <td rowspan="2"><strong>Contrôle</strong></td>
          <td>CCP1</td>
          <td>Capture / Compare / PWM</td>
        </tr>
@@ -1165,7 +1165,7 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
          <td>Capture / Compare / PWM</td>
        </tr>
        <tr>
-         <td rowspan="2">Mémoire / Bus</td>
+         <td rowspan="2"><strong>Mémoire / Bus</strong></td>
          <td>EEPROM / FLASH</td>
          <td>Fin d’écriture</td>
        </tr>
