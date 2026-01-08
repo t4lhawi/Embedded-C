@@ -1366,12 +1366,12 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
    | **Mode** | Timer / Compteur | Timer / Compteur | Timer |
    | **Préscaleur** | `8-bit` Programmable Software | Préscaleur `2-bit` | Programmable Software (`1:1`, `1:4`, `1:16`) |
    | **Postscaleur** | Non | Non | Programmable (`1:1` à `1:16`) |
-   | **Source Horloge** | Interne / Externe | Interne / Externe / 32kHz | Interne |
+   | **Source Horloge** | Interne (Système) / Externe | Interne / Externe / 32kHz | Interne |
    | **Interruption** | Overflow | Overflow | Sur match `TMRx=PRx` |
    
    > - **Préscaleur :** Diviseur de Fréquence **AVANT** le Compteur.
    >    - **Sans préscaleur :** 1 tic = 1s
-   >    - **Préscaleur `1:8` :** 8 tics = 1s → **($`8`$ = $`2^{2bit}`$)**
+   >    - **Préscaleur `1:8` :** 8 tics = 1s → **(`1:8` = `1:2ᵇⁱᵗ`)**
    > - **Postscaleur :** Diviseur de Fréquence **APRÈS** le Compteur, sur l'interruption.
    >    - **Sans postscaleur :** Interruption à Chaque Overflow
    >    - **Postscaleur `1:10` :** Interruption Tous les 10 Overflows
