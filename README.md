@@ -41,19 +41,13 @@
 - ## **[Gestion de CAN](#7-gestion-de-can)**
 
 
+---
+
+<h3 align="center"><a href="https://github.com/mohamedtalhaouii/Programmation-C" target="_blank">Lien de Programmation en C</a></h3>
 
 ---
 
-<h3> 
-   <table align="center">
-  <thead>
-    <tr>
-      <th><a href="https://github.com/mohamedtalhaouii/Programmation-C" target="_blank">Lien de Programmation en C</a></th>
-      <th><a href="https://github.com/mohamedtalhaouii/Programmation-Cpp" target="_blank">Lien de Programmation en C++</a></th>
-    </tr>
-  </thead>
-</table>
-</h3>
+<h3 align="center"><a href="https://github.com/mohamedtalhaouii/Programmation-Cpp" target="_blank">Lien de Programmation en C++</a></h3>
 
 ---
 
