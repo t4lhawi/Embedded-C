@@ -19,7 +19,7 @@
    - **[Pins du Microcontrôleur](#pins-du-microcontrôleur-pic18f45k22)**
 
 - ## **[Ports d’Entrée/Sortie (E/S)](#4-ports-dentréesortie-es)**
-   - **[Registres de Contrôle](#registres-de-contrôle)**
+   - **[Registres de Contrôle](#registres-de-contrôle-1)**
    - **[Registres associés au PORTA](#registres-associés-au-porta)**
    - **[Registres associés au PORTB](#registres-associés-au-portb)**
    - **[Registres associés au PORTC](#registres-associés-au-portc)**
@@ -34,6 +34,8 @@
    - **[Registres de Gestion d'Interruption](#registres-de-gestion-dinterruption)**
 
 - ## **[Gestion des Timers](#6-gestion-des-timers)**
+   - **[Caractéristiques des Timers](#caractéristique-des-timers)**
+   - **[Registres de Contrôle](#registres-de-contrôle-2)**
    - **[Timer 0 (TMR0)](#logique-des-interruptions-du-pic18)**
    - **[Timers 1, 3 et 5 (TMR1/3/5)](#mécanisme-de-contrôle)**
    - **[Timers 2, 4 et 6 (TMR2/4/6)](#types-des-interruptions-sources)**
@@ -1354,9 +1356,41 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
 ---
 
 ## **6. Gestion des Timers**
+Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou **un compteur** indépendant du processeur. Il permet d'exécuter des tâches répétitives avec une précision temporelle parfaite sans bloquer le programme principal.
+
+- ### Caractéristique des Timers
+
+   | Caractéristique | TIMER0 | TIMER1/3/5 | TIMER2/4/6 |
+   |-----------------|--------|------------|------------|
+   | **Taille** | `8/16-bit` | `16-bit` (`TMRxH:TMRxL`) | `8-bit` (`TMRx` et `PRx`) |
+   | **Mode** | Timer / Compteur | Timer / Compteur | Timer |
+   | **Préscaleur** | `8-bit` Programmable Software | Préscaleur `2-bit` | Programmable Software (`1:1`, `1:4`, `1:16`) |
+   | **Postscaleur** | Non | Non | Programmable (`1:1` à `1:16`) |
+   | **Source Horloge** | Interne / Externe | Interne / Externe / 32kHz | Interne |
+   | **Interruption** | Overflow | Overflow | Sur match `TMRx=PRx` |
+   
+   > - **Préscaleur :** Diviseur de Fréquence **AVANT** le Compteur.
+   >    - **Sans préscaleur :** 1 tic = 1s
+   >    - **Préscaleur `1:8` :** 8 tics = 1s → **($`8`$ = $`2^{2bit}`$)**
+   > - **Postscaleur :** Diviseur de Fréquence **APRÈS** le Compteur, sur l'interruption.
+   >    - **Sans postscaleur :** Interruption à Chaque Overflow
+   >    - **Postscaleur `1:10` :** Interruption Tous les 10 Overflows
+
+
+- ### Registres de Contrôle
+   - #### Timer 0
+   - #### Timer 1/3/5
+   - #### Timer 2/4/6
+
+
+
+
+
+
 
 
 ---
+
 ## **7. Gestion de CAN**
 
 ---
