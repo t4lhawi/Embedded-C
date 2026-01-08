@@ -13,9 +13,9 @@ void main(){
 
     while(1){
         if(!etat){
-            LATC = 0x01;
+            LATC = 0x01; // Interrupteur Ouvert
         } else {
-            LATC = 0x02;
+            LATC = 0x02; // Interrupteur Fermé
         }
     }
 }
