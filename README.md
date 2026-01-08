@@ -1,13 +1,12 @@
 # **Plan du Contenu :**
 
-- **[Introduction aux Systèmes Embarqués](#1-introduction-aux-systèmes-embarqués)**
+- ## **[Introduction aux Systèmes Embarqués](#1-introduction-aux-systèmes-embarqués)**
    - **[Architecture Générale](#architecture-générale)**
-   -  **[Caractéristiques d’un Système Embarqué](#caractéristiques-dun-système-embarqué)**
-   -  **[Cycle de Développement](#cycle-de-développement)**
-   -  **[Domaines d’Application](#domaines-dapplication)**
+   - **[Caractéristiques d’un Système Embarqué](#caractéristiques-dun-système-embarqué)**
+   - **[Cycle de Développement](#cycle-de-développement)**
+   - **[Domaines d’Application](#domaines-dapplication)**
 
-
-- **[Manipulation des Bits](#2-manipulation-des-bits)**
+- ## **[Manipulation des Bits](#2-manipulation-des-bits)**
    - **[Représentation Binaire d’un Octet](#représentation-binaire-dun-octet-char-)**
    - **[Opérations bit à bit (bitwise)](#opérations-bit-à-bit-bitwise)**
    - **[Opérations courantes sur un bit précis](#opérations-courantes-sur-un-bit-précis)**
@@ -15,11 +14,11 @@
    - **[Rotation des bits](#rotations-de-bits)**
    - **[Masques de bits (bit masks)](#masques-de-bits-bit-masks)**
 
-- **[Microcontrôleur PIC18F](#3-microcontrôleur-pic18f)**
+- ## **[Microcontrôleur PIC18F](#3-microcontrôleur-pic18f)**
    - **[Architecture du Microcontrôleur](#architecture-du-microcontrôleur-pic18f45k22)**
    - **[Pins du Microcontrôleur](#pins-du-microcontrôleur-pic18f45k22)**
 
-- **[Ports d’Entrée/Sortie (E/S)](#4-ports-dentréesortie-es)**
+- ## **[Ports d’Entrée/Sortie (E/S)](#4-ports-dentréesortie-es)**
    - **[Registres de Contrôle](#registres-de-contrôle)**
    - **[Registres associés au PORTA](#registres-associés-au-porta)**
    - **[Registres associés au PORTB](#registres-associés-au-portb)**
@@ -27,17 +26,19 @@
    - **[Registres associés au PORTD](#registres-associés-au-portd)**
    - **[Registres associés au PORTE](#registres-associés-au-porte)**
 
-- **[Gestion des Interruptions](#5-gestion-des-interruptions)**
-   -  **[Logique des Interruptions (Diagram)](#logique-des-interruptions-du-pic18)**
-   -  **[Types des Interruptions](#types-des-interruptions-sources)**
-   -  **[Mécanisme de Contrôle](#mécanisme-de-contrôle)**
-   -  **[Priorité des interruptions](#priorité-des-interruptions)**
-   -  **[Registres de Gestion d'Interruption](#registres-de-gestion-dinterruption)**
+- ## **[Gestion des Interruptions](#5-gestion-des-interruptions)**
+   - **[Logique des Interruptions (Diagram)](#logique-des-interruptions-du-pic18)**
+   - **[Types des Interruptions](#types-des-interruptions-sources)**
+   - **[Mécanisme de Contrôle](#mécanisme-de-contrôle)**
+   - **[Priorité des interruptions](#priorité-des-interruptions)**
+   - **[Registres de Gestion d'Interruption](#registres-de-gestion-dinterruption)**
 
+- ## **[Gestion des Timers](#6-gestion-des-timers)**
+   - **[Timer 0 (TMR0)](#logique-des-interruptions-du-pic18)**
+   - **[Timers 1, 3 et 5 (TMR1/3/5)](#mécanisme-de-contrôle)**
+   - **[Timers 2, 4 et 6 (TMR2/4/6)](#types-des-interruptions-sources)**
 
-- **[Gestion des Timers](#6-gestion-des-timers)**
-
-- **[Gestion de CAN](#7-gestion-de-can)**
+- ## **[Gestion de CAN](#7-gestion-de-can)**
 ---
 
 <h3 align="center"><a href="https://github.com/mohamedtalhaouii/Programmation-C" target="_blank">Lien de Programmation en C</a></h3>
@@ -1238,9 +1239,9 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
          |-------|-------|-------|-------|-------|-------|-------|-------|
          | **GIE/GIEH** | **PEIE/GIEL** | **TMR0IE** | **INT0IE** | **RBIE** | **TMR0IF** | **INT0IF** | **RBIF** |
       
-      > - **Bits 7-6** : Contrôle global (noms changent selon IPEN)
-      > - **Bits 5-3** : Activation des interruptions de base
-      > - **Bits 2-0** : Flags d'interruption de base
+         > - **Bits 7-6** : Contrôle global (noms changent selon IPEN)
+         > - **Bits 5-3** : Activation des interruptions de base
+         > - **Bits 2-0** : Flags d'interruption de base
       
       - **INTCON2 - Configuration Interruptions Externes**
       
@@ -1344,8 +1345,8 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
          |-------|-------|-------|-------|-------|-------|-------|-------|
          | **IPEN** | **SBOREN** | — | **RI** | **TO** | **PD** | **POR** | **BOR** |
       
-      > - **Bit 7 (IPEN)** : `0`=Mode simple, `1`=Mode deux priorités
-      > - **Bits 4-0** : Indicateurs de reset (Power-on, Brown-out, etc.)
+         > - **Bit 7 (IPEN)** : `0`=Mode simple, `1`=Mode deux priorités
+         > - **Bits 4-0** : Indicateurs de reset (Power-on, Brown-out, etc.)
 
 
 ---
