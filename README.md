@@ -1355,7 +1355,7 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
    | **Postscaleur** | Non | Non | Programmable (`1:1` à `1:16`) |
    | **Source Horloge** | Interne (Système) / Externe | Interne / Externe / 32kHz | Interne |
    | **Interruption** | Overflow | Overflow | Sur match `TMRx=PRx` |
-   | **Applications** |	Délais, comptage | Mesure, RTC, CCP | PWM, Timing |
+   | **Applications** |	Délais, Comptage | Mesure, RTC, CCP | PWM, Timing |
    
    > - **Préscaleur :** Diviseur de Fréquence **AVANT** le Compteur.
    >    - **Sans préscaleur :** 1 tic = 1s
