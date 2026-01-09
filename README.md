@@ -1507,9 +1507,9 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
       >    - Seul `TMR0L` est **Utilisé**
 
 
-   - ### Période de Débordement (Overflow)
+   - #### Période de Débordement (Overflow)
 
-      - #### Période d’Horloge du Timer
+      - ##### Période d’Horloge du Timer
          > **En mode Timer (`T0CS = 0`) :**
  
          | $`T_H = \frac{4}{F_{osc}}`$ |
@@ -1517,7 +1517,7 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
 
  
      
-      - #### Temps Avant Débordement
+      - ##### Temps Avant Débordement
          
          | $`T_0 = \text{Iteration} \times \text{Prediv} \times T_H`$ |
          |------------------------------------------------------------|
@@ -1526,12 +1526,12 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
          > - **Prediv** = prescaler
          > - **$`T_H`$** = période d’horloge
       
-      - #### Valeur initiale du Timer0
+      - ##### Valeur initiale du Timer0
                
          | $`\text{TMR0}_{init} = \text{Max}_{Timer0} - \text{Iteration} + 1`$ |
          |---------------------------------------------------------------------|
       
-      - #### Valeur maximale du Timer0
+      - ##### Valeur maximale du Timer0
       
          | Mode        | Max   |
          | ----------- | ----- |
@@ -1539,7 +1539,7 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
          | **`16-bits`** | 65535 |
       
       
-      - #### Valeurs Possibles du Prédiviseur
+      - ##### Valeurs Possibles du Prédiviseur
       
          | $`\text{Prediv} \in \{1, 2, 4, 8, 16, 32, 64, 128, 256\}`$  |
          |-----------------------------------------------------------|
