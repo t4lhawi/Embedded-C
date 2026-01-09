@@ -366,7 +366,7 @@ Le **[PIC18F&sup1;](https://en.wikipedia.org/wiki/PIC_microcontrollers)** fait p
          <td>C1POL</td>
          <td>C1SP</td>
          <td>C1R</td>
-         <td colspan="2">C1CH&lt;1:0&gt;</td>
+         <td align="center" colspan="2">C1CH&lt;1:0&gt;</td>
        </tr>
        <tr>
          <td><strong>CM2CON0</strong></td>
@@ -376,7 +376,7 @@ Le **[PIC18F&sup1;](https://en.wikipedia.org/wiki/PIC_microcontrollers)** fait p
          <td>C2POL</td>
          <td>C2SP</td>
          <td>C2R</td>
-         <td colspan="2">C2CH&lt;1:0&gt;</td>
+         <td align="center" colspan="2">C2CH&lt;1:0&gt;</td>
        </tr>
        <tr>
          <td><strong>LATA</strong></td>
@@ -395,7 +395,7 @@ Le **[PIC18F&sup1;](https://en.wikipedia.org/wiki/PIC_microcontrollers)** fait p
          <td>DACLPS</td>
          <td>DACOE</td>
          <td>—</td>
-         <td colspan="2">DACPSS&lt;1:0&gt;</td>
+         <td align="center" colspan="2">DACPSS&lt;1:0&gt;</td>
          <td>—</td>
          <td>DACNSS</td>
        </tr>
@@ -404,7 +404,7 @@ Le **[PIC18F&sup1;](https://en.wikipedia.org/wiki/PIC_microcontrollers)** fait p
          <td>—</td>
          <td>—</td>
          <td>—</td>
-         <td colspan="5">DACR&lt;4:0&gt;</td>
+         <td align="center" colspan="5">DACR&lt;4:0&gt;</td>
        </tr>
        <tr>
          <td><strong>HVLDCON</strong></td>
@@ -412,7 +412,7 @@ Le **[PIC18F&sup1;](https://en.wikipedia.org/wiki/PIC_microcontrollers)** fait p
          <td>BGVST</td>
          <td>IRVST</td>
          <td>HLVDEN</td>
-         <td colspan="4">HLVDL&lt;3:0&gt;</td>
+         <td align="center" colspan="4">HLVDL&lt;3:0&gt;</td>
        </tr>
        <tr>
          <td><strong>PORTA</strong></td>
@@ -439,7 +439,7 @@ Le **[PIC18F&sup1;](https://en.wikipedia.org/wiki/PIC_microcontrollers)** fait p
        <tr>
          <td><strong>SRCON0</strong></td>
          <td>SRLEN</td>
-         <td colspan="3">SRCLK&lt;2:0&gt;</td>
+         <td align="center" colspan="3">SRCLK&lt;2:0&gt;</td>
          <td>SRQEN</td>
          <td>SRNQEN</td>
          <td>SRPS</td>
@@ -451,7 +451,7 @@ Le **[PIC18F&sup1;](https://en.wikipedia.org/wiki/PIC_microcontrollers)** fait p
          <td>SSPOV</td>
          <td>SSPEN</td>
          <td>CKP</td>
-         <td colspan="4">SSPM&lt;3:0&gt;</td>
+         <td align="center" colspan="4">SSPM&lt;3:0&gt;</td>
        </tr>
        <tr>
          <td><strong>T0CON</strong></td>
@@ -460,7 +460,7 @@ Le **[PIC18F&sup1;](https://en.wikipedia.org/wiki/PIC_microcontrollers)** fait p
          <td>T0CS</td>
          <td>T0SE</td>
          <td>PSA</td>
-         <td colspan="3">T0PS&lt;2:0&gt;</td>
+         <td align="center" colspan="3">T0PS&lt;2:0&gt;</td>
        </tr>
        <tr>
          <td><strong>TRISA</strong></td>
@@ -510,28 +510,28 @@ Le **[PIC18F&sup1;](https://en.wikipedia.org/wiki/PIC_microcontrollers)** fait p
        <tr>
          <td><strong>ECCP2AS</strong></td>
          <td>CCP2ASE</td>
-         <td colspan="3">CCP2AS&lt;2:0&gt;</td>
-         <td colspan="2">PSS2AC&lt;1:0&gt;</td>
-         <td colspan="2">PSS2BD&lt;1:0&gt;</td>
+         <td align="center" colspan="3">CCP2AS&lt;2:0&gt;</td>
+         <td align="center" colspan="2">PSS2AC&lt;1:0&gt;</td>
+         <td align="center" colspan="2">PSS2BD&lt;1:0&gt;</td>
        </tr>
        <tr>
          <td><strong>CCP2CON</strong></td>
-         <td colspan="2">P2M&lt;1:0&gt;</td>
-         <td colspan="2">DC2B&lt;1:0&gt;</td>
-         <td colspan="4">CCP2M&lt;3:0&gt;</td>
+         <td align="center" colspan="2">P2M&lt;1:0&gt;</td>
+         <td align="center" colspan="2">DC2B&lt;1:0&gt;</td>
+         <td align="center" colspan="4">CCP2M&lt;3:0&gt;</td>
        </tr>
        <tr>
          <td><strong>ECCP3AS</strong></td>
          <td>CCP3ASE</td>
-         <td colspan="3">CCP3AS&lt;2:0&gt;</td>
-         <td colspan="2">PSS3AC&lt;1:0&gt;</td>
-         <td colspan="2">PSS3BD&lt;1:0&gt;</td>
+         <td align="center" colspan="3">CCP3AS&lt;2:0&gt;</td>
+         <td align="center" colspan="2">PSS3AC&lt;1:0&gt;</td>
+         <td align="center" colspan="2">PSS3BD&lt;1:0&gt;</td>
        </tr>
        <tr>
          <td><strong>CCP3CON</strong></td>
-         <td colspan="2">P3M&lt;1:0&gt;</td>
-         <td colspan="2">DC3B&lt;1:0&gt;</td>
-         <td colspan="4">CCP3M&lt;3:0&gt;</td>
+         <td align="center" colspan="2">P3M&lt;1:0&gt;</td>
+         <td align="center" colspan="2">DC3B&lt;1:0&gt;</td>
+         <td align="center" colspan="4">CCP3M&lt;3:0&gt;</td>
        </tr>
        <tr>
          <td><strong>INTCON</strong></td>
@@ -618,12 +618,12 @@ Le **[PIC18F&sup1;](https://en.wikipedia.org/wiki/PIC_microcontrollers)** fait p
          <td>T1GSPM</td>
          <td>T1GGO / ¬<span style="text-decoration: overline">DONE</span></td>
          <td>T1GVAL</td>
-         <td colspan="2">T1GSS&lt;1:0&gt;</td>
+         <td align="center" colspan="2">T1GSS&lt;1:0&gt;</td>
        </tr>
        <tr>
          <td><strong>T3CON</strong></td>
-         <td colspan="2">TMR3CS&lt;1:0&gt;</td>
-         <td colspan="2">T3CKPS&lt;1:0&gt;</td>
+         <td align="center" colspan="2">TMR3CS&lt;1:0&gt;</td>
+         <td align="center" colspan="2">T3CKPS&lt;1:0&gt;</td>
          <td>T3SOSCEN</td>
          <td>¬T3SYNC</td>
          <td>T3RD16</td>
@@ -637,7 +637,7 @@ Le **[PIC18F&sup1;](https://en.wikipedia.org/wiki/PIC_microcontrollers)** fait p
          <td>T5GSPM</td>
          <td>T5GGO / ¬DONE</td>
          <td>T5GVAL</td>
-         <td colspan="2">T5GSS&lt;1:0&gt;</td>
+         <td align="center" colspan="2">T5GSS&lt;1:0&gt;</td>
        </tr>
        <tr>
          <td><strong>TRISB</strong></td>
@@ -701,28 +701,28 @@ Le **[PIC18F&sup1;](https://en.wikipedia.org/wiki/PIC_microcontrollers)** fait p
        <tr>
          <td><strong>ECCP1AS</strong></td>
          <td>CCP1ASE</td>
-         <td colspan="3">CCP1AS&lt;2:0&gt;</td>
-         <td colspan="2">PSS1AC&lt;1:0&gt;</td>
-         <td colspan="2">PSS1BD&lt;1:0&gt;</td>
+         <td align="center" colspan="3">CCP1AS&lt;2:0&gt;</td>
+         <td align="center" colspan="2">PSS1AC&lt;1:0&gt;</td>
+         <td align="center" colspan="2">PSS1BD&lt;1:0&gt;</td>
        </tr>
        <tr>
          <td><strong>CCP1CON</strong></td>
-         <td colspan="2">P1M&lt;1:0&gt;</td>
-         <td colspan="2">DC1B&lt;1:0&gt;</td>
-         <td colspan="4">CCP1M&lt;3:0&gt;</td>
+         <td align="center" colspan="2">P1M&lt;1:0&gt;</td>
+         <td align="center" colspan="2">DC1B&lt;1:0&gt;</td>
+         <td align="center" colspan="4">CCP1M&lt;3:0&gt;</td>
        </tr>
        <tr>
          <td><strong>ECCP2AS</strong></td>
          <td>CCP2ASE</td>
-         <td colspan="3">CCP2AS&lt;2:0&gt;</td>
-         <td colspan="2">PSS2AC&lt;1:0&gt;</td>
-         <td colspan="2">PSS2BD&lt;1:0&gt;</td>
+         <td align="center" colspan="3">CCP2AS&lt;2:0&gt;</td>
+         <td align="center" colspan="2">PSS2AC&lt;1:0&gt;</td>
+         <td align="center" colspan="2">PSS2BD&lt;1:0&gt;</td>
        </tr>
        <tr>
          <td><strong>CCP2CON</strong></td>
-         <td colspan="2">P2M&lt;1:0&gt;</td>
-         <td colspan="2">DC2B&lt;1:0&gt;</td>
-         <td colspan="4">CCP2M&lt;3:0&gt;</td>
+         <td align="center" colspan="2">P2M&lt;1:0&gt;</td>
+         <td align="center" colspan="2">DC2B&lt;1:0&gt;</td>
+         <td align="center" colspan="4">CCP2M&lt;3:0&gt;</td>
        </tr>
        <tr>
          <td><strong>CTMUCONH</strong></td>
@@ -785,12 +785,12 @@ Le **[PIC18F&sup1;](https://en.wikipedia.org/wiki/PIC_microcontrollers)** fait p
          <td>SSPOV</td>
          <td>SSPEN</td>
          <td>CKP</td>
-         <td colspan="4">SSPM&lt;3:0&gt;</td>
+         <td align="center" colspan="4">SSPM&lt;3:0&gt;</td>
        </tr>
        <tr>
          <td><strong>T1CON</strong></td>
-         <td colspan="2">TMR1CS&lt;1:0&gt;</td>
-         <td colspan="2">T1CKPS&lt;1:0&gt;</td>
+         <td align="center" colspan="2">TMR1CS&lt;1:0&gt;</td>
+         <td align="center" colspan="2">T1CKPS&lt;1:0&gt;</td>
          <td>T1SOSCEN</td>
          <td>¬T1SYNC</td>
          <td>T1RD16</td>
@@ -798,8 +798,8 @@ Le **[PIC18F&sup1;](https://en.wikipedia.org/wiki/PIC_microcontrollers)** fait p
        </tr>
        <tr>
          <td><strong>T3CON</strong></td>
-         <td colspan="2">TMR3CS&lt;1:0&gt;</td>
-         <td colspan="2">T3CKPS&lt;1:0&gt;</td>
+         <td align="center" colspan="2">TMR3CS&lt;1:0&gt;</td>
+         <td align="center" colspan="2">T3CKPS&lt;1:0&gt;</td>
          <td>T3SOSCEN</td>
          <td>¬T3SYNC</td>
          <td>T3RD16</td>
@@ -813,12 +813,12 @@ Le **[PIC18F&sup1;](https://en.wikipedia.org/wiki/PIC_microcontrollers)** fait p
          <td>T3GSPM</td>
          <td>T3GGO / ¬DONE</td>
          <td>T3GVAL</td>
-         <td colspan="2">T3GSS&lt;1:0&gt;</td>
+         <td align="center" colspan="2">T3GSS&lt;1:0&gt;</td>
        </tr>
        <tr>
          <td><strong>T5CON</strong></td>
-         <td colspan="2">TMR5CS&lt;1:0&gt;</td>
-         <td colspan="2">T5CKPS&lt;1:0&gt;</td>
+         <td align="center" colspan="2">TMR5CS&lt;1:0&gt;</td>
+         <td align="center" colspan="2">T5CKPS&lt;1:0&gt;</td>
          <td>T5SOSCEN</td>
          <td>¬T5SYNC</td>
          <td>T5RD16</td>
@@ -894,23 +894,23 @@ Le **[PIC18F&sup1;](https://en.wikipedia.org/wiki/PIC_microcontrollers)** fait p
        </tr>
        <tr>
          <td><strong>CCP1CON</strong></td>
-         <td colspan="2">P1M&lt;1:0&gt;</td>
-         <td colspan="2">DC1B&lt;1:0&gt;</td>
-         <td colspan="4">CCP1M&lt;3:0&gt;</td>
+         <td align="center" colspan="2">P1M&lt;1:0&gt;</td>
+         <td align="center" colspan="2">DC1B&lt;1:0&gt;</td>
+         <td align="center" colspan="4">CCP1M&lt;3:0&gt;</td>
        </tr>
        <tr>
          <td><strong>CCP2CON</strong></td>
-         <td colspan="2">P2M&lt;1:0&gt;</td>
-         <td colspan="2">DC2B&lt;1:0&gt;</td>
-         <td colspan="4">CCP2M&lt;3:0&gt;</td>
+         <td align="center" colspan="2">P2M&lt;1:0&gt;</td>
+         <td align="center" colspan="2">DC2B&lt;1:0&gt;</td>
+         <td align="center" colspan="4">CCP2M&lt;3:0&gt;</td>
        </tr>
        <tr>
          <td><strong>CCP4CON</strong></td>
           <td>—</td>
           <td>—</td>
           <td>—</td>
-         <td colspan="2">DC4B&lt;1:0&gt;</td>
-         <td colspan="4">CCP4M&lt;3:0&gt;</td>
+         <td align="center" colspan="2">DC4B&lt;1:0&gt;</td>
+         <td align="center" colspan="4">CCP4M&lt;3:0&gt;</td>
        </tr>
        <tr>
          <td><strong>LATD</strong></td>
@@ -962,7 +962,7 @@ Le **[PIC18F&sup1;](https://en.wikipedia.org/wiki/PIC_microcontrollers)** fait p
          <td>SSPOV</td>
          <td>SSPEN</td>
          <td>CKP</td>
-         <td colspan="4">SSPM&lt;3:0&gt;</td>
+         <td align="center" colspan="4">SSPM&lt;3:0&gt;</td>
        </tr>
        <tr>
          <td><strong>TRISD</strong></td>
@@ -1106,7 +1106,7 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
         </thead>
         <tbody>
           <tr>
-            <td rowspan="4"><strong><a href="#6-gestion-des-timers">Timers</a></strong></td>
+            <td rowspan="4"><strong>Timers</strong></td>
             <td>Timer0</td>
             <td>Débordement du Timer0</td>
           </tr>
@@ -1346,7 +1346,7 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
 ## **6. Gestion des Timers**
 Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou **un compteur** indépendant du processeur. Il permet d'exécuter des tâches répétitives avec une précision temporelle parfaite sans bloquer le programme principal.
 
-- ### Caractéristique des Timers
+- ### Types des Timers
 
    | Caractéristique | TIMER0 | TIMER1/3/5 | TIMER2/4/6 |
    |-----------------|--------|------------|------------|
@@ -1366,10 +1366,81 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
    >    - **Postscaleur `1:10` :** Interruption Tous les 10 Overflows
 
 
-- ### Registres de Contrôle
-   - #### Timer 0
-   - #### Timer 1/3/5
-   - #### Timer 2/4/6
+- ### Timer 0
+   - #### Registre de Contrôle
+
+   <table>
+     <thead>
+       <tr align="center">
+         <th>Bit 7</th>
+         <th>Bit 6</th>
+         <th>Bit 5</th>
+         <th>Bit 4</th>
+         <th>Bit 3</th>
+         <th>Bit 2</th>
+         <th>Bit 1</th>
+         <th>Bit 0</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr align="center">
+         <td><strong>TMR0ON</strong></td>
+         <td><strong>T08BIT</strong></td>
+         <td><strong>T0CS</strong></td>
+         <td><strong>T0SE</strong></td>
+         <td><strong>PSA</strong></td>
+         <td colspan="3"><strong>T0PS&lt;2:0&gt;</strong></td>
+       </tr>
+     </tbody>
+   </table>
+
+   > - **Bit 7 : TMR0ON - Timer0 Activation**
+   >    - **`0`** = **Désactivé**
+   >    - **`1`** = **Activé**
+   
+   > - **Bit 6 : T08BIT - Mode Timer0**
+   >    - **`0`** = **Mode `16-bit`**
+   >    - **`1`** = **Mode `8-bit`**
+   
+   > - **Bit 5 : T0CS - Source d'Horloge**
+   >    - **`0`** = Horloge **Interne** (Cycle d'Instruction Fosc/4)
+   >    - **`1`** = Horloge **Externe** (Broche `T0CKI`)
+   
+   > - **Bit 4 : T0SE - Front d'Horloge Externe**
+   >    - **`0`** = Front **Montant** (LOW→HIGH)
+   >    - **`1`** = Front **Descendant** (HIGH→LOW)
+   
+   > - **Bit 3 : PSA - Attribution du Préscaleur**
+   >    - **`0`** = **Attribué**
+   >    - **`1`** = **NON Attribué**
+   
+   > - **Bits 2-0 : T0PS<2:0> - Sélection du Préscaleur**
+   > 
+   >      | T0PS2 | T0PS1 | T0PS0 | Valeur préscaleur |
+   >      |-------|-------|-------|-------------------|
+   >      | 0 | 0 | 0 | 1:2 |
+   >      | 0 | 0 | 1 | 1:4 |
+   >      | 0 | 1 | 0 | 1:8 |
+   >      | 0 | 1 | 1 | 1:16 |
+   >      | 1 | 0 | 0 | 1:32 |
+   >      | 1 | 0 | 1 | 1:64 |
+   >      | 1 | 1 | 0 | 1:128 |
+   >      | 1 | 1 | 1 | 1:256 |
+
+   - #### Mode Fonctionnement
+
+      | Bit                         | **Mode Timer** (`T0CS = 0`)   | **Mode Compteur** (`T0CS = 1`)     |
+      | --------------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------- |
+      | **T0CON<5> :** `T0CS`       | **`0`** : Source **interne**<br>**Horloge** = `Fosc / 4` | **`1`** : Source **Externe**<br>Entrée sur **`RA4` / `T0CKI`**                          |
+      | **T0CON<4> :** `T0SE`       | **Ignoré** (Sans Effet)                        | **`0`** : Comptage sur **Front Montant**<br>**`1`** : Comptage sur **Front descendant** |
+
+
+- ### Timer 1/3/5
+
+
+
+
+- ### Timer 2/4/6
 
 
 
