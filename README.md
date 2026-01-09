@@ -1347,7 +1347,7 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
 
 - ### Caractéristique des Timers
 
-   | Caractéristique | TIMER0 | TIMER1/3/5 | TIMER2/4/6 |
+   | Caractéristique | Timer 0 | Timer 1/3/5 | Timer 2/4/6 |
    |-----------------|--------|------------|------------|
    | **Taille** | `8/16-bit` | `16-bit` (`TMRxH:TMRxL`) | `8-bit` (`TMRx` et `PRx`) |
    | **Mode** | Timer / Compteur | Timer / Compteur | Timer |
