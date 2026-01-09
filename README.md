@@ -1351,18 +1351,18 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
    |-----------------|--------|------------|------------|
    | **Taille** | `8/16-bit` | `16-bit` (`TMRxH:TMRxL`) | `8-bit` (`TMRx` et `PRx`) |
    | **Mode** | Timer / Compteur | Timer / Compteur | Timer |
-   | **Préscaleur** | `8-bit` Programmable Software | Préscaleur `2-bit` | Programmable Software (`1:1`, `1:4`, `1:16`) |
-   | **Postscaleur** | Non | Non | Programmable (`1:1` à `1:16`) |
+   | **Prédiviseur (Prescaler)** | `8-bit` Programmable Software | Prédiviseur `2-bit` | Programmable Software (`1:1`, `1:4`, `1:16`) |
+   | **Post-diviseur (Postscaler)** | Non | Non | Programmable (`1:1` à `1:16`) |
    | **Source Horloge** | Interne (Système) / Externe | Interne / Externe / 32kHz | Interne |
    | **Interruption** | Overflow | Overflow | Sur match `TMRx=PRx` |
    | **Applications** |	Délais, Comptage | Mesure, RTC, CCP | PWM, Timing |
    
-   > - **Préscaleur :** Diviseur de Fréquence **AVANT** le Compteur.
-   >    - **Sans préscaleur :** 1 tic = 1s
-   >    - **Préscaleur `1:8` :** 8 tics = 1s → **(`1:8` = `1:2ᵇⁱᵗ`)**
-   > - **Postscaleur :** Diviseur de Fréquence **APRÈS** le Compteur, sur l'interruption.
-   >    - **Sans postscaleur :** Interruption à Chaque Overflow
-   >    - **Postscaleur `1:10` :** Interruption Tous les 10 Overflows
+   > - **Prédiviseur :** Diviseur de Fréquence **AVANT** le Compteur.
+   >    - **Sans Prédiviseur :** 1 tic = 1s
+   >    - **Prédiviseur `1:8` :** 8 tics = 1s → **(`1:8` = `1:2ᵇⁱᵗ`)**
+   > - **Post-diviseur :** Diviseur de Fréquence **APRÈS** le Compteur, sur l'interruption.
+   >    - **Sans Post-diviseur :** Interruption à Chaque Overflow
+   >    - **Post-diviseur `1:10` :** Interruption Tous les 10 Overflows
 
 
 - ### Timer 0 (TMR0)
@@ -1408,13 +1408,13 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
          - **`0`** = Front **Montant** (LOW→HIGH)
          - **`1`** = Front **Descendant** (HIGH→LOW)
       
-      - **Bit 3 : `PSA` - Attribution du Préscaleur**
+      - **Bit 3 : `PSA` - Attribution du Prédiviseur**
          - **`0`** = **Attribué**
          - **`1`** = **NON Attribué**
       
-      - **Bits 2-0 : `T0PS<2:0>` - Sélection du Préscaleur**
+      - **Bits 2-0 : `T0PS<2:0>` - Sélection du Prédiviseur**
        
-         | T0PS2 | T0PS1 | T0PS0 | Valeur préscaleur |
+         | T0PS2 | T0PS1 | T0PS0 | Valeur Prédiviseur |
          |-------|-------|-------|-------------------|
          | 0 | 0 | 0 | 1:2 |
          | 0 | 0 | 1 | 1:4 |
@@ -1505,6 +1505,47 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
       > - Si **T08BIT = 1 (`8-bit`)** :
       >    - `TMR0H` est **Ignoré**
       >    - Seul `TMR0L` est **Utilisé**
+
+
+   - ### Période de Débordement (Overflow)
+
+      - #### Période d’Horloge du Timer
+         > **En mode Timer (`T0CS = 0`) :**
+ 
+         | $`T_H = \frac{4}{F_{osc}}`$ |
+         |-----------------------------|
+
+ 
+     
+      - #### Temps Avant Débordement
+         
+         | $`T_0 = \text{Iteration} \times \text{Prediv} \times T_H`$ |
+         |------------------------------------------------------------|
+      
+         > - **Iteration** = nombre d’incréments du Timer
+         > - **Prediv** = prescaler
+         > - **$`T_H`$** = période d’horloge
+      
+      - #### Valeur initiale du Timer0
+               
+         | $`\text{TMR0}_{init} = \text{Max}_{Timer0} - \text{Iteration} + 1`$ |
+         |---------------------------------------------------------------------|
+      
+      - #### Valeur maximale du Timer0
+      
+         | Mode        | Max   |
+         | ----------- | ----- |
+         | **`8-bits`**  | 255   |
+         | **`16-bits`** | 65535 |
+      
+      
+      - #### Valeurs Possibles du Prédiviseur
+      
+         | $`\text{Prediv} \in \{1, 2, 4, 8, 16, 32, 64, 128, 256\}`$  |
+         |-----------------------------------------------------------|
+         
+
+
 
 - ### Timer 1/3/5 (TMR1/3/5)
 
