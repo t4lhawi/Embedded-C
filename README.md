@@ -1482,11 +1482,11 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
           </tr>
           <tr>
             <td><strong>TMR0H</strong></td>
-            <td align="center" colspan="8">Timer0 Register, High Byte</td>
+            <td align="center" colspan="8">Timer0 Register, High Byte <strong>&lt;15:8&gt;</strong></td>
           </tr>
           <tr>
             <td><strong>TMR0L</strong></td>
-            <td align="center" colspan="8">Timer0 Register, Low Byte</td>
+            <td align="center" colspan="8">Timer0 Register, Low Byte <strong>&lt;7:0&gt;</strong></td>
           </tr>
           <tr>
             <td><strong>TRISA</strong></td>
@@ -1501,6 +1501,10 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
           </tr>
         </tbody>
       </table>
+
+      > - Si **T08BIT = 1 (`8-bit`)** :
+      >    - `TMR0H` est **Ignoré**
+      >    - Seul `TMR0L` est **Utilisé**
 
 - ### Timer 1/3/5 (TMR1/3/5)
 
