@@ -35,9 +35,9 @@
 
 - ## **[Gestion des Timers](#6-gestion-des-timers)**
    - **[Caractéristiques des Timers](#caractéristique-des-timers)**
-   - **[Timer 0 (TMR0)](#logique-des-interruptions-du-pic18)**
-   - **[Timers 1, 3 et 5 (TMR1/3/5)](#mécanisme-de-contrôle)**
-   - **[Timers 2, 4 et 6 (TMR2/4/6)](#types-des-interruptions-sources)**
+   - **[Timer 0 (TMR0)](#timer-0-tmr0)**
+   - **[Timers 1, 3 et 5 (TMR1/3/5)](#timer-135-tmr135)**
+   - **[Timers 2, 4 et 6 (TMR2/4/6)](#timer-246-tmr246)**
 
 - ## **[Gestion de CAN](#7-gestion-de-can)**
 
@@ -1365,7 +1365,7 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
    >    - **Postscaleur `1:10` :** Interruption Tous les 10 Overflows
 
 
-- ### Timer 0
+- ### Timer 0 (TMR0)
    - #### Registre de Contrôle
       <table>
         <thead>
@@ -1502,12 +1502,12 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
         </tbody>
       </table>
 
-- ### Timer 1/3/5
+- ### Timer 1/3/5 (TMR1/3/5)
 
 
 
 
-- ### Timer 2/4/6
+- ### Timer 2/4/6 (TMR2/4/6)
 
 
 
