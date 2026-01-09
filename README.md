@@ -1105,7 +1105,7 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
         </thead>
         <tbody>
           <tr>
-            <td rowspan="4"><strong>Timers</strong></td>
+            <td rowspan="4"><strong><a href="#6-gestion-des-timers">Timers</a></strong></td>
             <td>Timer0</td>
             <td>Débordement du Timer0</td>
           </tr>
@@ -1432,6 +1432,75 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
       | **T0CON<5> :** `T0CS`       | **`0`** : Source **Interne** (**Fosc/4**)        | **`1`** : Source **Externe** (Broche **RA4 / T0CKI**)                     |
       | **T0CON<4> :** `T0SE`       | **Ignoré** (Sans Effet)                          | **`0`** : Comptage sur **Front Montant**<br>**`1`** : Comptage sur **Front descendant** |
 
+   - #### Registres Associés
+
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Bit 7</th>
+            <th>Bit 6</th>
+            <th>Bit 5</th>
+            <th>Bit 4</th>
+            <th>Bit 3</th>
+            <th>Bit 2</th>
+            <th>Bit 1</th>
+            <th>Bit 0</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong><a href="#mécanisme-de-contrôle">INTCON</a></strong></td>
+            <td>GIE / GIEH</td>
+            <td>PEIE / GIEL</td>
+            <td>TMR0IE</td>
+            <td>INT0IE</td>
+            <td>RBIE</td>
+            <td>TMR0IF</td>
+            <td>INT0IF</td>
+            <td>RBIF</td>
+          </tr>
+          <tr>
+            <td><strong><a href="#mécanisme-de-contrôle">INTCON2</a></strong></td>
+            <td>RBPU</td>
+            <td>INTEDG0</td>
+            <td>INTEDG1</td>
+            <td>INTEDG2</td>
+            <td>—</td>
+            <td>TMR0IP</td>
+            <td>—</td>
+            <td>RBIP</td>
+          </tr>
+          <tr>
+            <td><strong>T0CON</strong></td>
+            <td>TMR0ON</td>
+            <td>T08BIT</td>
+            <td>T0CS</td>
+            <td>T0SE</td>
+            <td>PSA</td>
+            <td align="center" colspan="3">T0PS&lt;2:0&gt;</td>
+          </tr>
+          <tr>
+            <td><strong>TMR0H</strong></td>
+            <td align="center" colspan="8">Timer0 Register, High Byte</td>
+          </tr>
+          <tr>
+            <td><strong>TMR0L</strong></td>
+            <td align="center" colspan="8">Timer0 Register, Low Byte</td>
+          </tr>
+          <tr>
+            <td><strong>TRISA</strong></td>
+            <td>TRISA7</td>
+            <td>TRISA6</td>
+            <td>TRISA5</td>
+            <td>TRISA4</td>
+            <td>TRISA3</td>
+            <td>TRISA2</td>
+            <td>TRISA1</td>
+            <td>TRISA0</td>
+          </tr>
+        </tbody>
+      </table>
 
 - ### Timer 1/3/5
 
