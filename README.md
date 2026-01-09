@@ -19,7 +19,7 @@
    - **[Pins du Microcontrôleur](#pins-du-microcontrôleur-pic18f45k22)**
 
 - ## **[Ports d’Entrée/Sortie (E/S)](#4-ports-dentréesortie-es)**
-   - **[Registres de Contrôle](#registres-de-contrôle-1)**
+   - **[Registres de Contrôle](#registres-de-contrôle)**
    - **[Registres associés au PORTA](#registres-associés-au-porta)**
    - **[Registres associés au PORTB](#registres-associés-au-portb)**
    - **[Registres associés au PORTC](#registres-associés-au-portc)**
@@ -35,7 +35,6 @@
 
 - ## **[Gestion des Timers](#6-gestion-des-timers)**
    - **[Caractéristiques des Timers](#caractéristique-des-timers)**
-   - **[Registres de Contrôle](#registres-de-contrôle-2)**
    - **[Timer 0 (TMR0)](#logique-des-interruptions-du-pic18)**
    - **[Timers 1, 3 et 5 (TMR1/3/5)](#mécanisme-de-contrôle)**
    - **[Timers 2, 4 et 6 (TMR2/4/6)](#types-des-interruptions-sources)**
@@ -1346,7 +1345,7 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
 ## **6. Gestion des Timers**
 Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou **un compteur** indépendant du processeur. Il permet d'exécuter des tâches répétitives avec une précision temporelle parfaite sans bloquer le programme principal.
 
-- ### Types des Timers
+- ### Caractéristique des Timers
 
    | Caractéristique | TIMER0 | TIMER1/3/5 | TIMER2/4/6 |
    |-----------------|--------|------------|------------|
@@ -1368,71 +1367,70 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
 
 - ### Timer 0
    - #### Registre de Contrôle
+      <table>
+        <thead>
+          <tr align="center">
+            <th>Bit 7</th>
+            <th>Bit 6</th>
+            <th>Bit 5</th>
+            <th>Bit 4</th>
+            <th>Bit 3</th>
+            <th>Bit 2</th>
+            <th>Bit 1</th>
+            <th>Bit 0</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr align="center">
+            <td><strong>TMR0ON</strong></td>
+            <td><strong>T08BIT</strong></td>
+            <td><strong>T0CS</strong></td>
+            <td><strong>T0SE</strong></td>
+            <td><strong>PSA</strong></td>
+            <td colspan="3"><strong>T0PS&lt;2:0&gt;</strong></td>
+          </tr>
+        </tbody>
+      </table>
 
-   <table>
-     <thead>
-       <tr align="center">
-         <th>Bit 7</th>
-         <th>Bit 6</th>
-         <th>Bit 5</th>
-         <th>Bit 4</th>
-         <th>Bit 3</th>
-         <th>Bit 2</th>
-         <th>Bit 1</th>
-         <th>Bit 0</th>
-       </tr>
-     </thead>
-     <tbody>
-       <tr align="center">
-         <td><strong>TMR0ON</strong></td>
-         <td><strong>T08BIT</strong></td>
-         <td><strong>T0CS</strong></td>
-         <td><strong>T0SE</strong></td>
-         <td><strong>PSA</strong></td>
-         <td colspan="3"><strong>T0PS&lt;2:0&gt;</strong></td>
-       </tr>
-     </tbody>
-   </table>
-
-   > - **Bit 7 : TMR0ON - Timer0 Activation**
-   >    - **`0`** = **Désactivé**
-   >    - **`1`** = **Activé**
-   
-   > - **Bit 6 : T08BIT - Mode Timer0**
-   >    - **`0`** = **Mode `16-bit`**
-   >    - **`1`** = **Mode `8-bit`**
-   
-   > - **Bit 5 : T0CS - Source d'Horloge**
-   >    - **`0`** = Horloge **Interne** (Cycle d'Instruction Fosc/4)
-   >    - **`1`** = Horloge **Externe** (Broche `T0CKI`)
-   
-   > - **Bit 4 : T0SE - Front d'Horloge Externe**
-   >    - **`0`** = Front **Montant** (LOW→HIGH)
-   >    - **`1`** = Front **Descendant** (HIGH→LOW)
-   
-   > - **Bit 3 : PSA - Attribution du Préscaleur**
-   >    - **`0`** = **Attribué**
-   >    - **`1`** = **NON Attribué**
-   
-   > - **Bits 2-0 : T0PS<2:0> - Sélection du Préscaleur**
-   > 
-   >      | T0PS2 | T0PS1 | T0PS0 | Valeur préscaleur |
-   >      |-------|-------|-------|-------------------|
-   >      | 0 | 0 | 0 | 1:2 |
-   >      | 0 | 0 | 1 | 1:4 |
-   >      | 0 | 1 | 0 | 1:8 |
-   >      | 0 | 1 | 1 | 1:16 |
-   >      | 1 | 0 | 0 | 1:32 |
-   >      | 1 | 0 | 1 | 1:64 |
-   >      | 1 | 1 | 0 | 1:128 |
-   >      | 1 | 1 | 1 | 1:256 |
+      - **Bit 7 : `TMR0ON` - Timer0 Activation**
+         - **`0`** = **Désactivé**
+         - **`1`** = **Activé**
+      
+      - **Bit 6 : `T08BIT` - Mode Timer0**
+         - **`0`** = **Mode `16-bit`**
+         - **`1`** = **Mode `8-bit`**
+      
+      - **Bit 5 : `T0CS` - Source d'Horloge**
+         - **`0`** = Horloge **Interne** (Cycle d'Instruction **Fosc/4**)
+         - **`1`** = Horloge **Externe** (Broche **RA4 / T0CKI**)
+      
+      - **Bit 4 : `T0SE` - Front d'Horloge Externe**
+         - **`0`** = Front **Montant** (LOW→HIGH)
+         - **`1`** = Front **Descendant** (HIGH→LOW)
+      
+      - **Bit 3 : `PSA` - Attribution du Préscaleur**
+         - **`0`** = **Attribué**
+         - **`1`** = **NON Attribué**
+      
+      - **Bits 2-0 : `T0PS<2:0>` - Sélection du Préscaleur**
+       
+         | T0PS2 | T0PS1 | T0PS0 | Valeur préscaleur |
+         |-------|-------|-------|-------------------|
+         | 0 | 0 | 0 | 1:2 |
+         | 0 | 0 | 1 | 1:4 |
+         | 0 | 1 | 0 | 1:8 |
+         | 0 | 1 | 1 | 1:16 |
+         | 1 | 0 | 0 | 1:32 |
+         | 1 | 0 | 1 | 1:64 |
+         | 1 | 1 | 0 | 1:128 |
+         | 1 | 1 | 1 | 1:256 |
 
    - #### Mode Fonctionnement
 
-      | Bit                         | **Mode Timer** (`T0CS = 0`)   | **Mode Compteur** (`T0CS = 1`)     |
-      | --------------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------- |
-      | **T0CON<5> :** `T0CS`       | **`0`** : Source **interne**<br>**Horloge** = `Fosc / 4` | **`1`** : Source **Externe**<br>Entrée sur **`RA4` / `T0CKI`**                          |
-      | **T0CON<4> :** `T0SE`       | **Ignoré** (Sans Effet)                        | **`0`** : Comptage sur **Front Montant**<br>**`1`** : Comptage sur **Front descendant** |
+      | Champ / Bit                 | **Mode Timer** (`T0CS = 0`)                      | **Mode Compteur** (`T0CS = 1`)                                            |
+      | --------------------------- | ------------------------------------------------ | ------------------------------------------------------------------------- |
+      | **T0CON<5> :** `T0CS`       | **`0`** : Source **Interne** (**Fosc/4**)        | **`1`** : Source **Externe** (Broche **RA4 / T0CKI**)                     |
+      | **T0CON<4> :** `T0SE`       | **Ignoré** (Sans Effet)                          | **`0`** : Comptage sur **Front Montant**<br>**`1`** : Comptage sur **Front descendant** |
 
 
 - ### Timer 1/3/5
