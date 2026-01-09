@@ -1106,7 +1106,7 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
         </thead>
         <tbody>
           <tr>
-            <td rowspan="4"><strong>Timers</strong></td>
+            <td rowspan="4"><strong><a href="#6-gestion-des-timers">Timers</a></strong></td>
             <td>Timer0</td>
             <td>Débordement du Timer0</td>
           </tr>
