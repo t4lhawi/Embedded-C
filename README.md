@@ -1430,7 +1430,7 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
       | Champ / Bit                 | **Mode Timer** (`T0CS = 0`)                      | **Mode Compteur** (`T0CS = 1`)                                            |
       | --------------------------- | ------------------------------------------------ | ------------------------------------------------------------------------- |
       | **T0CON<5> :** `T0CS`       | **`0`** : Source **Interne** (**Fosc/4**)        | **`1`** : Source **Externe** (Broche **RA4 / T0CKI**)                     |
-      | **T0CON<4> :** `T0SE`       | **Ignoré** (Sans Effet)                          | **`0`** : Comptage sur **Front Montant**<br>**`1`** : Comptage sur **Front descendant** |
+      | **T0CON<4> :** `T0SE`       | **Ignoré** (Sans Effet)                          | **`0`** : Comptage sur **Front Montant**<br>**`1`** : Comptage sur **Front Descendant** |
 
    - #### Registres Associés
 
