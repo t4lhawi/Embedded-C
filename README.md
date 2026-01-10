@@ -1526,11 +1526,8 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
  
      
      > - **Valeur Maximale**
-     > 
-     >    | Mode        | Max   |
-     >    | ----------- | ----- |
-     >    | **`8-bits`**  | 255   |
-     >    | **`16-bits`** | 65535 |
+     >    - **$`Max(8bits) = 255`$**
+     >    - **$`Max(16bits) = 65535`$**
       
          
    
