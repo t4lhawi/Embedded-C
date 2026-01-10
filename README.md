@@ -1351,15 +1351,15 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
    |-----------------|--------|------------|------------|
    | **Taille** | `8/16-bit` | `16-bit` (`TMRxH:TMRxL`) | `8-bit` (`TMRx` et `PRx`) |
    | **Mode** | Timer / Compteur | Timer / Compteur | Timer |
-   | **Prédiviseur (Prescaler)** | `8-bit` Programmable Software | Prédiviseur `2-bit` | Programmable Software (`1:1`, `1:4`, `1:16`) |
+   | **Pré-diviseur (Prescaler)** | `8-bit` Programmable Software | Pré-diviseur `2-bit` | Programmable Software (`1:1`, `1:4`, `1:16`) |
    | **Post-diviseur (Postscaler)** | Non | Non | Programmable (`1:1` à `1:16`) |
    | **Source Horloge** | Interne (Système) / Externe | Interne / Externe / 32kHz | Interne |
    | **Interruption** | Overflow | Overflow | Sur match `TMRx=PRx` |
    | **Applications** |	Délais, Comptage | Mesure, RTC, CCP | PWM, Timing |
    
-   > - **Prédiviseur :** Diviseur de Fréquence **AVANT** le Compteur.
-   >    - **Sans Prédiviseur :** 1 tic = 1s
-   >    - **Prédiviseur `1:8` :** 8 tics = 1s → **(`1:8` = `1:2ᵇⁱᵗ`)**
+   > - **Pré-diviseur :** Diviseur de Fréquence **AVANT** le Compteur.
+   >    - **Sans Pré-diviseur :** 1 tic = 1s
+   >    - **Pré-diviseur `1:8` :** 8 tics = 1s → **(`1:8` = `1:2ᵇⁱᵗ`)**
    > - **Post-diviseur :** Diviseur de Fréquence **APRÈS** le Compteur, sur l'interruption.
    >    - **Sans Post-diviseur :** Interruption à Chaque Overflow
    >    - **Post-diviseur `1:10` :** Interruption Tous les 10 Overflows
@@ -1408,13 +1408,13 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
          - **`0`** = Front **Montant** (LOW→HIGH)
          - **`1`** = Front **Descendant** (HIGH→LOW)
       
-      - **Bit 3 : `PSA` - Attribution du Prédiviseur**
+      - **Bit 3 : `PSA` - Attribution du Pré-diviseur**
          - **`0`** = **Attribué**
          - **`1`** = **NON Attribué**
       
-      - **Bits 2-0 : `T0PS<2:0>` - Sélection du Prédiviseur**
+      - **Bits 2-0 : `T0PS<2:0>` - Sélection du Pré-diviseur**
        
-         | T0PS2 | T0PS1 | T0PS0 | Valeur Prédiviseur |
+         | T0PS2 | T0PS1 | T0PS0 | Valeur Pré-diviseur |
          |-------|-------|-------|-------------------|
          | 0 | 0 | 0 | 1:2 |
          | 0 | 0 | 1 | 1:4 |
@@ -1539,7 +1539,7 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
          | **`16-bits`** | 65535 |
       
       
-      - ##### Valeurs Possibles du Prédiviseur
+      - ##### Valeurs Possibles du Pré-diviseur
       
          | $`\text{Prediv} \in \{1, 2, 4, 8, 16, 32, 64, 128, 256\}`$  |
          |-----------------------------------------------------------|
