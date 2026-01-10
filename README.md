@@ -1362,7 +1362,7 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
 
 
 - ### Timer 0 (TMR0)
-   - #### Registre de Contrôle
+   - #### Registre de Contrôle - `T0CON`
       <table>
         <thead>
           <tr align="center">
