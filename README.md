@@ -7,7 +7,7 @@
    - **[Domaines d’Application](#domaines-dapplication)**
 
 - ## **[Manipulation des Bits](#2-manipulation-des-bits)**
-   - **[Représentation Binaire d’un Octet](#représentation-binaire-dun-octet-char-)**
+   - **[Représentation Binaire d’un Octet](#représentation-binaire-dun-octet-char)**
    - **[Opérations bit à bit (bitwise)](#opérations-bit-à-bit-bitwise)**
    - **[Opérations courantes sur un bit précis](#opérations-courantes-sur-un-bit-précis)**
    - **[Décalages de bits](#décalages-de-bits)**
@@ -113,7 +113,7 @@ Il combine : **microcontrôleur**, **logiciel embarqué**, **interfaces**, **cap
 
 ## **2. Manipulation des Bits**
 
-- ### Représentation Binaire d’un Octet (`char`) :
+- ### Représentation Binaire d’un Octet (`char`)
    Un type `char` est codé sur 8 bits, numérotés de b0 à b7.
    <table>
      <thead>
@@ -150,7 +150,7 @@ Il combine : **microcontrôleur**, **logiciel embarqué**, **interfaces**, **cap
    | **NOT (négation)** | `~`     | `a = ~x`         | Inverse tous les bits (0→1, 1→0).                                           |
 
 
-- ### **Opérations courantes sur un bit précis**
+- ### **Opérations Courantes sur un Bit Précis**
 
    | Opération                        | Code                        | Description                       |
    | -------------------------------- | --------------------------- | --------------------------------- |
@@ -165,7 +165,7 @@ Il combine : **microcontrôleur**, **logiciel embarqué**, **interfaces**, **cap
 
 
 
-- ### **Décalages de bits**
+- ### **Décalages de Bits**
 
    | Opération             | Symbole | Code     | Description                                                                          |
    | --------------------- | ------- | -------- | ------------------------------------------------------------------------------------ |
@@ -174,7 +174,7 @@ Il combine : **microcontrôleur**, **logiciel embarqué**, **interfaces**, **cap
 
 
 
-- ### **Rotations de bits**
+- ### **Rotations de Bits**
 
    | Opération             | Code                         | Description                                                            |
    | --------------------- | ---------------------------- | ---------------------------------------------------------------------- |
@@ -184,7 +184,7 @@ Il combine : **microcontrôleur**, **logiciel embarqué**, **interfaces**, **cap
    > - Les rotations conservent tous les bits, contrairement aux décalages.
    > - Pour un `char`, on considère **8 bits** (adapter 8 selon la taille du type).
 
-- ### **Masques de bits (bit masks)**
+- ### **Masques de Bits (Bit Masks)**
 
    | Opération                          | Code             | Description                           |
    | ---------------------------------- | ---------------- | ------------------------------------- |
