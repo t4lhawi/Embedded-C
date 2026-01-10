@@ -1503,43 +1503,37 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
       >    - Seul `TMR0L` est **Utilisé**
 
 
-   - #### Période de Débordement (Overflow)
-
-      - ##### Période d’Horloge du Timer
-         > **En mode Timer (`T0CS = 0`) :**
+   - #### Période de Débordement $`T_0`$ (Overflow)
+      - ##### En Mode Timer (`T0CS = 0`)
  
-         | $`T_H = \frac{4}{F_{osc}}`$ |
-         |-----------------------------|
+         |        Étapes                            |             En Mode Timer (`T0CS = 0`)                                             |
+         | ---------------------------------------- | :--------------------------------------------------------------------------------: |
+         | **Étape 1 :** Période d’Horloge Interne  | <div align="center">**$`T_H = \frac{4}{F_{osc}}`$**                                |
+         | **Étape 2 :** Choix du Pré-diviseur      | <div align="center">**$`\text{Prediv} \in \{1, 2, 4, 8, 16, 32, 64, 128, 256\}`$** |
+         | **Étape 3 :** Période d’un Incrément     | <div align="center">**$`T_{inc}​ = \text{Prediv} \times T_H`$**                     |
+         | **Étape 4 :** Nombre d’Itérations        | <div align="center">**$`N = \frac{T_{désiré}}{T_{inc}}`$**                         |
+         | **Étape 5 :** Valeur Initiale à Charger  | <div align="center">**$`\text{TMR0}_{init} = \text{Max} - \text{N} + 1`$**         |
+         | **Formule Finale**                       | <div align="center">**$`T_0 ​= N \times \text{Prediv} \times \frac{4}{F_{osc​}}`$**  |​​​​
 
+      - ##### En Mode Compteur (`T0CS = 1`)
+
+         |        Étapes                               |             En Mode Compteur (`T0CS = 1`)                                                 |
+         | ------------------------------------------- | :---------------------------------------------------------------------------------------: |
+         | **Étape 1 :** Choix du Pré-diviseur         | <div align="center">**$`\text{Prediv} \in \{1, 2, 4, 8, 16, 32, 64, 128, 256\}`$**        |
+         | **Étape 2 :** Nombre d’Événements à Compter | <div align="center">**$`N = \text{Nombre d’Impulsions Souhaitées}`$**                     |
+         | **Étape 3 :** Valeur Initiale à Charger     | <div align="center">**$`\text{TMR0}_{init} = \text{Max} - \text{N} + 1`$**                |
+         | **Formule Finale**                          | <div align="center">**$`\text{Débordement Aprés N } \times \text{ Prediv Impulsions}`$**  |
  
      
-      - ##### Temps Avant Débordement
+     > - **Valeur Maximale**
+     > 
+     >    | Mode        | Max   |
+     >    | ----------- | ----- |
+     >    | **`8-bits`**  | 255   |
+     >    | **`16-bits`** | 65535 |
+      
          
-         | $`T_0 = \text{Iteration} \times \text{Prediv} \times T_H`$ |
-         |------------------------------------------------------------|
-      
-         > - **Iteration** = nombre d’incréments du Timer
-         > - **Prediv** = prescaler
-         > - **$`T_H`$** = période d’horloge
-      
-      - ##### Valeur initiale du Timer0
-               
-         | $`\text{TMR0}_{init} = \text{Max}_{Timer0} - \text{Iteration} + 1`$ |
-         |---------------------------------------------------------------------|
-      
-      - ##### Valeur maximale du Timer0
-      
-         | Mode        | Max   |
-         | ----------- | ----- |
-         | **`8-bits`**  | 255   |
-         | **`16-bits`** | 65535 |
-      
-      
-      - ##### Valeurs Possibles du Pré-diviseur
-      
-         | $`\text{Prediv} \in \{1, 2, 4, 8, 16, 32, 64, 128, 256\}`$  |
-         |-----------------------------------------------------------|
-         
+   
 
 
 
