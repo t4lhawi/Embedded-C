@@ -1366,7 +1366,7 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
 
 
 - ### Timer 0 (TMR0)
-   - #### Registre de Contrôle - `T0CON`
+   - #### Registre de Contrôle – `T0CON`
       <table>
         <thead>
           <tr align="center">
@@ -1392,27 +1392,27 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
         </tbody>
       </table>
 
-      - **Bit 7 : `TMR0ON` - Timer0 Activation**
+      - **Bit 7 : `TMR0ON` – Timer0 Activation**
          - **`0`** = **Désactivé**
          - **`1`** = **Activé**
       
-      - **Bit 6 : `T08BIT` - Mode Timer0**
+      - **Bit 6 : `T08BIT` – Mode Timer0**
          - **`0`** = **Mode `16-bit`**
          - **`1`** = **Mode `8-bit`**
       
-      - **Bit 5 : `T0CS` - Source d'Horloge**
+      - **Bit 5 : `T0CS` – Source d'Horloge**
          - **`0`** = Horloge **Interne** (Cycle d'Instruction **Fosc/4**)
          - **`1`** = Horloge **Externe** (Broche **RA4 / T0CKI**)
       
-      - **Bit 4 : `T0SE` - Front d'Horloge Externe**
+      - **Bit 4 : `T0SE` – Front d'Horloge Externe**
          - **`0`** = Front **Montant** (LOW→HIGH)
          - **`1`** = Front **Descendant** (HIGH→LOW)
       
-      - **Bit 3 : `PSA` - Attribution du Pré-diviseur**
+      - **Bit 3 : `PSA` – Attribution du Pré-diviseur**
          - **`0`** = **Attribué**
          - **`1`** = **NON Attribué**
       
-      - **Bits 2-0 : `T0PS<2:0>` - Sélection du Pré-diviseur**
+      - **Bits 2-0 : `T0PS<2:0>` – Sélection du Pré-diviseur**
        
          | T0PS2 | T0PS1 | T0PS0 | Valeur Pré-diviseur |
          |-------|-------|-------|-------------------|
@@ -1543,7 +1543,68 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
 
 - ### Timer 1/3/5 (TMR1/3/5)
 
+   - #### Registre de Contrôle – `TxCON` (x = 1, 3, 5)
+      <table>
+        <thead>
+          <tr align="center">
+            <th>Bit 7</th>
+            <th>Bit 6</th>
+            <th>Bit 5</th>
+            <th>Bit 4</th>
+            <th>Bit 3</th>
+            <th>Bit 2</th>
+            <th>Bit 1</th>
+            <th>Bit 0</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr align="center">
+            <td colspan="2"><strong>TMRxCS&lt;1:0&gt;</strong></td>
+            <td colspan="2"><strong>TXCKPS&lt;1:0&gt;</strong></td>
+            <td><strong>TXSOSCEN</strong></td>
+            <td><strong>TXSYNC</strong></td>
+            <td><strong>TXRD16</strong></td>
+            <td><strong>TMRxON</strong></td>
+          </tr>
+        </tbody>
+      </table>
 
+      - **Bits 7-6 : `TMRxCS<1:0>` – Sélection de la Source d'Horloge du Timer**
+         | TMRxCS1 | TMRxCS0 | Source d'Horloge |
+         |---------|---------|------------------|
+         | 0 | 0 | **Horloge d'Instruction (`Fosc/4`)** |
+         | 0 | 1 | **Horloge Système (`Fosc`)** |
+         | 1 | 0 | **Source Externe (Broche `TXCKI`) *ou* Oscillateur Secondaire** (selon **`TXSOSCEN`**) |
+         | 1 | 1 | **Réservé – Ne pas Utiliser** |
+
+         > - Si **`TMRxCS<1:0> = 10`** et **`TXSOSCEN = 0`** : Horloge Externe sur **Broche `TXCKI`** (Front Montant).
+         > - Si **`TMRxCS<1:0> = 10`** et **`TXSOSCEN = 1`** : **Oscillateur à Quartz (Secondaire)** sur Broches **`SOSC/SOSCO`**.
+
+      - **Bits 5-4 : `TXCKPS<1:0>` – Sélection du Prédiviseur d'Horloge**
+         | TXCKPS1 | TXCKPS0 | Valeur du Prédiviseur |
+         |---------|---------|------------------------|
+         | 0 | 0 | **1:1** (Pas de division) |
+         | 0 | 1 | **1:2** |
+         | 1 | 0 | **1:4** |
+         | 1 | 1 | **1:8** |
+
+      - **Bit 3 : `TXSOSCEN` – Activation de l'Oscillateur Secondaire**
+         - **`0`** = **Désactivé**
+         - **`1`** = **Activé** (circuit oscillateur secondaire dédié)
+
+      - **Bit 2 : `TXSYNC` – Synchronisation de l'Horloge Externe**
+         - Si `TMRxCS<1:0> = 1X` (Source Externe) :
+            - **`0`** = Synchronisation avec l'**Horloge Système (Fosc)**
+            - **`1`** = **Pas de synchronisation**
+         - Si `TMRxCS<1:0> = 0X` (Source Interne) : **Ce bit est ignoré.**
+
+      - **Bit 1 : `TXRD16` – Mode de Lecture/Écriture `16-Bits`**
+         - **`0`** = Lecture/écriture en **deux opérations `8-bits`**
+         - **`1`** = Lecture/écriture en **une opération `16-bits`**
+
+      - **Bit 0 : `TMRxON` – Activation du Timer**
+         - **`0`** = **Arrêt** – Réinitialise la bascule de gâchette du Timer
+         - **`1`** = **Marche**
 
 
 - ### Timer 2/4/6 (TMR2/4/6)
