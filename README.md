@@ -44,7 +44,7 @@
 
 ---
 
-<h3 align="center"><a href="https://ww1.microchip.com/downloads/jp/DeviceDoc/jp547043.pdf" target="_blank">Data Sheet - PIC18F45K22</a></h3>
+<h3 align="center"><a href="https://ww1.microchip.com/downloads/jp/DeviceDoc/jp547043.pdf" target="_blank">Data Sheet - PIC18(L)F2X/4XK22</a></h3>
 
 ---
 
