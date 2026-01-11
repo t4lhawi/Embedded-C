@@ -8,11 +8,11 @@
 
 - ## **[Manipulation des Bits](#2-manipulation-des-bits)**
    - **[Représentation Binaire d’un Octet](#représentation-binaire-dun-octet-char)**
-   - **[Opérations bit à bit (bitwise)](#opérations-bit-à-bit-bitwise)**
-   - **[Opérations courantes sur un bit précis](#opérations-courantes-sur-un-bit-précis)**
-   - **[Décalages de bits](#décalages-de-bits)**
-   - **[Rotation des bits](#rotations-de-bits)**
-   - **[Masques de bits (bit masks)](#masques-de-bits-bit-masks)**
+   - **[Opérations Bit à Bit (Bitwise)](#opérations-bit-à-bit-bitwise)**
+   - **[Opérations Courantes sur un Bit Précis](#opérations-courantes-sur-un-bit-précis)**
+   - **[Décalages de Bits](#décalages-de-bits)**
+   - **[Rotation des Bits](#rotations-de-bits)**
+   - **[Masques de Bits (Bit masks)](#masques-de-bits-bit-masks)**
 
 - ## **[Microcontrôleur PIC18F](#3-microcontrôleur-pic18f)**
    - **[Architecture du Microcontrôleur](#architecture-du-microcontrôleur-pic18f45k22)**
@@ -30,7 +30,7 @@
    - **[Logique des Interruptions (Diagram)](#logique-des-interruptions-du-pic18)**
    - **[Types des Interruptions](#types-des-interruptions-sources)**
    - **[Mécanisme de Contrôle](#mécanisme-de-contrôle)**
-   - **[Priorité des interruptions](#priorité-des-interruptions)**
+   - **[Priorité des Interruptions](#priorité-des-interruptions)**
    - **[Registres de Gestion d'Interruption](#registres-de-gestion-dinterruption)**
 
 - ## **[Gestion des Timers](#6-gestion-des-timers)**
@@ -144,7 +144,7 @@ Il combine : **microcontrôleur**, **logiciel embarqué**, **interfaces**, **cap
    > - `LSB` : bit de poids Faible
    > - `MSB` : bit de poids Fort
 
-- ### **Opérations bit à bit (bitwise)**
+- ### **Opérations Bit à Bit (Bitwise)**
 
    | Opération          | Symbole | Code             | Description                                                                 |
    | ------------------ | ------- | ---------------- | --------------------------------------------------------------------------- |
