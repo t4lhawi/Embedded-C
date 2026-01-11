@@ -1798,13 +1798,133 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
 
    
 - ### Timer 2/4/6 (TMR2/4/6)
+   
+   - #### Registre de Contrôle – `TxCON` (x = 2, 4, 6)
+      <table>
+        <thead>
+          <tr align="center">
+            <th>Bit 7</th>
+            <th>Bit 6</th>
+            <th>Bit 5</th>
+            <th>Bit 4</th>
+            <th>Bit 3</th>
+            <th>Bit 2</th>
+            <th>Bit 1</th>
+            <th>Bit 0</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr align="center">
+            <td><strong>—</strong></td>
+            <td colspan="4"><strong>TxOUTPS&lt;3:0&gt;</strong></td>
+            <td><strong>TMRxON</strong></td>
+            <td colspan="2"><strong>TxCKPS&lt;1:0&gt;</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      - **Bit 7** : **Non implémenté** – Lecture = `0`
+
+      - **Bits 6-3 : `TxOUTPS<3:0>` – Sélection du Postdiviseur de Sortie**
+         | TxOUTPS3 | TxOUTPS2 | TxOUTPS1 | TxOUTPS0 | Valeur du Postdiviseur |
+         |----------|----------|----------|----------|-------------------------|
+         | 0 | 0 | 0 | 0 | **1:1** (Pas de division) |
+         | 0 | 0 | 0 | 1 | **1:2** |
+         | 0 | 0 | 1 | 0 | **1:3** |
+         | 0 | 0 | 1 | 1 | **1:4** |
+         | 0 | 1 | 0 | 0 | **1:5** |
+         | 0 | 1 | 0 | 1 | **1:6** |
+         | 0 | 1 | 1 | 0 | **1:7** |
+         | 0 | 1 | 1 | 1 | **1:8** |
+         | 1 | 0 | 0 | 0 | **1:9** |
+         | 1 | 0 | 0 | 1 | **1:10** |
+         | 1 | 0 | 1 | 0 | **1:11** |
+         | 1 | 0 | 1 | 1 | **1:12** |
+         | 1 | 1 | 0 | 0 | **1:13** |
+         | 1 | 1 | 0 | 1 | **1:14** |
+         | 1 | 1 | 1 | 0 | **1:15** |
+         | 1 | 1 | 1 | 1 | **1:16** |
+
+      - **Bit 2 : `TMRxON` – Activation du Timer**
+         - **`0`** = **Timer éteint**
+         - **`1`** = **Timer allumé**
+
+      - **Bits 1-0 : `TxCKPS<1:0>` – Sélection du Prédiviseur d'Horloge**
+         | TxCKPS1 | TxCKPS0 | Valeur du Prédiviseur |
+         |---------|---------|------------------------|
+         | 0 | 0 | **1:1** (Pas de division) |
+         | 0 | 1 | **1:4** |
+         | 1 | 0 | **1:16** |
+         | 1 | 1 | **1:16** (identique au cas `10`) |
 
 
 
-
-
-
-
+   - #### Registres Associés (x = 2, 4, 6)
+      <table>
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Bit 7</th>
+            <th>Bit 6</th>
+            <th>Bit 5</th>
+            <th>Bit 4</th>
+            <th>Bit 3</th>
+            <th>Bit 2</th>
+            <th>Bit 1</th>
+            <th>Bit 0</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>TxCON</strong></td>
+            <td>—</td>
+            <td colspan="4"><strong>TxOUTPS&lt;3:0&gt;</strong></td>
+            <td><strong>TMRxON</strong></td>
+            <td colspan="2"><strong>TxCKPS&lt;1:0&gt;</strong></td>
+          </tr>
+          <tr>
+            <td><strong>PRx</strong></td>
+            <td align="center" colspan="8">Valeur de Période du Timerx</td>
+          </tr>
+          <tr>
+            <td><strong>TMRx</strong></td>
+            <td align="center" colspan="8">Compteur du Timerx (8 bits)</td>
+          </tr>
+          <tr>
+            <td><strong>PMD0</strong></td>
+            <td>UART2MD</td>
+            <td>UART1MD</td>
+            <td>TMR6MD</td>
+            <td>TMR6MD</td>
+            <td>TMR4MD</td>
+            <td>TMR3MD</td>
+            <td>TMR2MD</td>
+            <td>TMR1MD</td>
+          </tr>
+          <tr>
+            <td><strong>CCPTMRS0</strong></td>
+            <td colspan="2"><strong>C3TSEL&lt;1:0&gt;</strong></td>
+            <td>—</td>
+            <td colspan="2"><strong>C2TSEL&lt;1:0&gt;</strong></td>
+            <td>—</td>
+            <td colspan="2"><strong>C1TSEL&lt;1:0&gt;</strong></td>
+          </tr>
+          <tr>
+            <td><strong>CCPTMRS1</strong></td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td colspan="2"><strong>C5TSEL&lt;1:0&gt;</strong></td>
+            <td colspan="2"><strong>C4TSEL&lt;1:0&gt;</strong></td>
+          </tr>
+        </tbody>
+      </table>
+      
+      > Consultez les sections suivantes pour la configuration :  
+      > - **[Activation des interruptions (`PIEx`)](#registres-dactivation-pie1-à-pie5)**
+      > - **[Drapeaux d'interruption (`PIRx`)](#registres-de-flags-pir1-à-pir5)**
+      > - **[Priorités d'interruption (`IPRx`)](#registres-de-priorité-ipr1-à-ipr5)**
 
 ---
 
