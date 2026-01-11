@@ -1791,9 +1791,10 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
         </tbody>
       </table>
 
-      > **Note :** Pour la gestion des interruptions, voir la section [Gestion des Interruptions](#5-gestion-des-interruptions).
-      
-
+      > Consultez les sections suivantes pour la configuration :  
+      > - **[Activation des interruptions (`PIEx`)](#registres-dactivation-pie1-à-pie5)**
+      > - **[Drapeaux d'interruption (`PIRx`)](#registres-de-flags-pir1-à-pir5)**
+      > - **[Priorités d'interruption (`IPRx`)](#registres-de-priorité-ipr1-à-ipr5)**
 
    
 - ### Timer 2/4/6 (TMR2/4/6)
