@@ -2,7 +2,7 @@
 // Filière : GSEIR3 (S1) | 2025/2026
 // mikroC PRO (Compiler) | Microcontrôleurs PIC18F (Microchip)
 
-volatile char etat = 0;
+unsigned char etat = 0;
 
 void main(){
     TRISC = 0x00;

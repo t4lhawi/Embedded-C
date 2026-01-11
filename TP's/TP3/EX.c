@@ -43,8 +43,8 @@ void interrupt(){
 }
 
 //---------------------| Q3 |---------------------//
-volatile char int0_flag = 0;
-volatile char int1_flag = 0;
+unsigned char int0_flag = 0;
+unsigned char int1_flag = 0;
 
 void main(){
     TRISD = 0x00;
@@ -111,7 +111,7 @@ void interrupt(){
 }
 
 //---------------------| Q5 |---------------------//
-volatile char var1, var2;
+unsigned char var1, var2;
 
 void main(){
     TRISA = 0xFF;
