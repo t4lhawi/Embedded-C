@@ -1874,7 +1874,7 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
             <th>Bit 0</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody align="center">
           <tr>
             <td><strong>TxCON</strong></td>
             <td>—</td>
