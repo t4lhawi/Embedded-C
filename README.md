@@ -1577,11 +1577,11 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
          | 1 | 0 | **Source Externe (Broche `TXCKI`) *ou* Oscillateur Secondaire** (selon **`TXSOSCEN`**) |
          | 1 | 1 | **Réservé – Ne pas Utiliser** |
 
-         > - Si **`TMRxCS<1:0> = 10`** et **`TXSOSCEN = 0`** : Horloge Externe sur **Broche `TXCKI`** (Front Montant).
-         > - Si **`TMRxCS<1:0> = 10`** et **`TXSOSCEN = 1`** : **Oscillateur à Quartz (Secondaire)** sur Broches **`SOSC/SOSCO`**.
+         > - Si **`TMRxCS<1:0> = 10`** et **`TXSOSCEN = 0`** : Horloge Externe sur **Broche TXCKI** (Front Montant).
+         > - Si **`TMRxCS<1:0> = 10`** et **`TXSOSCEN = 1`** : **Oscillateur à Quartz (Secondaire)** sur Broches **SOSC/SOSCO**.
 
-      - **Bits 5-4 : `TXCKPS<1:0>` – Sélection du Prédiviseur d'Horloge**
-         | TXCKPS1 | TXCKPS0 | Valeur du Prédiviseur |
+      - **Bits 5-4 : `TXCKPS<1:0>` – Sélection du Pré-diviseur d'Horloge**
+         | TXCKPS1 | TXCKPS0 | Valeur du Pré-diviseur |
          |---------|---------|------------------------|
          | 0 | 0 | **1:1** (Pas de division) |
          | 0 | 1 | **1:2** |
