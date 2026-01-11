@@ -1355,7 +1355,7 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
    
    > - **Pré-diviseur :** Diviseur de Fréquence **AVANT** le Compteur.
    >    - **Sans Pré-diviseur :** 1 tic = 1s
-   >    - **Pré-diviseur `1:8` :** 8 tics = 1s → **(`1:8` = `1:2ᵇⁱᵗ`)**
+   >    - **Pré-diviseur `1:8` :** 8 tics = 1s
    > - **Post-diviseur :** Diviseur de Fréquence **APRÈS** le Compteur, sur l'interruption.
    >    - **Sans Post-diviseur :** Interruption à Chaque Overflow
    >    - **Post-diviseur `1:10` :** Interruption Tous les 10 Overflows
