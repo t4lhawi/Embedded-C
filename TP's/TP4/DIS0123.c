@@ -30,11 +30,11 @@ void interrupt() {
 
 void main(){
     // Configure PORTA as output
-    TRISA = 0x00;
+    TRISA = 0;
     // Clear PORTA
     LATA = 0;
     // Configure PORTD as output
-    TRISD = 0x00;
+    TRISD = 0;
     // Clear PORTD
     LATD = 0;
     // Set TMR0 mode, and assign prescaler to TMR0 to create a delay of 1 ms
