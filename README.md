@@ -1482,18 +1482,18 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
           </tr>
           <tr>
             <td><strong>TMR0H</strong></td>
-            <td align="center" colspan="8">Timer0 Register, High Byte <strong>&lt;15:8&gt;</strong></td>
+            <td align="center" colspan="8">Timer0 Register, High Byte</strong></td>
           </tr>
           <tr>
             <td><strong>TMR0L</strong></td>
-            <td align="center" colspan="8">Timer0 Register, Low Byte <strong>&lt;7:0&gt;</strong></td>
+            <td align="center" colspan="8">Timer0 Register, Low Byte</strong></td>
           </tr>
           <tr>
             <td><strong>TRISA</strong></td>
             <td>TRISA7</td>
             <td>TRISA6</td>
             <td>TRISA5</td>
-            <td>TRISA4</td>
+            <td><strong>TRISA4</strong></td>
             <td>TRISA3</td>
             <td>TRISA2</td>
             <td>TRISA1</td>
@@ -1606,7 +1606,193 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
          - **`0`** = **Arrêt** – Réinitialise la bascule de gâchette du Timer
          - **`1`** = **Marche**
 
+   - #### Registre de Contrôle de la Porte (Gate) – `TXGCON` (x = 1, 3, 5)
+      <table>
+        <thead>
+          <tr align="center">
+            <th>Bit 7</th>
+            <th>Bit 6</th>
+            <th>Bit 5</th>
+            <th>Bit 4</th>
+            <th>Bit 3</th>
+            <th>Bit 2</th>
+            <th>Bit 1</th>
+            <th>Bit 0</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr align="center">
+            <td><strong>TMRxGE</strong></td>
+            <td><strong>TxGPOL</strong></td>
+            <td><strong>TxGTM</strong></td>
+            <td><strong>TxGSPM</strong></td>
+            <td><strong>TxGGO/DONE</strong></td>
+            <td><strong>TxGVAL</strong></td>
+            <td colspan="2"><strong>TxGSS&lt;1:0&gt;</strong></td>
+          </tr>
+        </tbody>
+      </table>
 
+      - **Bit 7 : `TMRxGE` – Activation de la Fonction Porte du Timer**
+         - Si **`TMRxON = 0`** : Ce bit est **ignoré**.
+         - Si **`TMRxON = 1`** :
+            - **`0`** = Le Timer compte **indépendamment** de la fonction porte.
+            - **`1`** = Le comptage du Timer est **contrôlé** par la fonction porte.
+
+      - **Bit 6 : `TxGPOL` – Polarité de la Porte du Timer**
+         - **`0`** = Porte **active à l'état BAS** (Le Timer compte quand la porte est BASSE).
+         - **`1`** = Porte **active à l'état HAUT** (Le Timer compte quand la porte est HAUTE).
+
+      - **Bit 5 : `TxGTM` – Mode Basculé (Toggle) de la Porte**
+         - **`0`** = **Désactivé** – La bascule de la porte est réinitialisée.
+         - **`1`** = **Activé** – La bascule de la porte du Timer bascule à **chaque front montant** de la source sélectionnée.
+
+      - **Bit 4 : `TxGSPM` – Mode Impulsion Unique (Single-Pulse) de la Porte**
+         - **`0`** = **Désactivé**
+         - **`1`** = **Activé** – Le mode impulsion unique contrôle la porte du Timer.
+
+      - **Bit 3 : `TxGGO/DONE` – État d'Acquisition en Mode Impulsion Unique**
+         - **`0`** = L'acquisition de l'impulsion unique est **terminée** ou **n'a pas démarré**.
+         - **`1`** = L'acquisition est **prête** et attend un front déclencheur.
+         > - *Ce bit est **Automatiquement Réinitialisé** quand `TxGSPM` est mis à `0`.*
+
+      - **Bit 2 : `TxGVAL` – État Actuel de la Porte du Timer (Lecture seule)**
+         - Indique l'état actuel du signal de porte qui serait appliqué au Timer (`TMRxH:TMRxL`).
+         > - *Non affecté par l'activation de la porte (`TMRxGE`).*
+
+      - **Bits 1-0 : `TxGSS<1:0>` – Sélection de la Source de la Porte du Timer**
+         | TxGSS1 | TxGSS0 | Source de la Porte |
+         |--------|--------|---------------------|
+         | 0 | 0 | **Broche de la porte du Timer (Timer Gate Pin)** |
+         | 0 | 1 | **Signal de correspondance (Match) du Timer2/4/6** (Sortie de `PR2/PR4/PR6`) |
+         | 1 | 0 | **Sortie du Comparateur 1** (optionnellement synchronisée – `sync_C1OUT`) |
+         | 1 | 1 | **Sortie du Comparateur 2** (optionnellement synchronisée – `sync_C2OUT`) |
+
+      - #### Mode Fonctionnement de la Porte
+
+         | Champ / Bit               | **Fonction**                                                                                                     |
+         |---------------------------|------------------------------------------------------------------------------------------------------------------|
+         | **`TMRxGE`**              | Active (`1`) ou contourne (`0`) le contrôle du comptage par la porte, uniquement si le Timer est activé (`TMRxON=1`). |
+         | **`TxGSS<1:0>`**          | Définit l'origine du signal qui contrôle la porte (broche, autre timer, comparateur).                           |
+         | **`TxGPOL`**              | Définit si le comptage a lieu quand le signal de porte est HAUT (`1`) ou BAS (`0`).                              |
+         | **`TxGTM`**               | Permet à la porte de basculer son état à chaque front montant de sa source, créant un signal alterné.            |
+         | **`TxGSPM` & `TxGGO/DONE`**| Permet de capturer une **seule impulsion** contrôlée par la porte. `TxGGO/DONE` indique l'état de l'acquisition.|
+
+
+   - #### Registres Associés (x = 1, 3, 5)
+      <table>
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Bit 7</th>
+            <th>Bit 6</th>
+            <th>Bit 5</th>
+            <th>Bit 4</th>
+            <th>Bit 3</th>
+            <th>Bit 2</th>
+            <th>Bit 1</th>
+            <th>Bit 0</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>TxCON</strong></td>
+            <td colspan="2">TMRxCS&lt;1:0&gt;</td>
+            <td colspan="2">TxCKPS&lt;1:0&gt;</td>
+            <td>TxSOSCEN</td>
+            <td>TxSYNC</td>
+            <td>TxRD16</td>
+            <td>TMRxON</td>
+          </tr>
+          <tr>
+            <td><strong>TxGCON</strong></td>
+            <td>TMRxGE</td>
+            <td>TxGPOL</td>
+            <td>TxGTM</td>
+            <td>TxGSPM</td>
+            <td>TxGGO/<br>DONE</td>
+            <td>TxGVAL</td>
+            <td colspan="2">TxGSS&lt;1:0&gt;</td>
+          </tr>
+          <tr>
+            <td><strong>TMRxH</strong></td>
+            <td align="center" colspan="8">Timerx Register, High Byte</td>
+          </tr>
+          <tr>
+            <td><strong>TMRxL</strong></td>
+            <td align="center" colspan="8">Timerx Register, Low Byte</td>
+          </tr>
+         <tr> 
+            <td><strong>PMD0</strong></td> 
+            <td>UART2MD</td> 
+            <td>UART1MD</td> 
+            <td>TMR8MD</td> 
+            <td>TMR8MD</td> 
+            <td>TMR4MD</td> 
+            <td>TMR3MD</td> 
+            <td>TMR2MD</td> 
+            <td>TMR1MD</td> 
+         </tr>
+          <tr>
+            <td><strong>TRISB</strong></td>
+            <td>TRISB7</td>
+            <td>TRISB6</td>
+            <td><strong>TRISB5</strong></td>
+            <td><strong>TRISB4</strong></td>
+            <td>TRISB3</td>
+            <td>TRISB2</td>
+            <td>TRISB1</td>
+            <td>TRISB0</td>
+          </tr>
+          <tr>
+            <td><strong>TRISC</strong></td>
+            <td>TRISC7</td>
+            <td>TRISC6</td>
+            <td>TRISC5</td>
+            <td>TRISC4</td>
+            <td>TRISC3</td>
+            <td><strong>TRISC2</strong></td>
+            <td><strong>TRISC1</strong></td>
+            <td><strong>TRISC0</strong></td>
+          </tr>
+          <tr>
+            <td><strong>ANSELB</strong></td>
+            <td>—</td>
+            <td>—</td>
+            <td><strong>ANSB5</strong></td>
+            <td><strong>ANSB4</strong></td>
+            <td>ANSB3</td>
+            <td>ANSB2</td>
+            <td>ANSB1</td>
+            <td>ANSB0</td>
+          </tr>
+          <tr>
+            <td><strong>ANSELC</strong></td>
+            <td>ANSC7</td>
+            <td>ANSC6</td>
+            <td>ANSC5</td>
+            <td>ANSC4</td>
+            <td>ANSC3</td>
+            <td><strong>ANSC2</strong></td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td><strong>CONFIG3H</strong></td>
+            <td>MCLRE</td>
+            <td>—</td>
+            <td>P2BMX</td>
+            <td><strong>T3CMX</strong></td>
+            <td>HFOFST</td>
+            <td>CCP3MX</td>
+            <td>PBADEN</td>
+            <td>CCP2MX</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+   
 - ### Timer 2/4/6 (TMR2/4/6)
 
 
