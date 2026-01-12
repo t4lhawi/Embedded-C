@@ -8,7 +8,7 @@ void main(){
     TRISC &= 0xFC;
     LATC = 0x00;
 
-    IOCB = 0x10; // IOCB4=1 (Interrupteur ghykhdem kolma bdelna l'etat dyal RB4)
+    IOCB = 0x10; // IOCB4=1 (Interrupteur ghykhdem kolma bdelna l'etat dyal RB4 (soit 0 wla 1))
 
     INTCON |= 0x88; // GIE=1, RBIE=1
     INTCON &= 0xFE; // RBIF=0
