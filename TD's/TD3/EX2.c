@@ -3,8 +3,8 @@
 // mikroC PRO (Compiler) | Microcontrôleurs PIC18F (Microchip)
 
 void main(){
-    TRISB |= 0xC0; // Buttons de l'interruption INT0, INT1
-    TRISD &= 0xFc; // RD0, RD1 en Sortie
+    TRISB |= 0x03; // Buttons de l'interruption INT0, INT1
+    TRISD &= 0xFC; // RD0, RD1 en Sortie
     LATD = 0x00;
 
     RCON &= 0x7F; // IPEN=0

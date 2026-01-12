@@ -6,7 +6,7 @@ unsigned char etat = 0;
 
 void main(){
     TRISA = 0x00;
-    TRISB |= 0xF0; // Buttons de l'interruption RB4-7)
+    TRISB |= 0xF0; // Buttons de l'interruption RB4-7
     LATA = 0x00;
 
     INTCON |= 0x88; // GIE=1, RBIE=1
