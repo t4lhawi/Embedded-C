@@ -5,6 +5,7 @@
 void main(){
     TRISC = 0x00;
     TRISB |= 0x02; // Buttons de l'interruption INT1
+    ANSELB = 0;
     LATC = 0x00;
 
     INTCON |= 0xC0; // GIE=1, PEIE=1

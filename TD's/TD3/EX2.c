@@ -4,6 +4,7 @@
 
 void main(){
     TRISB |= 0x03; // Buttons de l'interruption INT0, INT1
+    ANSELB = 0;
     TRISD &= 0xFC; // RD0, RD1 en Sortie
     LATD = 0x00;
 
