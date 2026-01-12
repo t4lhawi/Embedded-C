@@ -27,7 +27,6 @@
    - **[Registres associés au PORTE](#registres-associés-au-porte)**
 
 - ## **[Gestion des Interruptions](#5-gestion-des-interruptions)**
-   - **[Logique des Interruptions (Diagram)](#logique-des-interruptions-du-pic18)**
    - **[Types des Interruptions](#types-des-interruptions-sources)**
    - **[Mécanisme de Contrôle](#mécanisme-de-contrôle)**
    - **[Priorité des Interruptions](#priorité-des-interruptions)**
@@ -1079,11 +1078,6 @@ Le **[PIC18F&sup1;](https://en.wikipedia.org/wiki/PIC_microcontrollers)** fait p
 
 ## **5. Gestion des Interruptions**
 Une interruption est un événement qui provoque l'**arrêt immédiat du programme principal** pour exécuter une fonction spécifique appelée **ISR** (Interrupt Service Routine). Une fois le traitement terminé, le microcontrôleur reprend l'exécution du programme principal exactement là où il s'était arrêté.
-
-- ### Logique des Interruptions du PIC18
-   ![interrupt_diag](https://github.com/user-attachments/assets/9ec4bac7-ec19-4170-bf94-0515fc5612ee)
-   > **`(1)`** : L’interruption **RBIF** nécessite également l’activation individuelle des broches **IOCB**.
-
 
 - ### Types des Interruptions (Sources)
 
