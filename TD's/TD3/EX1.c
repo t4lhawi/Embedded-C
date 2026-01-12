@@ -5,12 +5,13 @@
 void main(){
     TRISB |= 0x10; // RB4
     ANSELB = 0;
-    TRISC &= 0xF3;
+    TRISC &= 0xFC;
     LATC = 0x00;
+
+    IOCB = 0x10; // IOCB4=1 (Interrupteur ghykhdem kolma bdelna l'etat dyal RB4)
 
     INTCON |= 0x88; // GIE=1, RBIE=1
     INTCON &= 0xFE; // RBIF=0
-    IOCB = 0x10; // IOCB4=1 (Interrupteur ghayb9a khdam 7ta tbdel l'etat dyal RB4)
 
     while(1);
 }
