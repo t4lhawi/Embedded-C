@@ -10,7 +10,7 @@ void main(){
 
     INTCON |= 0x88; // GIE=1, RBIE=1
     INTCON &= 0xFE; // RBIF=0
-    IOCB = 0x10; // IOCB4=1
+    IOCB = 0x10; // IOCB4=1 (Interrupteur ghayb9a khdam 7ta tbdel l'etat dyal RB4)
 
     while(1);
 }
