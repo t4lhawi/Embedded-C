@@ -7,6 +7,7 @@ unsigned char div = 0;
 void main(){
     TRISB |= 0x20; // RB5=1 (Entree)
     ANSELB = 0;
+    
     TRISC &= 0xFD; // RC1=0 (Sortie)
     LATC = 0x00;
     
