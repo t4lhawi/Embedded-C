@@ -1188,6 +1188,11 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
       | **GIEH/GIE** | `INTCON<7>` | Global Interrupt Enable (High) | Gardien principal (nom change selon IPEN) | `0` = Interruptions désactivées<br>`1` = Interruptions activées |
       | **GIEL/PEIE** | `INTCON<6>` | Global Interrupt Enable Low | Contrôle secondaire (nom change selon IPEN) | `0` = Périphériques désactivés<br>`1` = Périphériques activés |
 
+      > - Si (Interruption == `INT0` || `Timer0` || `RB4-RB7`)
+      >    - → **`GIE = 1`** Suffit
+      > - Si (Interruption == `INT1` || `INT2` || `Timers1/2/3/4/5/6` || `CAN`)
+      >    - → **`GIE = 1`** ET **`PEIE = 1`** Obligatoires
+
 
    - #### Contrôle par Source (Bits Spécifiques)  
       | Bit | Symbole | Localisation | Fonction | Description |
