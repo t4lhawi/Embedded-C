@@ -17,10 +17,10 @@ void main(){
 }
 
 void interrupt(){
-    if(PORTB & 0x10){ // RB4=1 (Interrupteur Fermé)
+    if(PORTB & 0x10){ // RB4=1 (Interrupteur Fermé) (___)
         LATC = 0x02;
     }
-    else { // RB4=0 (Interrupteur Ouvert)
+    else { // RB4=0 (Interrupteur Ouvert) (_―_)
         LATC = 0x01;
     }
     INTCON &= 0xFE; // RBIF=0
