@@ -9,7 +9,7 @@ void main(){
     LATD = 0x00;
 
     RCON &= 0x7F; // IPEN=0
-    INTCON |= 0x90; // GIE=1, INT0IE=1
+    INTCON |= 0xD0; // GIE=1, PEIE=1, INT0IE=1
     INTCON &= 0xFD; // INT0IF=0
 
     INTCON3 |= 0x08; // INT1IE=1
