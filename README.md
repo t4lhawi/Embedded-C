@@ -2179,7 +2179,14 @@ Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Tensi
         > - **1,024 V** : Pour CAN (ADC) basse tension
         > - **2,048 V / 4,096 V** : Pour comparateurs analogiques ou CAN haute précision
 
-- ### Registres de Résultat
+- ### Registres Associés
+
+- ### Fonctionnes Avancé MikroC
+   | **Fonction** | **Description** |
+   |--------------|-----------------|
+   | **`ADC_Init()`** | Initialise l'ADC avec l'horloge RC. <br>À appeler une fois au début. |
+   | **`ADC_Get_Sample(channel)`** | Lit un échantillon sur le `channel` (0-…). <br>Nécessite `ADC_Init()`. |
+   | **`ADC_Read(channel)`** | Initialise + lit en une seule commande sur le `channel`. |
 
 
 ## **8. Gestion de CNA**
