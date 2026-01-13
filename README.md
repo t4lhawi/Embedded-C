@@ -1978,46 +1978,45 @@ Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Tensi
       </table>
       
       - **Bits 6-2 : `CHS<4:0>` – Sélection du Canal Analogique**
-        | CHS4 | CHS3 | CHS2 | CHS1 | CHS0 | Canal | Broche PIC18F45K22 |
-        |------|------|------|------|------|-------|-------------------|
-        | 0 | 0 | 0 | 0 | 0 | **AN0** | RA0 |
-        | 0 | 0 | 0 | 0 | 1 | **AN1** | RA1 |
-        | 0 | 0 | 0 | 1 | 0 | **AN2** | RA2 |
-        | 0 | 0 | 0 | 1 | 1 | **AN3** | RA3 |
-        | 0 | 0 | 1 | 0 | 0 | **AN4** | RA5 |
-        | 0 | 0 | 1 | 0 | 1 | **AN5** | RE0 |
-        | 0 | 0 | 1 | 1 | 0 | **AN6** | RE1 |
-        | 0 | 0 | 1 | 1 | 1 | **AN7** | RE2 |
-        | 0 | 1 | 0 | 0 | 0 | **AN8** | RB2 |
-        | 0 | 1 | 0 | 0 | 1 | **AN9** | RB3 |
-        | 0 | 1 | 0 | 1 | 0 | **AN10** | RB1 |
-        | 0 | 1 | 0 | 1 | 1 | **AN11** | RB4 |
-        | 0 | 1 | 1 | 0 | 0 | **AN12** | RB0 |
-        | 0 | 1 | 1 | 0 | 1 | **AN13** | RB5 |
-        | 0 | 1 | 1 | 1 | 0 | **AN14** | RB6 |
-        | 0 | 1 | 1 | 1 | 1 | **AN15** | RB7 |
-        | 1 | 0 | 0 | 0 | 0 | **AN16** | RC2 |
-        | 1 | 0 | 0 | 0 | 1 | **AN17** | RC3 |
-        | 1 | 0 | 0 | 1 | 0 | **AN18** | RC6 |
-        | 1 | 0 | 0 | 1 | 1 | **AN19** | RC7 |
-        | 1 | 0 | 1 | 0 | 0 | **AN20** | RD0 |
-        | 1 | 0 | 1 | 0 | 1 | **AN21** | RD1 |
-        | 1 | 0 | 1 | 1 | 0 | **AN22** | RD2 |
-        | 1 | 0 | 1 | 1 | 1 | **AN23** | RD3 |
-        | 1 | 1 | 0 | 0 | 0 | **AN24** | RD4 |
-        | 1 | 1 | 0 | 0 | 1 | **AN25** | RD5 |
-        | 1 | 1 | 0 | 1 | 0 | **AN26** | RD6 |
-        | 1 | 1 | 0 | 1 | 1 | **AN27** | RD7 |
-        | 1 | 1 | 1 | 0 | 0 | **RÉSERVÉ** | — |
-        | 1 | 1 | 1 | 0 | 1 | **CTMU** | Module CTMU interne |
-        | 1 | 1 | 1 | 1 | 0 | **CNA** | Module DAC interne |
-        | 1 | 1 | 1 | 1 | 1 | **FVR BUF2** | Référence FVR (1.024V/2.048V/4.096V) |
+           | CHS4 | CHS3 | CHS2 | CHS1 | CHS0 | Canal | Broche PIC18F45K22 |
+           |------|------|------|------|------|-------|-------------------|
+           | 0 | 0 | 0 | 0 | 0 | **AN0** | RA0 |
+           | 0 | 0 | 0 | 0 | 1 | **AN1** | RA1 |
+           | 0 | 0 | 0 | 1 | 0 | **AN2** | RA2 |
+           | 0 | 0 | 0 | 1 | 1 | **AN3** | RA3 |
+           | 0 | 0 | 1 | 0 | 0 | **AN4** | RA5 |
+           | 0 | 0 | 1 | 0 | 1 | **AN5** | RE0 |
+           | 0 | 0 | 1 | 1 | 0 | **AN6** | RE1 |
+           | 0 | 0 | 1 | 1 | 1 | **AN7** | RE2 |
+           | 0 | 1 | 0 | 0 | 0 | **AN8** | RB2 |
+           | 0 | 1 | 0 | 0 | 1 | **AN9** | RB3 |
+           | 0 | 1 | 0 | 1 | 0 | **AN10** | RB1 |
+           | 0 | 1 | 0 | 1 | 1 | **AN11** | RB4 |
+           | 0 | 1 | 1 | 0 | 0 | **AN12** | RB0 |
+           | 0 | 1 | 1 | 0 | 1 | **AN13** | RB5 |
+           | 0 | 1 | 1 | 1 | 0 | **AN14** | RB6 |
+           | 0 | 1 | 1 | 1 | 1 | **AN15** | RB7 |
+           | 1 | 0 | 0 | 0 | 0 | **AN16** | RC2 |
+           | 1 | 0 | 0 | 0 | 1 | **AN17** | RC3 |
+           | 1 | 0 | 0 | 1 | 0 | **AN18** | RC6 |
+           | 1 | 0 | 0 | 1 | 1 | **AN19** | RC7 |
+           | 1 | 0 | 1 | 0 | 0 | **AN20** | RD0 |
+           | 1 | 0 | 1 | 0 | 1 | **AN21** | RD1 |
+           | 1 | 0 | 1 | 1 | 0 | **AN22** | RD2 |
+           | 1 | 0 | 1 | 1 | 1 | **AN23** | RD3 |
+           | 1 | 1 | 0 | 0 | 0 | **AN24** | RD4 |
+           | 1 | 1 | 0 | 0 | 1 | **AN25** | RD5 |
+           | 1 | 1 | 0 | 1 | 0 | **AN26** | RD6 |
+           | 1 | 1 | 0 | 1 | 1 | **AN27** | RD7 |
+           | 1 | 1 | 1 | 0 | 0 | **RÉSERVÉ** | — |
+           | 1 | 1 | 1 | 0 | 1 | **CTMU** | Module CTMU interne |
+           | 1 | 1 | 1 | 1 | 0 | **CNA** | Module DAC interne |
+           | 1 | 1 | 1 | 1 | 1 | **FVR BUF2** | Référence FVR (1.024V/2.048V/4.096V) |
       
       - **Bit 1 : `GO/DONE` – Statut de Conversion A/D**
         - **`1`** = **Conversion en cours** – Démarre une nouvelle conversion si écrit à `1`
         - **`0`** = **Conversion terminée** – Mis à `0` automatiquement par le matériel après conversion
         
-        > **Fonctionnement** :
         > - Écrire `1` pour démarrer une conversion.
         > - Lire `0` pour vérifier que la conversion est terminée.
       
