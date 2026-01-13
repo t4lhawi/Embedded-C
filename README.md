@@ -39,6 +39,8 @@
    - **[Timers 2, 4 et 6 (TMR2/4/6)](#timer-246-tmr246)**
 
 - ## **[Gestion de CAN](#7-gestion-de-can)**
+   - **[Registres de Contrôle](#registres-de-contrôle-2)**
+   - **[Registres de Résultat](#registres-de-résultat)**
 
 - ## **[Gestion de CNA](#8-gestion-de-cna)**
 
@@ -1930,20 +1932,255 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
 ---
 
 ## **7. Gestion de CAN**
+Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Tension Analogique** en une **Valeur Numérique sur 10 bits** (0 à 1023).
+>   - Entrées Analogiques multiplexées **(`AN0` à `AN27`)**
+>   - Résultat Stocké dans **`ADRESH:ADRESL`**
+>   - Références de Tension configurables (**$`V_{DD}`$, $`V_{SS}`$, $`V_{REF±}`$, $`FVR`$**)
+>   - Peut générer une interruption en fin de Conversion
+
+- ### Étapes de Configuration
+
+   | Étape | Registres et Formules |
+   | :--- | :--- |
+   | **1. Entrée Analogique** | **ANSELx = 1** (mode analogique), **TRISx = 1** (entrée) |
+   | **2. Tensions de Références** | **ADCON1** : bits **PVCFG** (Réf +) et **NVCFG** (Réf -) |
+   | **3. Temps & Horloge** | **ADCON2** : **ADCS** (vitesse $\ge 1 \mu s$), **ACQT** (acquisition auto) |
+   | **4. Format & Canal** | **ADCON2** : **ADFM** (justification) ; **ADCON0** : **CHS<4:0>** (canal) |
+   | **5. Activation** | **ADCON0** : **ADON = 1** (mise sous tension du module) |
+   | **6. Conversion** | **GO/DONE = 1** (lancer) ; attendre **GO/DONE == 0** (fin) |
+   | **7. Résultat** | Lire **ADRESH** et **ADRESL** (donnée sur 10 bits) |
+   | **8. Remise à zéro** | **ADIF = 0** (effacer le drapeau d'interruption) |
+
+- ### Registres de Contrôle
+
+   - #### `ADCONO` - Sélection de Canal et Activation ADC
+      <table>
+        <thead>
+          <tr align="center">
+            <th>Bit 7</th>
+            <th>Bit 6</th>
+            <th>Bit 5</th>
+            <th>Bit 4</th>
+            <th>Bit 3</th>
+            <th>Bit 2</th>
+            <th>Bit 1</th>
+            <th>Bit 0</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr align="center">
+            <td>—</td>
+            <td colspan="5"><strong>CHS&lt;4:0&gt;</strong></td>
+            <td><strong>GO/DONE</strong></td>
+            <td><strong>ADON</strong></td>
+          </tr>
+        </tbody>
+      </table>
+      
+      - **Bits 6-2 : `CHS<4:0>` – Sélection du Canal Analogique**
+        | CHS4 | CHS3 | CHS2 | CHS1 | CHS0 | Canal | Broche PIC18F45K22 |
+        |------|------|------|------|------|-------|-------------------|
+        | 0 | 0 | 0 | 0 | 0 | **AN0** | RA0 |
+        | 0 | 0 | 0 | 0 | 1 | **AN1** | RA1 |
+        | 0 | 0 | 0 | 1 | 0 | **AN2** | RA2 |
+        | 0 | 0 | 0 | 1 | 1 | **AN3** | RA3 |
+        | 0 | 0 | 1 | 0 | 0 | **AN4** | RA5 |
+        | 0 | 0 | 1 | 0 | 1 | **AN5** | RE0 |
+        | 0 | 0 | 1 | 1 | 0 | **AN6** | RE1 |
+        | 0 | 0 | 1 | 1 | 1 | **AN7** | RE2 |
+        | 0 | 1 | 0 | 0 | 0 | **AN8** | RB2 |
+        | 0 | 1 | 0 | 0 | 1 | **AN9** | RB3 |
+        | 0 | 1 | 0 | 1 | 0 | **AN10** | RB1 |
+        | 0 | 1 | 0 | 1 | 1 | **AN11** | RB4 |
+        | 0 | 1 | 1 | 0 | 0 | **AN12** | RB0 |
+        | 0 | 1 | 1 | 0 | 1 | **AN13** | RB5 |
+        | 0 | 1 | 1 | 1 | 0 | **AN14** | RB6 |
+        | 0 | 1 | 1 | 1 | 1 | **AN15** | RB7 |
+        | 1 | 0 | 0 | 0 | 0 | **AN16** | RC2 |
+        | 1 | 0 | 0 | 0 | 1 | **AN17** | RC3 |
+        | 1 | 0 | 0 | 1 | 0 | **AN18** | RC6 |
+        | 1 | 0 | 0 | 1 | 1 | **AN19** | RC7 |
+        | 1 | 0 | 1 | 0 | 0 | **AN20** | RD0 |
+        | 1 | 0 | 1 | 0 | 1 | **AN21** | RD1 |
+        | 1 | 0 | 1 | 1 | 0 | **AN22** | RD2 |
+        | 1 | 0 | 1 | 1 | 1 | **AN23** | RD3 |
+        | 1 | 1 | 0 | 0 | 0 | **AN24** | RD4 |
+        | 1 | 1 | 0 | 0 | 1 | **AN25** | RD5 |
+        | 1 | 1 | 0 | 1 | 0 | **AN26** | RD6 |
+        | 1 | 1 | 0 | 1 | 1 | **AN27** | RD7 |
+        | 1 | 1 | 1 | 0 | 0 | **RÉSERVÉ** | — |
+        | 1 | 1 | 1 | 0 | 1 | **CTMU** | Module CTMU interne |
+        | 1 | 1 | 1 | 1 | 0 | **CNA** | Module DAC interne |
+        | 1 | 1 | 1 | 1 | 1 | **FVR BUF2** | Référence FVR (1.024V/2.048V/4.096V) |
+      
+      - **Bit 1 : `GO/DONE` – Statut de Conversion A/D**
+        - **`1`** = **Conversion en cours** – Démarre une nouvelle conversion si écrit à `1`
+        - **`0`** = **Conversion terminée** – Mis à `0` automatiquement par le matériel après conversion
+        
+        > **Fonctionnement** :
+        > - Écrire `1` pour démarrer une conversion.
+        > - Lire `0` pour vérifier que la conversion est terminée.
+      
+      - **Bit 0 : `ADON` – Activation du Convertisseur A/D**
+        - **`1`** = **ADC activé** – Alimentation et circuits activés
+        - **`0`** = **ADC désactivé** – Économie d'énergie
+   
+   
+   - #### `ADCON1` - Configuration des Références de Tension
+      <table>
+        <thead>
+          <tr align="center">
+            <th>Bit 7</th>
+            <th>Bit 6</th>
+            <th>Bit 5</th>
+            <th>Bit 4</th>
+            <th>Bit 3</th>
+            <th>Bit 2</th>
+            <th>Bit 1</th>
+            <th>Bit 0</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr align="center">
+            <td><strong>TRIGSEL</strong></td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td colspan="2"><strong>PVCFG&lt;1:0&gt;</strong></td>
+            <td colspan="2"><strong>NVCFG&lt;1:0&gt;</strong></td>
+          </tr>
+        </tbody>
+      </table>
+      
+      - **Bit 7 : `TRIGSEL` – Sélection du Déclencheur Spécial**
+        - **`1`** = **CTMU** – Déclenchement par le module CTMU (Charge Time Measurement Unit)
+        - **`0`** = **CCP5** – Déclenchement par le module Capture/Compare/PWM 5
+      
+      - **Bits 3-2 : `PVCFG<1:0>` – Configuration de la Référence Positive VREF+**
+        | PVCFG1 | PVCFG0 | Référence Positive VREF+ |
+        |--------|--------|---------------------------|
+        | 0 | 0 | **VDD** – Tension d'alimentation du microcontrôleur |
+        | 0 | 1 | **Broche VREF+ (RA3)** – Référence externe |
+        | 1 | 0 | **FVR BUF2** – Référence interne fixe (FVRCON) |
+        | 1 | 1 | **RÉSERVÉ** (par défaut = VDD) |
+      
+      - **Bits 1-0 : `NVCFG<1:0>` – Configuration de la Référence Négative VREF-**
+        | NVCFG1 | NVCFG0 | Référence Négative VREF- |
+        |--------|--------|---------------------------|
+        | 0 | 0 | **VSS** – Masse (0V) |
+        | 0 | 1 | **Broche VREF- (RA2)** – Référence externe |
+        | 1 | 0 | **RÉSERVÉ** (par défaut = VSS) |
+        | 1 | 1 | **RÉSERVÉ** (par défaut = VSS) |
+   
+   
+   - #### `ADCON2` - Configuration de l'Horloge et du Format
+      <table>
+        <thead>
+          <tr align="center">
+            <th>Bit 7</th>
+            <th>Bit 6</th>
+            <th>Bit 5</th>
+            <th>Bit 4</th>
+            <th>Bit 3</th>
+            <th>Bit 2</th>
+            <th>Bit 1</th>
+            <th>Bit 0</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr align="center">
+            <td><strong>ADFM</strong></td>
+            <td>—</td>
+            <td colspan="3"><strong>ACQT&lt;2:0&gt;</strong></td>
+            <td colspan="3"><strong>ADCS&lt;2:0&gt;</strong></td>
+          </tr>
+        </tbody>
+      </table>
+      
+      - **Bit 7 : `ADFM` – Format du Résultat de Conversion**
+        - **`1`** = **Justifié à Droite** – 8 bits bas dans ADRESL, 2 bits hauts dans ADRESH
+        - **`0`** = **Justifié à Gauche** – 8 bits hauts dans ADRESL, 2 bits bas dans ADRESH
+      
+      
+      - **Bits 5-3 : `ACQT<2:0>` – Sélection du Temps d'Acquisition**
+        | ACQT2 | ACQT1 | ACQT0 | Temps d'Acquisition | Remarque |
+        |-------|-------|-------|---------------------|----------|
+        | 0 | 0 | 0 | **0 TAD** | Manuel (déclenchement immédiat) |
+        | 0 | 0 | 1 | **2 TAD** | Minimum recommandé |
+        | 0 | 1 | 0 | **4 TAD** | Standard |
+        | 0 | 1 | 1 | **6 TAD** | Pour sources à haute impédance |
+        | 1 | 0 | 0 | **8 TAD** | Haute impédance |
+        | 1 | 0 | 1 | **12 TAD** | Très haute impédance |
+        | 1 | 1 | 0 | **16 TAD** | Impédances extrêmes |
+        | 1 | 1 | 1 | **20 TAD** | Maximum |
+      
+        > **TAD** = Temps d'Horloge ADC (ADC Clock Period)
+      
+      - **Bits 2-0 : `ADCS<2:0>` – Sélection de l'Horloge ADC**
+        | ADCS2 | ADCS1 | ADCS0 | Horloge ADC (TAD) | Fréquence Max |
+        |-------|-------|-------|-------------------|---------------|
+        | 0 | 0 | 0 | **FOSC/2** | Rapide (pour FOSC ≤ 10 MHz) |
+        | 0 | 0 | 1 | **FOSC/8** | Standard |
+        | 0 | 1 | 0 | **FOSC/32** | Lent |
+        | 0 | 1 | 1 | **FRC** | Horloge RC interne (500 kHz typique) |
+        | 1 | 0 | 0 | **FOSC/4** | Pour FOSC ≤ 20 MHz |
+        | 1 | 0 | 1 | **FOSC/16** | Moyenne |
+        | 1 | 1 | 0 | **FOSC/64** | Très lente |
+        | 1 | 1 | 1 | **FRC** | Horloge RC interne (alternatif) |
+      
+        > **TAD** doit être entre 0.7 µs et 25 µs pour une conversion précise.
 
 
+   - #### `FVRCON` - Contrôle de la Référence de Tension Fixe
+      <table>
+        <thead>
+          <tr align="center">
+            <th>Bit 7</th>
+            <th>Bit 6</th>
+            <th>Bit 5</th>
+            <th>Bit 4</th>
+            <th>Bit 3</th>
+            <th>Bit 2</th>
+            <th>Bit 1</th>
+            <th>Bit 0</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr align="center">
+            <td><strong>FVREN</strong></td>
+            <td><strong>FVRST</strong></td>
+            <td colspan="2"><strong>FVRS&lt;1:0&gt;</strong></td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      - **Bit 7 : `FVREN` – Activation de la Référence de Tension Fixe**
+        - **`0`** = **Désactivé** – Le module FVR est éteint (économie d'énergie)
+        - **`1`** = **Activé** – Le module FVR est alimenté et opérationnel
+      
+      - **Bit 6 : `FVRST` – Indicateur de Prêt du FVR**
+        - **`0`** = **Non prêt** – La sortie FVR n'est pas stable ou le module est désactivé
+        - **`1`** = **Prêt** – La tension de référence est stable et peut être utilisée
+        
+        > **Note** : Ce bit est **lecture seule**. Il faut attendre qu'il passe à `1` après l'activation du FVR avant d'utiliser la référence.
+      
+      - **Bits 5-4 : `FVRS<1:0>` – Sélection du Niveau de Tension de Sortie**
+        | FVRS1 | FVRS0 | Gain | Tension de Sortie (Typique) |
+        |-------|-------|------|-----------------------------|
+        | 0 | 0 | **Désactivé** | — |
+        | 0 | 1 | **1×** | 1,024 V |
+        | 1 | 0 | **2×** | 2,048 V |
+        | 1 | 1 | **4×** | 4,096 V |
+        
+        > **Application** : 
+        > - **1,024 V** : Pour CAN (ADC) basse tension
+        > - **2,048 V / 4,096 V** : Pour comparateurs analogiques ou CAN haute précision
 
-
-
-
-
-
-
-
-
-
-
-
+- ### Registres de Résultat
 
 
 ## **8. Gestion de CNA**
