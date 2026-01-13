@@ -39,8 +39,10 @@
    - **[Timers 2, 4 et 6 (TMR2/4/6)](#timer-246-tmr246)**
 
 - ## **[Gestion de CAN](#7-gestion-de-can)**
+   - **[Étapes de Configuration](#étapes-de-configuration)**
    - **[Registres de Contrôle](#registres-de-contrôle-2)**
-   - **[Registres de Résultat](#registres-de-résultat)**
+   - **[Registres Associés](#registres-associés)**
+   - **[Fonctionnes Avancé MikroC](#fonctionnes-avancé-mikroc)**
 
 - ## **[Gestion de CNA](#8-gestion-de-cna)**
 
