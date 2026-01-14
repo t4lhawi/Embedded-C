@@ -20,11 +20,11 @@
 
 - ## **[Ports d’Entrée/Sortie (E/S)](#4-ports-dentréesortie-es)**
    - **[Registres de Contrôle](#registres-de-contrôle)**
-   - **[Registres associés au PORTA](#registres-associés-au-porta)**
-   - **[Registres associés au PORTB](#registres-associés-au-portb)**
-   - **[Registres associés au PORTC](#registres-associés-au-portc)**
-   - **[Registres associés au PORTD](#registres-associés-au-portd)**
-   - **[Registres associés au PORTE](#registres-associés-au-porte)**
+   - **[Registres Associés au PORTA](#registres-associés-au-porta)**
+   - **[Registres Associés au PORTB](#registres-associés-au-portb)**
+   - **[Registres Associés au PORTC](#registres-associés-au-portc)**
+   - **[Registres Associés au PORTD](#registres-associés-au-portd)**
+   - **[Registres Associés au PORTE](#registres-associés-au-porte)**
 
 - ## **[Gestion des Interruptions](#5-gestion-des-interruptions)**
    - **[Types des Interruptions](#types-des-interruptions-sources)**
@@ -339,7 +339,7 @@ Le **[PIC18F&sup1;](https://en.wikipedia.org/wiki/PIC_microcontrollers)** fait p
    > - Manipulation des Sorties **Toujours via `LATx`**
 
 
-- ### Registres associés au PORTA
+- ### Registres Associés au PORTA
 
    <table>
      <thead>
@@ -488,7 +488,7 @@ Le **[PIC18F&sup1;](https://en.wikipedia.org/wiki/PIC_microcontrollers)** fait p
    > - — = emplacements non implémentés, lus comme ‘0’.
    > - **`<n:m>` → on prend tous les bits du bit n jusqu’au bit m, inclus.**
 
-- ### Registres associés au PORTB
+- ### Registres Associés au PORTB
 
    <table>
      <thead>
@@ -679,7 +679,7 @@ Le **[PIC18F&sup1;](https://en.wikipedia.org/wiki/PIC_microcontrollers)** fait p
 
 
 
-- ### Registres associés au PORTC
+- ### Registres Associés au PORTC
 
    <table>
      <thead>
@@ -862,7 +862,7 @@ Le **[PIC18F&sup1;](https://en.wikipedia.org/wiki/PIC_microcontrollers)** fait p
    > - Les **bits grisés ne sont pas utilisés pour PORTC**.
    > - **`<n:m>` → on prend tous les bits du bit n jusqu’au bit m, inclus.**
 
-- ### Registres associés au PORTD
+- ### Registres Associés au PORTD
 
    <table>
      <thead>
@@ -991,7 +991,7 @@ Le **[PIC18F&sup1;](https://en.wikipedia.org/wiki/PIC_microcontrollers)** fait p
    > - — = **emplacements non implémentés, lus comme ‘0’**.
    > - **`<n:m>` → on prend tous les bits du bit n jusqu’au bit m, inclus.**
 
-- ### Registres associés au PORTE
+- ### Registres Associés au PORTE
 
    <table>
      <thead>
