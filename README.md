@@ -1841,7 +1841,7 @@ Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Tensi
    | Étape | Action | Description |
    |-------|--------|-------------|
    | **1** | **[Configurer le Port](#4-ports-dentréesortie-es)** | • `TRISx = 1` (Entrée)<br>• `ANSELx = 1` (Analogique) |
-   | **2** | **Configurer le Module CAN** | • `ADCS` (Vitesse)<br>• `PVCFG/NVCFG` (Références)<br>• `CHS` (Canal)<br>• `ADFM` (Format)<br>• `ACQT` (Délai)<br>• `ADON = 1` (Activation) |
+   | **2** | **[Configurer le Module CAN](#registres-de-contrôle-2)** | • `ADCS` ([Vitesse](#adcon2---configuration-de-lhorloge-et-du-format))<br>• `PVCFG/NVCFG` ([Références](#adcon1---configuration-des-références-de-tension))<br>• `CHS` ([Canal](#adcono---sélection-de-canal-et-activation-adc))<br>• `ADFM` ([Format](#adcon2---configuration-de-lhorloge-et-du-format))<br>• `ACQT` ([Délai](#adcon2---configuration-de-lhorloge-et-du-format))<br>• `ADON = 1` ([Activation](#adcono---sélection-de-canal-et-activation-adc)) |
    | **3** | **[Configurer l'Interruption](#5-gestion-des-interruptions)** (Optionnel) | • `ADIF = 0`<br>• `ADIE = 1`<br>• `PEIE = 1`<br>• `GIE = 1` |
    | **4** | **Attendre Acquisition** | Attente du **TACQ** (Si Manuel) |
    | **5** | **Démarrer Conversion** | `GO/DONE = 1` |
@@ -2055,20 +2055,21 @@ Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Tensi
                </table>
       
       - **Bits 5-3 : `ACQT<2:0>` – Sélection du Temps d'Acquisition**
-        | ACQT2 | ACQT1 | ACQT0 | Temps d'Acquisition | Remarque |
-        |-------|-------|-------|---------------------|----------|
-        | 0 | 0 | 0 | **0 TAD** | Manuel (déclenchement immédiat) |
-        | 0 | 0 | 1 | **2 TAD** | Minimum recommandé |
-        | 0 | 1 | 0 | **4 TAD** | Standard |
-        | 0 | 1 | 1 | **6 TAD** | Pour sources à haute impédance |
-        | 1 | 0 | 0 | **8 TAD** | Haute impédance |
-        | 1 | 0 | 1 | **12 TAD** | Très haute impédance |
-        | 1 | 1 | 0 | **16 TAD** | Impédances extrêmes |
-        | 1 | 1 | 1 | **20 TAD** | Maximum |
+        | ACQT2 | ACQT1 | ACQT0 | Temps d'Acquisition |
+        |-------|-------|-------|---------------------|
+        | 0 | 0 | 0 | **0 TAD** |
+        | 0 | 0 | 1 | **2 TAD** |
+        | 0 | 1 | 0 | **4 TAD** |
+        | 0 | 1 | 1 | **6 TAD** |
+        | 1 | 0 | 0 | **8 TAD** |
+        | 1 | 0 | 1 | **12 TAD** |
+        | 1 | 1 | 0 | **16 TAD** |
+        | 1 | 1 | 1 | **20 TAD** |
       
-        > **TAD** = Temps d'Horloge de CAN (ADC Clock Period)
+        > - **TAD** = Temps d'Horloge de CAN (ADC Clock Period)
+        > - **TACQ** = Temps d'Acquisition du CAN (ADC Acquisition Time)
       
-      - **Bits 2-0 : `ADCS<2:0>` – Sélection de l'Horloge ADC**
+      - **Bits 2-0 : `ADCS<2:0>` – Sélection de l'Horloge CAN**
         | ADCS2 | ADCS1 | ADCS0 | Horloge CAN (TAD) |
         |-------|-------|-------|-------------------|
         | 0 | 0 | 0 | **FOSC/2** |
