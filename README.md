@@ -2186,6 +2186,103 @@ Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Tensi
         > - **2,048 V / 4,096 V** : Pour comparateurs analogiques ou CAN haute précision
 
 - ### Registres Associés
+   <table>
+     <thead>
+       <tr>
+         <th>Name</th>
+         <th>Bit 7</th>
+         <th>Bit 6</th>
+         <th>Bit 5</th>
+         <th>Bit 4</th>
+         <th>Bit 3</th>
+         <th>Bit 2</th>
+         <th>Bit 1</th>
+         <th>Bit 0</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr>
+         <td><strong>ADCON0</strong></td>
+         <td>—</td>
+         <td align="center" colspan="5"><strong>CHS&lt;4:0&gt;</strong></td>
+         <td><strong>GO/DONE</strong></td>
+         <td><strong>ADON</strong></td>
+       </tr>
+       <tr>
+         <td><strong>ADCON1</strong></td>
+         <td><strong>TRIGSEL</strong></td>
+         <td>—</td>
+         <td>—</td>
+         <td>—</td>
+         <td align="center" colspan="2"><strong>PVCFG&lt;1:0&gt;</strong></td>
+         <td align="center" colspan="2"><strong>NVCFG&lt;1:0&gt;</strong></td>
+       </tr>
+       <tr>
+         <td><strong>ADCON2</strong></td>
+         <td><strong>ADFM</strong></td>
+         <td>—</td>
+         <td align="center" colspan="3"><strong>ACQT&lt;2:0&gt;</strong></td>
+         <td align="center" colspan="3"><strong>ADCS&lt;2:0&gt;</strong></td>
+       </tr>
+       <tr>
+         <td><strong>ADRESH</strong></td>
+         <td align="center" colspan="8">A/D Result, High Byte</td>
+       </tr>
+       <tr>
+         <td><strong>ADRESL</strong></td>
+         <td align="center" colspan="8">A/D Result, Low Byte</td>
+       </tr>
+       <tr>
+         <td><strong>CCP5CON</strong></td>
+         <td>—</td>
+         <td>—</td>
+         <td>DC5B1</td>
+         <td>DC5B0</td>
+         <td align="center" colspan="4"><strong>CCP5M&lt;3:0&gt;</strong></td>
+       </tr>
+       <tr>
+         <td><strong>CTMUCONH</strong></td>
+         <td><strong>CTMUEN</strong></td>
+         <td>—</td>
+         <td><strong>CTMUSIDL</strong></td>
+         <td><strong>TGEN</strong></td>
+         <td><strong>EDGEN</strong></td>
+         <td><strong>EDGSEQEN</strong></td>
+         <td><strong>IDISSEN</strong></td>
+         <td><strong>CTTRIG</strong></td>
+       </tr>
+       <tr>
+         <td><strong>PMD1</strong></td>
+         <td><strong>MSSP2MD</strong></td>
+         <td><strong>MSSP1MD</strong></td>
+         <td>—</td>
+         <td><strong>CCP5MD</strong></td>
+         <td><strong>CCP4MD</strong></td>
+         <td><strong>CCP3MD</strong></td>
+         <td><strong>CCP2MD</strong></td>
+         <td><strong>CCP1MD</strong></td>
+       </tr>
+       <tr>
+         <td><strong>PMD2</strong></td>
+         <td>—</td>
+         <td>—</td>
+         <td>—</td>
+         <td>—</td>
+         <td><strong>CTMUMD</strong></td>
+         <td><strong>CMP2MD</strong></td>
+         <td><strong>CMP1MD</strong></td>
+         <td><strong>ADCMD</strong></td>
+       </tr>
+     </tbody>
+   </table>
+   
+   > Consultez les sections suivantes pour la configuration :
+   > - **[Ports d’Entrée/Sortie (E/S) (`TRISx`, `ANSELx`)](#4-ports-dentréesortie-es)**
+   > - **[Activation des interruptions (`PIEx`)](#registres-dactivation-pie1-à-pie5)**
+   > - **[Drapeaux d'interruption (`PIRx`)](#registres-de-flags-pir1-à-pir5)**
+   > - **[Priorités d'interruption (`IPRx`)](#registres-de-priorité-ipr1-à-ipr5)**
+
+
 
 - ### Fonctionnes Avancé MikroC
    | **Fonction** | **Description** |
