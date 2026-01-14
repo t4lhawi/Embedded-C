@@ -2084,7 +2084,7 @@ Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Signa
          >   | --------- | ----------------------------- | --------------------------------------- |
          >   | 1         | **Période d’Horloge**         | $`T_{osc} = \dfrac{1}{F_{osc}}`$        |
          >   | 2         | **Période du CAN**            | $`T_{AD} = \text{ADCS} \times T_{osc}`$ |
-         >   | 3         | **Choisir `ADCS`**            | $`T_{AD} \ge 1,\mu s`$                  |
+         >   | 3         | **Choisir `ADCS`**            | $`T_{AD} \ge 1\mu s`$                  |
          
          > - **Plus Petit Diviseur Valide = Vitesse Maximale**
          > - **Modifier `ACQT` Ne Change pas la Vitesse de Conversion**
