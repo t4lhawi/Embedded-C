@@ -1942,16 +1942,16 @@ Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Tensi
 
 - ### Étapes de Conversion A/N
 
-   | Étape | Type | Action | Description |
-   |-------|------|--------|-------------|
-   | **1** | Configuration | **[Configurer le Port](#4-ports-dentréesortie-es)** | • `TRISx = 1` (Entrée)<br>• `ANSELx = 1` (Analogique) |
-   | **2** | Configuration | **Configurer le Module CAN** | • `ADCS` (Vitesse)<br>• `PVCFG/NVCFG` (Références)<br>• `CHS` (Canal)<br>• `ADFM` (Format)<br>• `ACQT` (Délai)<br>• `ADON = 1` (Activation) |
-   | **3** | Configuration | **[Configurer l'Interruption](#5-gestion-des-interruptions)** (optionnel) | • `ADIF = 0`<br>• `ADIE = 1`<br>• `PEIE = 1`<br>• `GIE = 1` |
-   | **4** | Conversion | **Attendre Acquisition** | Attente du Temps `TACQ` si manuel |
-   | **5** | Conversion | **Démarrer Conversion** | `GO/DONE = 1` |
-   | **6** | Conversion | **Attendre Fin** | • Vérifier `GO/DONE = 0`<br>• OU `ADIF = 1` |
-   | **7** | Conversion | **Lire Résultat** | Lecture `ADRESH:ADRESL` |
-   | **8** | Nettoyage | **Désactiver Drapeau (Flag)** | `ADIF = 0` (si interruption) |
+   | Étape | Action | Description |
+   |-------|--------|-------------|
+   | **1** | **[Configurer le Port](#4-ports-dentréesortie-es)** | • `TRISx = 1` (Entrée)<br>• `ANSELx = 1` (Analogique) |
+   | **2** | **Configurer le Module CAN** | • `ADCS` (Vitesse)<br>• `PVCFG/NVCFG` (Références)<br>• `CHS` (Canal)<br>• `ADFM` (Format)<br>• `ACQT` (Délai)<br>• `ADON = 1` (Activation) |
+   | **3** | **[Configurer l'Interruption](#5-gestion-des-interruptions)** (optionnel) | • `ADIF = 0`<br>• `ADIE = 1`<br>• `PEIE = 1`<br>• `GIE = 1` |
+   | **4** | **Attendre Acquisition** | Attente du Temps `TACQ` si manuel |
+   | **5** | **Démarrer Conversion** | `GO/DONE = 1` |
+   | **6** | **Attendre Fin** | • Vérifier `GO/DONE = 0`<br>• OU `ADIF = 1` |
+   | **7** | **Lire Résultat** | Lecture `ADRESH:ADRESL` |
+   | **8** | **Désactiver Drapeau (Flag)** | `ADIF = 0` (si interruption) |
 
   > - **Configuration (Étapes 1-3) :** Préparation des registres et du matériel
   > - **Exécution (Étapes 4-7) :** Lancement et lecture de la conversion
