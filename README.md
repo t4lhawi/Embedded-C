@@ -46,6 +46,7 @@
 
 - ## **[Gestion de CNA](#8-gestion-de-cna)**
 
+- ## **[Gestion de PWM](#9-gestion-de-pwm)**
 
 ---
 
@@ -2127,47 +2128,6 @@ Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Tensi
          <td><strong>ADRESL</strong></td>
          <td align="center" colspan="8">A/D Result, Low Byte</td>
        </tr>
-       <tr>
-         <td><strong>CCP5CON</strong></td>
-         <td>—</td>
-         <td>—</td>
-         <td>DC5B1</td>
-         <td>DC5B0</td>
-         <td align="center" colspan="4">CCP5M&lt;3:0&gt;</td>
-       </tr>
-       <tr>
-         <td><strong>CTMUCONH</strong></td>
-         <td>CTMUEN</td>
-         <td>—</td>
-         <td>CTMUSIDL</td>
-         <td>TGEN</td>
-         <td>EDGEN</td>
-         <td>EDGSEQEN</td>
-         <td>IDISSEN</td>
-         <td>CTTRIG</td>
-       </tr>
-       <tr>
-         <td><strong>PMD1</strong></td>
-         <td>MSSP2MD</td>
-         <td>MSSP1MD</td>
-         <td>—</td>
-         <td>CCP5MD</td>
-         <td>CCP4MD</td>
-         <td>CCP3MD</td>
-         <td>CCP2MD</td>
-         <td>CCP1MD</td>
-       </tr>
-       <tr>
-         <td><strong>PMD2</strong></td>
-         <td>—</td>
-         <td>—</td>
-         <td>—</td>
-         <td>—</td>
-         <td>CTMUMD</td>
-         <td>CMP2MD</td>
-         <td>CMP1MD</td>
-         <td>ADCMD</td>
-       </tr>
      </tbody>
    </table>
    
@@ -2188,6 +2148,14 @@ Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Tensi
 
 
 ## **8. Gestion de CNA**
+
+
+
+
+
+
+
+## **9. Gestion de PWM**
 ---
 
 <h3 align="center"> 🧑🏻‍💻 | Made By : <a href="https://github.com/t4lhawi" target="_blank">Mohamed Talhaoui</a></h3>
