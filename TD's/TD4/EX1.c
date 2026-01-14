@@ -11,7 +11,7 @@ void main(){
     TRISC = 0x00;
     LATC = 0x00;
 
-    ADCON2 = 0xBD; // ADCS=101 (Fosc/32 pour 8MHz) | ACQT=111 | ADFM=1
+    ADCON2 = 0xB9; // ADCS=001 (Fosc/8 pour 8MHz) | ACQT=111 | ADFM=1
 
     ADCON1 = 0x00; // PVCFG=00 (+VREF=VDD) | NVCFG=00 (-VREF=VSS)
 

@@ -2070,15 +2070,15 @@ Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Signa
         > - **TACQ** = Temps d'Acquisition du CAN (ADC Acquisition Time)
       
       - **Bits 2-0 : `ADCS<2:0>` – Sélection de l'Horloge CAN**
-        | ADCS2 | ADCS1 | ADCS0 | Horloge CAN (TAD) |
-        |-------|-------|-------|-------------------|
-        | 0 | 0 | 0 | **FOSC/2** |
-        | 1 | 0 | 0 | **FOSC/4** |
-        | 0 | 0 | 1 | **FOSC/8** |
-        | 1 | 0 | 1 | **FOSC/16** |
-        | 0 | 1 | 0 | **FOSC/32** |
-        | 1 | 1 | 0 | **FOSC/64** |
-        | x | 1 | 1 | **FRC** |
+        | ADCS2 | ADCS1 | ADCS0 | Horloge CAN (TAD) | Formule       |
+        |-------|-------|-------|-------------------| :-------------: |
+        | 0 | 0 | 0 | **Fosc/2** | $`T_{AD} = 2 \times T_{osc}`$    |
+        | 1 | 0 | 0 | **Fosc/4** | $`T_{AD} = 4 \times T_{osc}`$    |
+        | 0 | 0 | 1 | **Fosc/8** | $`T_{AD} = 8 \times T_{osc}`$    |
+        | 1 | 0 | 1 | **Fosc/16** | $`T_{AD} = 16 \times T_{osc}`$  |
+        | 0 | 1 | 0 | **Fosc/32** | $`T_{AD} = 32 \times T_{osc}`$  |
+        | 1 | 1 | 0 | **Fosc/64** | $`T_{AD} = 64 \times T_{osc}`$  |
+        | x | 1 | 1 | **FRC** |        ―             |
       
          >   | **Étape** | **Action**                    | **Formule**                             |
          >   | --------- | ----------------------------- | --------------------------------------- |
