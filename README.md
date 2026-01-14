@@ -2066,21 +2066,28 @@ Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Tensi
         | 1 | 1 | 0 | **16 TAD** | Impédances extrêmes |
         | 1 | 1 | 1 | **20 TAD** | Maximum |
       
-        > **TAD** = Temps d'Horloge ADC (ADC Clock Period)
+        > **TAD** = Temps d'Horloge de CAN (ADC Clock Period)
       
       - **Bits 2-0 : `ADCS<2:0>` – Sélection de l'Horloge ADC**
-        | ADCS2 | ADCS1 | ADCS0 | Horloge ADC (TAD) | Fréquence Max |
-        |-------|-------|-------|-------------------|---------------|
-        | 0 | 0 | 0 | **FOSC/2** | Rapide (pour FOSC ≤ 10 MHz) |
-        | 0 | 0 | 1 | **FOSC/8** | Standard |
-        | 0 | 1 | 0 | **FOSC/32** | Lent |
-        | 0 | 1 | 1 | **FRC** | Horloge RC interne (500 kHz typique) |
-        | 1 | 0 | 0 | **FOSC/4** | Pour FOSC ≤ 20 MHz |
-        | 1 | 0 | 1 | **FOSC/16** | Moyenne |
-        | 1 | 1 | 0 | **FOSC/64** | Très lente |
-        | 1 | 1 | 1 | **FRC** | Horloge RC interne (alternatif) |
+        | ADCS2 | ADCS1 | ADCS0 | Horloge CAN (TAD) |
+        |-------|-------|-------|-------------------|
+        | 0 | 0 | 0 | **FOSC/2** |
+        | 1 | 0 | 0 | **FOSC/4** |
+        | 0 | 0 | 1 | **FOSC/8** |
+        | 1 | 0 | 1 | **FOSC/16** |
+        | 0 | 1 | 0 | **FOSC/32** |
+        | 1 | 1 | 0 | **FOSC/64** |
+        | x | 1 | 1 | **FRC** |
       
-        > **TAD** doit être entre 0.7 µs et 25 µs pour une conversion précise.
+         >   | **Étape** | **Action**                    | **Formule**                             |
+         >   | --------- | ----------------------------- | --------------------------------------- |
+         >   | 1         | **Période d’Horloge**         | $`T_{osc} = \dfrac{1}{F_{osc}}`$        |
+         >   | 2         | **Période du CAN**            | $`T_{AD} = \text{ADCS} \times T_{osc}`$ |
+         >   | 3         | **Choisir `ADCS`**            | $`T_{AD} \ge 1,\mu s`$                  |
+         
+         > - **Plus Petit Diviseur Valide = Vitesse Maximale**
+         > - **Modifier `ACQT` Ne Change pas la Vitesse de Conversion**
+
 
 
    - #### `FVRCON` - Contrôle de la Référence de Tension Fixe
