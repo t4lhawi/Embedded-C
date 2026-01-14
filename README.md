@@ -1830,7 +1830,7 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
 ---
 
 ## **7. Gestion de CAN**
-Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Tension Analogique** en une **Valeur Numérique sur 10 bits** (0 à 1023).
+Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Signal Analogique** en une **Valeur Numérique sur 10 bits** (0 à 1023).
 >   - Entrées Analogiques multiplexées **(`AN0` à `AN27`)**
 >   - Résultat Stocké dans **`ADRESH:ADRESL`**
 >   - Références de Tension configurables (**$`V_{DD}`$, $`V_{SS}`$, $`V_{REF±}`$, $`FVR`$**)
@@ -2207,7 +2207,7 @@ Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Tensi
 
 
 ## **8. Gestion de CNA**
-
+Le **Convertisseur Numérique-Analogique (CNA)** permet de convertir un **Signal Numérique (Binaire)** en **Signal Analogique Continu**.
 
 
 
