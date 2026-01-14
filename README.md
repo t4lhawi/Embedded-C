@@ -2006,22 +2006,22 @@ Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Tensi
                  </tr>
                  <tr>
                      <td rowspan="2"><strong>ADFM=0</strong></td>
-                     <td><strong>Bit 7<br>D9</strong></td>
-                     <td><strong>Bit 6<br>D8</strong></td>
-                     <td><strong>Bit 5<br>D7</strong></td>
-                     <td><strong>Bit 4<br>D6</strong></td>
-                     <td><strong>Bit 3<br>D5</strong></td>
-                     <td><strong>Bit 2<br>D4</strong></td>
-                     <td><strong>Bit 1<br>D3</strong></td>
-                     <td><strong>Bit 0<br>D2</strong></td>
-                     <td><strong>Bit 7<br>D1</strong></td>
-                     <td><strong>Bit 6<br>D0</strong></td>
-                     <td>Bit 5<br>0</td>
-                     <td>Bit 4<br>0</td>
-                     <td>Bit 3<br>0</td>
-                     <td>Bit 2<br>0</td>
-                     <td>Bit 1<br>0</td>
-                     <td>Bit 0<br>0</td>
+                     <td><strong>Bit 7</td>
+                     <td><strong>Bit 6</td>
+                     <td><strong>Bit 5</td>
+                     <td><strong>Bit 4</td>
+                     <td><strong>Bit 3</td>
+                     <td><strong>Bit 2</td>
+                     <td><strong>Bit 1</td>
+                     <td><strong>Bit 0</td>
+                     <td><strong>Bit 7</td>
+                     <td><strong>Bit 6</td>
+                     <td>Bit 5</td>
+                     <td>Bit 4</td>
+                     <td>Bit 3</td>
+                     <td>Bit 2</td>
+                     <td>Bit 1</td>
+                     <td>Bit 0</td>
                  </tr>
                  <tr>
                      <td colspan="8" align="center">MSB ← 10-bit A/D Result → LSB</td>
@@ -2030,22 +2030,22 @@ Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Tensi
                  </tr>
                  <tr>
                      <td rowspan="2"><strong>ADFM=1</strong></td>
-                     <td>Bit 7<br>0</td>
-                     <td>Bit 6<br>0</td>
-                     <td>Bit 5<br>0</td>
-                     <td>Bit 4<br>0</td>
-                     <td>Bit 3<br>0</td>
-                     <td>Bit 2<br>0</td>
-                     <td><strong>Bit 1<br>D9</strong></td>
-                     <td><strong>Bit 0<br>D8</strong></td>
-                     <td><strong>Bit 7<br>D7</strong></td>
-                     <td><strong>Bit 6<br>D6</strong></td>
-                     <td><strong>Bit 5<br>D5</strong></td>
-                     <td><strong>Bit 4<br>D4</strong></td>
-                     <td><strong>Bit 3<br>D3</strong></td>
-                     <td><strong>Bit 2<br>D2</strong></td>
-                     <td><strong>Bit 1<br>D1</strong></td>
-                     <td><strong>Bit 0<br>D0</strong></td>
+                     <td>Bit 7</td>
+                     <td>Bit 6</td>
+                     <td>Bit 5</td>
+                     <td>Bit 4</td>
+                     <td>Bit 3</td>
+                     <td>Bit 2</td>
+                     <td><strong>Bit 1</td>
+                     <td><strong>Bit 0</td>
+                     <td><strong>Bit 7</td>
+                     <td><strong>Bit 6</td>
+                     <td><strong>Bit 5</td>
+                     <td><strong>Bit 4</td>
+                     <td><strong>Bit 3</td>
+                     <td><strong>Bit 2</td>
+                     <td><strong>Bit 1</td>
+                     <td><strong>Bit 0</td>
                  </tr>
                  <tr>
                      <td colspan="6" align="center">―</td>
