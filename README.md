@@ -2204,25 +2204,25 @@ Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Tensi
        <tr>
          <td><strong>ADCON0</strong></td>
          <td>—</td>
-         <td align="center" colspan="5"><strong>CHS&lt;4:0&gt;</strong></td>
-         <td><strong>GO/DONE</strong></td>
-         <td><strong>ADON</strong></td>
+         <td align="center" colspan="5">CHS&lt;4:0&gt;</td>
+         <td>GO/DONE</td>
+         <td>ADON</td>
        </tr>
        <tr>
          <td><strong>ADCON1</strong></td>
-         <td><strong>TRIGSEL</strong></td>
+         <td>TRIGSEL</td>
          <td>—</td>
          <td>—</td>
          <td>—</td>
-         <td align="center" colspan="2"><strong>PVCFG&lt;1:0&gt;</strong></td>
-         <td align="center" colspan="2"><strong>NVCFG&lt;1:0&gt;</strong></td>
+         <td align="center" colspan="2">PVCFG&lt;1:0&gt;</td>
+         <td align="center" colspan="2">NVCFG&lt;1:0&gt;</td>
        </tr>
        <tr>
          <td><strong>ADCON2</strong></td>
-         <td><strong>ADFM</strong></td>
+         <td>ADFM</td>
          <td>—</td>
-         <td align="center" colspan="3"><strong>ACQT&lt;2:0&gt;</strong></td>
-         <td align="center" colspan="3"><strong>ADCS&lt;2:0&gt;</strong></td>
+         <td align="center" colspan="3">ACQT&lt;2:0&gt;</td>
+         <td align="center" colspan="3">ADCS&lt;2:0&gt;</td>
        </tr>
        <tr>
          <td><strong>ADRESH</strong></td>
@@ -2238,29 +2238,29 @@ Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Tensi
          <td>—</td>
          <td>DC5B1</td>
          <td>DC5B0</td>
-         <td align="center" colspan="4"><strong>CCP5M&lt;3:0&gt;</strong></td>
+         <td align="center" colspan="4">CCP5M&lt;3:0&gt;</td>
        </tr>
        <tr>
          <td><strong>CTMUCONH</strong></td>
-         <td><strong>CTMUEN</strong></td>
+         <td>CTMUEN</td>
          <td>—</td>
-         <td><strong>CTMUSIDL</strong></td>
-         <td><strong>TGEN</strong></td>
-         <td><strong>EDGEN</strong></td>
-         <td><strong>EDGSEQEN</strong></td>
-         <td><strong>IDISSEN</strong></td>
-         <td><strong>CTTRIG</strong></td>
+         <td>CTMUSIDL</td>
+         <td>TGEN</td>
+         <td>EDGEN</td>
+         <td>EDGSEQEN</td>
+         <td>IDISSEN</td>
+         <td>CTTRIG</td>
        </tr>
        <tr>
          <td><strong>PMD1</strong></td>
-         <td><strong>MSSP2MD</strong></td>
-         <td><strong>MSSP1MD</strong></td>
+         <td>MSSP2MD</td>
+         <td>MSSP1MD</td>
          <td>—</td>
-         <td><strong>CCP5MD</strong></td>
-         <td><strong>CCP4MD</strong></td>
-         <td><strong>CCP3MD</strong></td>
-         <td><strong>CCP2MD</strong></td>
-         <td><strong>CCP1MD</strong></td>
+         <td>CCP5MD</td>
+         <td>CCP4MD</td>
+         <td>CCP3MD</td>
+         <td>CCP2MD</td>
+         <td>CCP1MD</td>
        </tr>
        <tr>
          <td><strong>PMD2</strong></td>
@@ -2268,10 +2268,10 @@ Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Tensi
          <td>—</td>
          <td>—</td>
          <td>—</td>
-         <td><strong>CTMUMD</strong></td>
-         <td><strong>CMP2MD</strong></td>
-         <td><strong>CMP1MD</strong></td>
-         <td><strong>ADCMD</strong></td>
+         <td>CTMUMD</td>
+         <td>CMP2MD</td>
+         <td>CMP1MD</td>
+         <td>ADCMD</td>
        </tr>
      </tbody>
    </table>
