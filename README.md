@@ -39,7 +39,7 @@
    - **[Timers 2, 4 et 6 (TMR2/4/6)](#timer-246-tmr246)**
 
 - ## **[Gestion de CAN](#7-gestion-de-can)**
-   - **[Étapes de Configuration](#étapes-de-configuration)**
+   - **[Étapes de Conversion](#étapes-de-conversion-an)**
    - **[Registres de Contrôle](#registres-de-contrôle-2)**
    - **[Registres Associés](#registres-associés)**
    - **[Fonctionnes Avancé *MikroC*](#fonctionnes-avancé-mikroc)**
@@ -1940,18 +1940,22 @@ Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Tensi
 >   - Références de Tension configurables (**$`V_{DD}`$, $`V_{SS}`$, $`V_{REF±}`$, $`FVR`$**)
 >   - Peut générer une interruption en fin de Conversion
 
-- ### Étapes de Configuration
+- ### Étapes de Conversion A/N
 
-   | Étape | Registres et Formules |
-   | :--- | :--- |
-   | **1. Entrée Analogique** | **ANSELx = 1** (mode analogique), **TRISx = 1** (entrée) |
-   | **2. Tensions de Références** | **ADCON1** : bits **PVCFG** (Réf +) et **NVCFG** (Réf -) |
-   | **3. Temps & Horloge** | **ADCON2** : **ADCS** (vitesse $\ge 1 \mu s$), **ACQT** (acquisition auto) |
-   | **4. Format & Canal** | **ADCON2** : **ADFM** (justification) ; **ADCON0** : **CHS<4:0>** (canal) |
-   | **5. Activation** | **ADCON0** : **ADON = 1** (mise sous tension du module) |
-   | **6. Conversion** | **GO/DONE = 1** (lancer) ; attendre **GO/DONE == 0** (fin) |
-   | **7. Résultat** | Lire **ADRESH** et **ADRESL** (donnée sur 10 bits) |
-   | **8. Remise à zéro** | **ADIF = 0** (effacer le drapeau d'interruption) |
+   | Étape | Type | Action | Description |
+   |-------|------|--------|-------------|
+   | **1** | Configuration | **[Configurer le Port](#4-ports-dentréesortie-es)** | • `TRISx = 1` (Entrée)<br>• `ANSELx = 1` (Analogique) |
+   | **2** | Configuration | **Configurer le Module CAN** | • `ADCS` (Vitesse)<br>• `PVCFG/NVCFG` (Références)<br>• `CHS` (Canal)<br>• `ADFM` (Format)<br>• `ACQT` (Délai)<br>• `ADON = 1` (Activation) |
+   | **3** | Configuration | **[Configurer l'Interruption](#5-gestion-des-interruptions)** (optionnel) | • `ADIF = 0`<br>• `ADIE = 1`<br>• `PEIE = 1`<br>• `GIE = 1` |
+   | **4** | Conversion | **Attendre Acquisition** | Attente du Temps `TACQ` si manuel |
+   | **5** | Conversion | **Démarrer Conversion** | `GO/DONE = 1` |
+   | **6** | Conversion | **Attendre Fin** | • Vérifier `GO/DONE = 0`<br>• OU `ADIF = 1` |
+   | **7** | Conversion | **Lire Résultat** | Lecture `ADRESH:ADRESL` |
+   | **8** | Nettoyage | **Désactiver Drapeau (Flag)** | `ADIF = 0` (si interruption) |
+
+  > - **Configuration (Étapes 1-3) :** Préparation des registres et du matériel
+  > - **Exécution (Étapes 4-7) :** Lancement et lecture de la conversion
+  > - **Nettoyage (Étapes 8) :** Gestion des interruptions
 
 - ### Registres de Contrôle
 
@@ -1980,8 +1984,8 @@ Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Tensi
       </table>
       
       - **Bits 6-2 : `CHS<4:0>` – Sélection du Canal Analogique**
-           | CHS4 | CHS3 | CHS2 | CHS1 | CHS0 | Canal | Broche PIC18F45K22 |
-           |------|------|------|------|------|-------|-------------------|
+           | CHS4 | CHS3 | CHS2 | CHS1 | CHS0 | Canal | Broche |
+           |------|------|------|------|------|-------|--------|
            | 0 | 0 | 0 | 0 | 0 | **AN0** | RA0 |
            | 0 | 0 | 0 | 0 | 1 | **AN1** | RA1 |
            | 0 | 0 | 0 | 1 | 0 | **AN2** | RA2 |
