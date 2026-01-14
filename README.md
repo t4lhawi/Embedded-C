@@ -42,7 +42,7 @@
    - **[Étapes de Configuration](#étapes-de-configuration)**
    - **[Registres de Contrôle](#registres-de-contrôle-2)**
    - **[Registres Associés](#registres-associés)**
-   - **[Fonctionnes Avancé MikroC](#fonctionnes-avancé-mikroc)**
+   - **[Fonctionnes Avancé *MikroC*](#fonctionnes-avancé-mikroc)**
 
 - ## **[Gestion de CNA](#8-gestion-de-cna)**
 
