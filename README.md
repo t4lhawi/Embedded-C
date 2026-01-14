@@ -1716,28 +1716,6 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
             <td><strong>TMRxL</strong></td>
             <td align="center" colspan="8">Timerx Register, Low Byte</td>
           </tr>
-         <tr> 
-            <td><strong>PMD0</strong></td> 
-            <td>UART2MD</td> 
-            <td>UART1MD</td> 
-            <td>TMR8MD</td> 
-            <td>TMR8MD</td> 
-            <td>TMR4MD</td> 
-            <td>TMR3MD</td> 
-            <td>TMR2MD</td> 
-            <td>TMR1MD</td> 
-         </tr>
-          <tr>
-            <td>CONFIG3H</td>
-            <td>MCLRE</td>
-            <td>—</td>
-            <td>P2BMX</td>
-            <td>T3CMX</td>
-            <td>HFOFST</td>
-            <td>CCP3MX</td>
-            <td>PBADEN</td>
-            <td>CCP2MX</td>
-          </tr>
         </tbody>
       </table>
 
@@ -1839,34 +1817,6 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
           <tr>
             <td><strong>TMRx</strong></td>
             <td align="center" colspan="8">Compteur du Timerx (8 bits)</td>
-          </tr>
-          <tr>
-            <td><strong>PMD0</strong></td>
-            <td>UART2MD</td>
-            <td>UART1MD</td>
-            <td>TMR6MD</td>
-            <td>TMR6MD</td>
-            <td>TMR4MD</td>
-            <td>TMR3MD</td>
-            <td>TMR2MD</td>
-            <td>TMR1MD</td>
-          </tr>
-          <tr>
-            <td><strong>CCPTMRS0</strong></td>
-            <td colspan="2">C3TSEL&lt;1:0&gt;</td>
-            <td>—</td>
-            <td colspan="2">C2TSEL&lt;1:0&gt;</td>
-            <td>—</td>
-            <td colspan="2">C1TSEL&lt;1:0&gt;</td>
-          </tr>
-          <tr>
-            <td><strong>CCPTMRS1</strong></td>
-            <td>—</td>
-            <td>—</td>
-            <td>—</td>
-            <td>—</td>
-            <td colspan="2">C5TSEL&lt;1:0&gt;</td>
-            <td colspan="2">C4TSEL&lt;1:0&gt;</td>
           </tr>
         </tbody>
       </table>
