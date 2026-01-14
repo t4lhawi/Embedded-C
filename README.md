@@ -1999,9 +1999,60 @@ Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Tensi
       </table>
       
       - **Bit 7 : `ADFM` – Format du Résultat de Conversion**
-        - **`1`** = **Justifié à Droite** – 8 bits bas dans ADRESL, 2 bits hauts dans ADRESH
-        - **`0`** = **Justifié à Gauche** – 8 bits hauts dans ADRESL, 2 bits bas dans ADRESH
-      
+              <table>
+                 <tr>
+                    <th colspan="9">ADRESH (High Byte)</th>
+                    <th colspan="8">ADRESL (Low Byte)</th>
+                 </tr>
+                 <tr>
+                     <td rowspan="2"><strong>ADFM=0</strong></td>
+                     <td><strong>Bit 7<br>D9</strong></td>
+                     <td><strong>Bit 6<br>D8</strong></td>
+                     <td><strong>Bit 5<br>D7</strong></td>
+                     <td><strong>Bit 4<br>D6</strong></td>
+                     <td><strong>Bit 3<br>D5</strong></td>
+                     <td><strong>Bit 2<br>D4</strong></td>
+                     <td><strong>Bit 1<br>D3</strong></td>
+                     <td><strong>Bit 0<br>D2</strong></td>
+                     <td><strong>Bit 7<br>D1</strong></td>
+                     <td><strong>Bit 6<br>D0</strong></td>
+                     <td>Bit 5<br>0</td>
+                     <td>Bit 4<br>0</td>
+                     <td>Bit 3<br>0</td>
+                     <td>Bit 2<br>0</td>
+                     <td>Bit 1<br>0</td>
+                     <td>Bit 0<br>0</td>
+                 </tr>
+                 <tr>
+                     <td colspan="8" align="center">MSB ← 10-bit A/D Result → LSB</td>
+                     <td colspan="2" align="center">Bits [1:0]</td>
+                     <td colspan="6" align="center">―</td>
+                 </tr>
+                 <tr>
+                     <td rowspan="2"><strong>ADFM=1</strong></td>
+                     <td>Bit 7<br>0</td>
+                     <td>Bit 6<br>0</td>
+                     <td>Bit 5<br>0</td>
+                     <td>Bit 4<br>0</td>
+                     <td>Bit 3<br>0</td>
+                     <td>Bit 2<br>0</td>
+                     <td><strong>Bit 1<br>D9</strong></td>
+                     <td><strong>Bit 0<br>D8</strong></td>
+                     <td><strong>Bit 7<br>D7</strong></td>
+                     <td><strong>Bit 6<br>D6</strong></td>
+                     <td><strong>Bit 5<br>D5</strong></td>
+                     <td><strong>Bit 4<br>D4</strong></td>
+                     <td><strong>Bit 3<br>D3</strong></td>
+                     <td><strong>Bit 2<br>D2</strong></td>
+                     <td><strong>Bit 1<br>D1</strong></td>
+                     <td><strong>Bit 0<br>D0</strong></td>
+                 </tr>
+                 <tr>
+                     <td colspan="6" align="center">―</td>
+                     <td colspan="2" align="center">Bits [9:8]</td>
+                     <td colspan="8" align="center">MSB ← 10-bit A/D Result → LSB</td>
+                 </tr>
+               </table>
       
       - **Bits 5-3 : `ACQT<2:0>` – Sélection du Temps d'Acquisition**
         | ACQT2 | ACQT1 | ACQT0 | Temps d'Acquisition | Remarque |
