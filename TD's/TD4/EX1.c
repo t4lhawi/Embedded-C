@@ -2,6 +2,7 @@
 // Filière : GSEIR3 (S1) | 2025/2026
 // mikroC PRO (Compiler) | Microcontrôleurs PIC18F (Microchip)
 
+//-------------------------| A |------------------------//
 void main(){
     TRISA |= 0x01; // RA0 en Entree
     ANSELA |= 0x01; // RA0 en E. Analogie
@@ -26,3 +27,5 @@ void main(){
         LATC = ADRESH; // 2-bits
     }
 }
+
+//-------------------------| B |------------------------//
