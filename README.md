@@ -1493,17 +1493,6 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
             <td><strong>TMR0L</strong></td>
             <td align="center" colspan="8">Timer0 Register, Low Byte</strong></td>
           </tr>
-          <tr>
-            <td><strong>TRISA</strong></td>
-            <td>TRISA7</td>
-            <td>TRISA6</td>
-            <td>TRISA5</td>
-            <td><strong>TRISA4</strong></td>
-            <td>TRISA3</td>
-            <td>TRISA2</td>
-            <td>TRISA1</td>
-            <td>TRISA0</td>
-          </tr>
         </tbody>
       </table>
 
@@ -1739,55 +1728,11 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
             <td>TMR1MD</td> 
          </tr>
           <tr>
-            <td><strong>TRISB</strong></td>
-            <td>TRISB7</td>
-            <td>TRISB6</td>
-            <td><strong>TRISB5</strong></td>
-            <td><strong>TRISB4</strong></td>
-            <td>TRISB3</td>
-            <td>TRISB2</td>
-            <td>TRISB1</td>
-            <td>TRISB0</td>
-          </tr>
-          <tr>
-            <td><strong>TRISC</strong></td>
-            <td>TRISC7</td>
-            <td>TRISC6</td>
-            <td>TRISC5</td>
-            <td>TRISC4</td>
-            <td>TRISC3</td>
-            <td><strong>TRISC2</strong></td>
-            <td><strong>TRISC1</strong></td>
-            <td><strong>TRISC0</strong></td>
-          </tr>
-          <tr>
-            <td><strong>ANSELB</strong></td>
-            <td>—</td>
-            <td>—</td>
-            <td><strong>ANSB5</strong></td>
-            <td><strong>ANSB4</strong></td>
-            <td>ANSB3</td>
-            <td>ANSB2</td>
-            <td>ANSB1</td>
-            <td>ANSB0</td>
-          </tr>
-          <tr>
-            <td><strong>ANSELC</strong></td>
-            <td>ANSC7</td>
-            <td>ANSC6</td>
-            <td>ANSC5</td>
-            <td>ANSC4</td>
-            <td>ANSC3</td>
-            <td><strong>ANSC2</strong></td>
-            <td>—</td>
-            <td>—</td>
-          </tr>
-          <tr>
-            <td><strong>CONFIG3H</strong></td>
+            <td>CONFIG3H</td>
             <td>MCLRE</td>
             <td>—</td>
             <td>P2BMX</td>
-            <td><strong>T3CMX</strong></td>
+            <td>T3CMX</td>
             <td>HFOFST</td>
             <td>CCP3MX</td>
             <td>PBADEN</td>
@@ -1883,9 +1828,9 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
           <tr>
             <td><strong>TxCON</strong></td>
             <td>—</td>
-            <td colspan="4"><strong>TxOUTPS&lt;3:0&gt;</strong></td>
-            <td><strong>TMRxON</strong></td>
-            <td colspan="2"><strong>TxCKPS&lt;1:0&gt;</strong></td>
+            <td colspan="4">TxOUTPS&lt;3:0&gt;</td>
+            <td>TMRxON</td>
+            <td colspan="2">TxCKPS&lt;1:0&gt;</td>
           </tr>
           <tr>
             <td><strong>PRx</strong></td>
@@ -1908,11 +1853,11 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
           </tr>
           <tr>
             <td><strong>CCPTMRS0</strong></td>
-            <td colspan="2"><strong>C3TSEL&lt;1:0&gt;</strong></td>
+            <td colspan="2">C3TSEL&lt;1:0&gt;</td>
             <td>—</td>
-            <td colspan="2"><strong>C2TSEL&lt;1:0&gt;</strong></td>
+            <td colspan="2">C2TSEL&lt;1:0&gt;</td>
             <td>—</td>
-            <td colspan="2"><strong>C1TSEL&lt;1:0&gt;</strong></td>
+            <td colspan="2">C1TSEL&lt;1:0&gt;</td>
           </tr>
           <tr>
             <td><strong>CCPTMRS1</strong></td>
@@ -1920,8 +1865,8 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
             <td>—</td>
             <td>—</td>
             <td>—</td>
-            <td colspan="2"><strong>C5TSEL&lt;1:0&gt;</strong></td>
-            <td colspan="2"><strong>C4TSEL&lt;1:0&gt;</strong></td>
+            <td colspan="2">C5TSEL&lt;1:0&gt;</td>
+            <td colspan="2">C4TSEL&lt;1:0&gt;</td>
           </tr>
         </tbody>
       </table>
