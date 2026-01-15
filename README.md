@@ -1758,8 +1758,8 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
         </tbody>
       </table>
 
-      - **Bits 6-3 : `TxOUTPS<3:0>` – Sélection du Postdiviseur de Sortie**
-         | TxOUTPS3 | TxOUTPS2 | TxOUTPS1 | TxOUTPS0 | Valeur du Postdiviseur |
+      - **Bits 6-3 : `TxOUTPS<3:0>` – Sélection du Post-diviseur de Sortie**
+         | TxOUTPS3 | TxOUTPS2 | TxOUTPS1 | TxOUTPS0 | Valeur du Post-diviseur |
          |----------|----------|----------|----------|-------------------------|
          | 0 | 0 | 0 | 0 | **1:1** (Pas de division) |
          | 0 | 0 | 0 | 1 | **1:2** |
@@ -1782,8 +1782,8 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
          - **`0`** = **Désactivé**
          - **`1`** = **Activé**
 
-      - **Bits 1-0 : `TxCKPS<1:0>` – Sélection du Prédiviseur d'Horloge**
-         | TxCKPS1 | TxCKPS0 | Valeur du Prédiviseur |
+      - **Bits 1-0 : `TxCKPS<1:0>` – Sélection du Pré-diviseur d'Horloge**
+         | TxCKPS1 | TxCKPS0 | Valeur du Pré-diviseur |
          |---------|---------|------------------------|
          | 0 | 0 | **1:1** (Pas de division) |
          | 0 | 1 | **1:4** |
