@@ -2207,11 +2207,11 @@ Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Signa
 
 
 - ### Fonctionnes Avancé MikroC
-   | **Fonction** | **Description** |
-   |--------------|-----------------|
-   | **`ADC_Init()`** | Initialise l'ADC avec l'horloge RC. <br>À appeler une fois au début. |
-   | **`ADC_Get_Sample(channel)`** | Lit un échantillon sur le `channel` (0-…). <br>Nécessite `ADC_Init()`. |
-   | **`ADC_Read(channel)`** | Initialise + lit en une seule commande sur le `channel`. |
+   | **Fonction**                  | **Description**                                |
+   | ----------------------------- | ---------------------------------------------- |
+   | **`ADC_Init()`**              | **Initialise** le Module CAN.                      |
+   | **`ADC_Get_Sample(channel)`** | **Lit Un** Échantillon sur le Canal Sélectionné.   |
+   | **`ADC_Read(channel)`**       | **Initialise** et **Lit** le CAN en une Seule Commande. |
 
 
 ## **8. Gestion de CNA**
@@ -2392,6 +2392,12 @@ Le Module **Capture / Compare / PWM** est un Périphérique qui permet à l'util
 
 
 - ### Fonctionnes Avancé MikroC
+   | **Fonction**             | **Description**                                  |
+   | ------------------------ | ------------------------------------------------ |
+   | **`PWM1_Init(freq)`**    | **Initialise** le Module PWM1 à la Fréquence `freq`. |
+   | **`PWM1_Set_Duty(val)`** | **Définit** le Rapport Cyclique du PWM.              |
+   | **`PWM1_Start()`**       | **Démarre** le Signal PWM.                           |
+   | **`PWM1_Stop()`**        | **Arrête** le Signal PWM.                            |
 
 
 
