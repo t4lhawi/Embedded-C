@@ -2681,7 +2681,7 @@ La **Modulation de Largeur d'Impulsion (PWM)** est une méthode permettant de fo
    </table>
    
    > Consultez les sections suivantes pour la configuration :
-   > - **[Ports d’Entrée/Sortie (E/S) (`TRISx`, `ANSELx`)](#4-ports-dentréesortie-es)**
+   > - **[Ports d’Entrée/Sortie (E/S) (`TRISx`)](#4-ports-dentréesortie-es)**
    > - **[Activation des interruptions (`PIEx`)](#registres-dactivation-pie1-à-pie5)**
    > - **[Drapeaux d'interruption (`PIRx`)](#registres-de-flags-pir1-à-pir5)**
    > - **[Priorités d'interruption (`IPRx`)](#registres-de-priorité-ipr1-à-ipr5)**
