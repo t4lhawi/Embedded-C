@@ -2216,10 +2216,10 @@ Le **Convertisseur Numérique-Analogique (CNA)** convertit une **Donnée Numéri
 - ### Étapes de Conversion N/A
    | **Étape** | **Action**                                  | **Description**                                                                                                         |
    | --------- | ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-   | **1**     | **CSource de Référence Positive** | Sélection de $V_{SRC+}$ :<br>• **VDD**<br>• **VREF+ Externe**<br>• **FVR BUF1**                                         |
-   | **2**     | **Source de Référence Négative** | Sélection de $V_{SRC-}$ :<br>• **VSS**<br>• **VREF− Externe**                                                           |
+   | **1**     | **Source de Référence Positive** | Sélection de $`V_{SRC+}`$ :<br>• **VDD**<br>• **VREF+ Externe**<br>• **FVR BUF1**                                         |
+   | **2**     | **Source de Référence Négative** | Sélection de $`V_{SRC-}`$ :<br>• **VSS**<br>• **VREF− Externe**                                                           |
    | **3**     | **Valeur Numérique du CNA**      | Réglage de `DACR<4:0>` (0 → 31), Déterminant le Niveau de Tension de Sortie                                             |
-   | **4**     | **Tension de Dortie**           | $`V_{OUT} = \left(\dfrac{V_{SRC+} - V_{SRC-}}{2^5}\right) \times DACR<4:0> + V_{SRC-}`$                                 |
+   | **4**     | **Tension de Sortie**           | $`V_{OUT} = \left(\dfrac{V_{SRC+} - V_{SRC-}}{2^5}\right) \times DACR<4:0> + V_{SRC-}`$                                 |
    | **5**     | **Destination de la Sortie**     | • Entrée Positive d’un **Comparateur**<br>• Module **CAN (ADC)**<br>• Broche **DACOUT (RA2)** |
 
 
