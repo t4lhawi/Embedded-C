@@ -1544,7 +1544,7 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
    
 
 
-
+<!-- 
 - ### Timer 1/3/5 (TMR1/3/5)
 
    - #### Registre de Contrôle – `TxCON` (x = 1, 3, 5)
@@ -1733,7 +1733,7 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
       > - **[Activation des interruptions (`PIEx`)](#registres-dactivation-pie1-à-pie5)**
       > - **[Drapeaux d'interruption (`PIRx`)](#registres-de-flags-pir1-à-pir5)**
       > - **[Priorités d'interruption (`IPRx`)](#registres-de-priorité-ipr1-à-ipr5)**
-
+ -->
    
 - ### Timer 2/4/6 (TMR2/4/6)
    
