@@ -2439,31 +2439,30 @@ La **Modulation de Largeur d'Impulsion (PWM)** est une méthode permettant de fo
          - Ces deux bits constituent les bits de poids faible (LSb) du rapport cyclique PWM. Les 8 bits de poids fort (MSb) se trouvent dans le registre `CCPRxL`.
       
       - **Bits 3-0 : `CCPxM<3:0>` – Sélection du Mode du Module ECCPx**
-        | CCPxM3 | CCPxM2 | CCPxM1 | CCPxM0 | Mode |
-        |--------|--------|--------|--------|------|
-        | 1 | 1 | x | x | **Mode PWM** (Génération de Modulation de Largeur d'Impulsion) |
+         - **`11xx` = Mode PWM**
 
-      > <table>
-      >     <tr>
-      >         <th colspan="10">Rapport Cyclique PWM (10 bits)</th>
-      >     </tr>
-      >     <tr>
-      >         <td colspan="8" align="center"><strong>CCPRxL (MSB - Bits [9:2])</strong></td>
-      >         <td colspan="2" align="center"><strong>DCxB&lt;1:0&gt; (LSB - Bits [1:0])</strong></td>
-      >     </tr>
-      >     <tr>
-      >         <td align="center">Bit 9<br>(MSB)</td>
-      >         <td align="center">Bit 8</td>
-      >         <td align="center">Bit 7</td>
-      >         <td align="center">Bit 6</td>
-      >         <td align="center">Bit 5</td>
-      >         <td align="center">Bit 4</td>
-      >         <td align="center">Bit 3</td>
-      >         <td align="center">Bit 2</td>
-      >         <td align="center">Bit 1</td>
-      >         <td align="center">Bit 0<br>(LSB)</td>
-      >     </tr>
-      > </table>
+
+            > <table>
+            >     <tr>
+            >         <th colspan="10">Rapport Cyclique PWM (10 bits)</th>
+            >     </tr>
+            >     <tr>
+            >         <td colspan="8" align="center"><strong>CCPRxL (MSB - Bits [9:2])</strong></td>
+            >         <td colspan="2" align="center"><strong>DCxB&lt;1:0&gt; (LSB - Bits [1:0])</strong></td>
+            >     </tr>
+            >     <tr>
+            >         <td align="center">Bit 9<br>(MSB)</td>
+            >         <td align="center">Bit 8</td>
+            >         <td align="center">Bit 7</td>
+            >         <td align="center">Bit 6</td>
+            >         <td align="center">Bit 5</td>
+            >         <td align="center">Bit 4</td>
+            >         <td align="center">Bit 3</td>
+            >         <td align="center">Bit 2</td>
+            >         <td align="center">Bit 1</td>
+            >         <td align="center">Bit 0<br>(LSB)</td>
+            >     </tr>
+            > </table>
 
 
 
