@@ -1803,6 +1803,14 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
       | **Formule Finale**                     | <div align="center">**$`T_{x} = (PRx + 1) \times \text{Prédiviseur} \times \text{Postdiviseur} \times T_H`$**</div> |
 
 
+      > - `PRx` est **sur 8 bits**
+      >    - $`0 \le PRx \le 255`$
+
+
+
+
+
+
    - #### Registres Associés (x = 2, 4, 6)
       <table>
         <thead>
