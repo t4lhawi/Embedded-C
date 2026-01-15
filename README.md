@@ -33,7 +33,7 @@
    - **[Registres de Gestion d'Interruption](#registres-de-gestion-dinterruption)**
 
 - ## **[Gestion des Timers](#6-gestion-des-timers)**
-   - **[Caractéristiques des Timers](#caractéristique-des-timers)**
+   - **[Caractéristiques des Timers](#caractéristiques-des-timers)**
    - **[Timer 0 (TMR0)](#timer-0-tmr0)**
    - **[Timers 1, 3 et 5 (TMR1/3/5)](#timer-135-tmr135)**
    - **[Timers 2, 4 et 6 (TMR2/4/6)](#timer-246-tmr246)**
@@ -50,6 +50,7 @@
    - **[Registres Associés](#registres-associés-1)**
 
 - ## **[Gestion de PWM](#9-gestion-de-pwm)**
+   - **[Caractéristiques du PWM](#caractéristiques-du-pwm)**
    - **[Étapes de Configuration](#étapes-de-configuration)**
    - **[Registres de Contrôle](#registres-de-contrôle-4)**
    - **[Registres Associés](#registres-associés-2)**
@@ -1359,7 +1360,7 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
 ## **6. Gestion des Timers**
 Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou **un compteur** indépendant du processeur. Il permet d'exécuter des tâches répétitives avec une précision temporelle parfaite sans bloquer le programme principal.
 
-- ### Caractéristique des Timers
+- ### Caractéristiques des Timers
 
    | Caractéristique | Timer 0 | Timer 1/3/5 | Timer 2/4/6 |
    |-----------------|--------|------------|------------|
@@ -2364,8 +2365,24 @@ Le **Convertisseur Numérique-Analogique (CNA)** convertit une **Donnée Numéri
 
 
 ## **9. Gestion de PWM**
-Le Module **Capture / Compare / PWM** est un Périphérique qui permet à l'utilisateur de **Chronométrer** et de
-**Contrôler** différents événements et de **Générer** des signaux **PWM** (**Pulse-Width Modulation**).
+La **Modulation de Largeur d'Impulsion (PWM)** est une méthode permettant de fournir de l'énergie à une charge en basculant rapidement entre les états logiques ‘1’ et ‘0’. 
+> Cette Fonction est Gérée par les Périphériques **Capture/Compare/PWM (CCP)**.
+
+
+- ### Caractéristiques du PWM
+   | **Caractéristique**     | **Description**                                                                           |
+   | ----------------------- | ----------------------------------------------------------------------------------------- |
+   | **Modules disponibles** | **5 modules PWM** :<br>• **3 modules ECCP** (Enhanced)<br>• **2 modules CCP** (standards) |
+   | **Période**             | Durée totale d’un cycle PWM (**ON + OFF**)                                                |
+   | **Rapport Cyclique**    | Pourcentage du temps où le signal est à l’état haut (**0 % à 100 %**)                     |
+   | **Résolution**          | Précision du signal PWM pouvant atteindre **10 bits** (**1024 pas**)                      |
+
+   > | <div align="center">**$`\text{Période PWM} = (PRx + 1) \times 4 \times T_{OSC} \times \text{Prescaler}`$**              |
+   > | :---------------------------------------------------------------------------------------------------------------------: |
+   > | <div align="center">**$`\text{Largeur d’impulsion} = (CCPRxL:CCPxCON<5:4>) \times T_{OSC} \times \text{Prescaler}`$**   |
+   > | <div align="center">**$`\text{Rapport Cyclique} = \frac{CCPRxL:CCPxCON<5:4>}{4 \times (PRx + 1)}`$**                    |
+   > | <div align="center">**$`\text{Résolution} = \frac{\ln \big( 4 \cdot (PRx + 1) \big)}{\ln 2} \text{bits}`$**             |
+
 
 
 - ### Étapes de Configuration
