@@ -45,7 +45,7 @@
    - **[Fonctionnes Avancé *MikroC*](#fonctionnes-avancé-mikroc)**
 
 - ## **[Gestion de CNA](#8-gestion-de-cna)**
-   - **[Caractéristiques de CNA](#caractéristique-de-cna)**
+   - **[Étapes de Conversion](#étapes-de-conversion-na)**
    - **[Registres de Contrôle](#registres-de-contrôle-3)**
    - **[Registres Associés](#registres-associés-1)**
 
@@ -2213,13 +2213,15 @@ Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Signa
 Le **Convertisseur Numérique-Analogique (CNA)** convertit une **Donnée Numérique** en une **Tension Analogique** proportionnelle, définie par des Tensions de Référence, avec un Nombre Fini de Niveaux (**32** pour un CNA **`5-bits`**).
 
 
-- ### Caractéristiques de CNA
-   | **Caractéristique**                            | **Description**                                                                                        |
-   | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-   | **Sorties Possibles**                          | • Entrée Positive d’un **Comparateur**<br>• Module **CAN (ADC)** <br>• Broche Externe **DACOUT (RA2)** |
-   | **Source de Référence Positive**<br>($V_{SRC+}$) | • **VDD**<br>• **VREF+ Externe**<br>• **FVR BUF1** (référence de tension fixe interne)               |
-   | **Source de Référence Négative**<br>($V_{SRC−}$) | • **VSS**<br>• **VREF− Externe**                                                                     |
-   | **Tension de Sortie**                          | **$`V_{OUT} = \left(\dfrac{V_{SRC+} - V_{SRC-}}{2^5}\right) \times DACR<4:0> + V_{SRC-}`$**            |
+- ### Étapes de Conversion N/A
+   | **Étape** | **Action**                                  | **Description**                                                                                                         |
+   | --------- | ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+   | **1**     | **CSource de Référence Positive** | Sélection de $V_{SRC+}$ :<br>• **VDD**<br>• **VREF+ Externe**<br>• **FVR BUF1**                                         |
+   | **2**     | **Source de Référence Négative** | Sélection de $V_{SRC-}$ :<br>• **VSS**<br>• **VREF− Externe**                                                           |
+   | **3**     | **Valeur Numérique du CNA**      | Réglage de `DACR<4:0>` (0 → 31), Déterminant le Niveau de Tension de Sortie                                             |
+   | **4**     | **Tension de Dortie**           | $`V_{OUT} = \left(\dfrac{V_{SRC+} - V_{SRC-}}{2^5}\right) \times DACR<4:0> + V_{SRC-}`$                                 |
+   | **5**     | **Destination de la Sortie**     | • Entrée Positive d’un **Comparateur**<br>• Module **CAN (ADC)**<br>• Broche **DACOUT (RA2)** |
+
 
 - ### Registres de Contrôle
 
