@@ -1787,8 +1787,7 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
          |---------|---------|------------------------|
          | 0 | 0 | **1:1** (Pas de division) |
          | 0 | 1 | **1:4** |
-         | 1 | 0 | **1:16** |
-         | 1 | 1 | **1:16** (Identique au cas `10`) |
+         | 1 | x | **1:16** |
 
    - #### PRx & Période Timer
  
