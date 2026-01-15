@@ -50,6 +50,11 @@
    - **[Registres Associés](#registres-associés-1)**
 
 - ## **[Gestion de PWM](#9-gestion-de-pwm)**
+   - **[Étapes de Configuration](#étapes-de-configuration)**
+   - **[Registres de Contrôle](#registres-de-contrôle-4)**
+   - **[Registres Associés](#registres-associés-2)**
+   - **[Fonctionnes Avancé *MikroC*](#fonctionnes-avancé-mikroc-1)**
+
 
 ---
 
@@ -2359,6 +2364,39 @@ Le **Convertisseur Numérique-Analogique (CNA)** convertit une **Donnée Numéri
 
 
 ## **9. Gestion de PWM**
+Le Module **Capture / Compare / PWM** est un Périphérique qui permet à l'utilisateur de **Chronométrer** et de
+**Contrôler** différents événements et de **Générer** des signaux **PWM** (**Pulse-Width Modulation**).
+
+
+- ### Étapes de Configuration
+
+   | **Étape** | **Action**                                   | **Description**                                                                  |
+   | --------- | -------------------------------------------- | -------------------------------------------------------------------------------- |
+   | **1**     | Désactiver la Sortie PWM                     | • `TRISx = 1` (Broche PWM configurée en **entrée**)                              |
+   | **2**     | Sélectionner le Timer                        | • Choisir **Timer2 / Timer4 / Timer6**<br>• Configuration via `CCPTMRSx`         |
+   | **3**     | Configurer la Période PWM                    | • Charger la Période dans `PRx`                                                  |
+   | **4**     | Configurer le Module PWM                     | • Activer le Mode PWM dans `CCPxCON`                                             |
+   | **5**     | Régler le Rapport Cyclique                   | • `CCPRxL` (8-bits MSB)<br>• `CCPxCON<5:4>` (2 bits LSB)                         |
+   | **6**     | Démarrer le Timer                            | • Régler le Pré-diviseur<br>• `TMRxON = 1`                                       |
+   | **7**     | Activer la sortie PWM                        | • Attendre le **Premier Débordement** du Timer<br>• `TRISx = 0` (Sortie activée) |
+
+
+
+- ### Registres de Contrôle
+
+
+
+
+- ### Registres Associés
+
+
+
+- ### Fonctionnes Avancé MikroC
+
+
+
+
+
 ---
 
 <h3 align="center"> 🧑🏻‍💻 | Made By : <a href="https://github.com/t4lhawi" target="_blank">Mohamed Talhaoui</a></h3>
