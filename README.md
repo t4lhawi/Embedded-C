@@ -1524,7 +1524,7 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
          | **Formule Finale**                       | <div align="center">**$`T_0 ​= N \times \text{Prediv} \times \frac{4}{F_{osc​}}`$**  |​​​​
  
          > - **Vérifie :** **$`T_{inc}​ < 256`$** (Mode `8-bit`) ou **$`< 65536`$** (Mode `16-bit`)
-         > - **Optimise :** Choisis le pré-diviseur qui donne un nombre de ticks proche d'un entier
+         > - **Optimise :** Choisis le Pré-diviseur qui donne un Nombre d’Itérations Proche d'un Entier
          
       - ##### En Mode Compteur (`T0CS = 1`)
 
@@ -1788,7 +1788,7 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
          | 0 | 0 | **1:1** (Pas de division) |
          | 0 | 1 | **1:4** |
          | 1 | 0 | **1:16** |
-         | 1 | 1 | **1:16** (identique au cas `10`) |
+         | 1 | 1 | **1:16** (Identique au cas `10`) |
 
 
 
