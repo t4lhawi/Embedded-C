@@ -1,8 +1,12 @@
+// Nom : Mohamed Talhaoui
+// Filière : GSEIR3 (S1) | 2025/2026
+// mikroC PRO (Compiler) | Microcontrôleurs PIC18F (Microchip)
+
 unsigned char *R0;
 unsigned char i;
 
+//---------------------| Q1 |---------------------//
 void main() {
-    // Q1
     R0 = (unsigned char *)0x20;  // Adresse de départ RAM
 
     for(i = 0; i < 10; i++) {
@@ -12,7 +16,7 @@ void main() {
 }
 
 
-    // Q2
+//---------------------| Q2 |---------------------//
 void main() {
     unsigned char *p;
     unsigned char val = 0;
