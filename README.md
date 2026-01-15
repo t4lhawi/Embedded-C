@@ -1541,9 +1541,6 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
      >    - **$`Max(16bits) = 65535`$**
       
          
-   
-
-
 <!-- 
 - ### Timer 1/3/5 (TMR1/3/5)
 
@@ -1734,9 +1731,9 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
       > - **[Drapeaux d'interruption (`PIRx`)](#registres-de-flags-pir1-à-pir5)**
       > - **[Priorités d'interruption (`IPRx`)](#registres-de-priorité-ipr1-à-ipr5)**
  -->
+
    
 - ### Timer 2/4/6 (TMR2/4/6)
-   
    - #### Registre de Contrôle – `TxCON` (x = 2, 4, 6)
       <table>
         <thead>
@@ -1760,8 +1757,6 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
           </tr>
         </tbody>
       </table>
-
-      - **Bit 7** : **Non implémenté** – Lecture = `0`
 
       - **Bits 6-3 : `TxOUTPS<3:0>` – Sélection du Postdiviseur de Sortie**
          | TxOUTPS3 | TxOUTPS2 | TxOUTPS1 | TxOUTPS0 | Valeur du Postdiviseur |
