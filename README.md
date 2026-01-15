@@ -1790,6 +1790,17 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
          | 1 | 0 | **1:16** |
          | 1 | 1 | **1:16** (Identique au cas `10`) |
 
+   - #### Période de Débordement $`T_x`$ (Overflow)
+ 
+      | Étapes                                       | En Mode Timer (`TMRxON = 1`)                                                    |
+      |----------------------------------------------|:-------------------------------------------------------------------------------:|
+      | **Étape 1 :** Période d’Horloge Interne | <div align="center">**$`T_H = \frac{4}{F_{osc}}`$**</div>                         |
+      | **Étape 2 :** Choix du Pré-diviseur    | <div align="left"> • **Timer2/6 : $`\text{Prédiviseur} \in \{1, 4, 16\}`$** <br> • **Timer4 : $`\text{Prédiviseur} \in \{1, 4, 16, 32, 64, 128\}`$**</div> |
+      | **Étape 3 :** Période d’un Incrément   | <div align="center">**$`T_{inc} = \text{Prédiviseur} \times T_H`$**</div>         |
+      | **Étape 4 :** Post-diviseur (Si Dispo) | <div align="left"> • **Timer2/6 :** **$`\text{Postdiviseur} \in \{1..16\}`$** <br> • **Timer4 : $`\text{Postdiviseur} = 1`$**</div> |
+      | **Étape 5 :** Période Timer Interruption | <div align="center">**$`T_{int} = T_{inc} \times \text{Postdiviseur} \times (PRx + 1)`$**</div> |
+      | **Étape 6 :** Valeur Période (`PRx`)     | <div align="center">**$`PRx = \frac{T_{désiré}}{T_{inc} \times \text{Postdiviseur}} - 1`$**</div> |
+      | **Formule Finale**                     | <div align="center">**$`T_{x} = (PRx + 1) \times \text{Prédiviseur} \times \text{Postdiviseur} \times \frac{4}{F_{osc}}`$**</div> |
 
 
    - #### Registres Associés (x = 2, 4, 6)
@@ -1831,7 +1842,16 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
       > - **[Drapeaux d'interruption (`PIRx`)](#registres-de-flags-pir1-à-pir5)**
       > - **[Priorités d'interruption (`IPRx`)](#registres-de-priorité-ipr1-à-ipr5)**
 
+
+
+
+
 ---
+
+
+
+
+
 
 ## **7. Gestion de CAN**
 Le **Convertisseur Analogique-Numérique (CAN)** permet de convertir une **Signal Analogique** en une **Valeur Numérique sur 10 bits** (0 à 1023).
