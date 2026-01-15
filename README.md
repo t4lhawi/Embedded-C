@@ -1778,9 +1778,9 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
          | 1 | 1 | 1 | 0 | **1:15** |
          | 1 | 1 | 1 | 1 | **1:16** |
 
-      - **Bit 2 : `TMRxON` – Activation du Timer**
-         - **`0`** = **Timer éteint**
-         - **`1`** = **Timer allumé**
+      - **Bit 2 : `TMRxON` – Activation du Timerx**
+         - **`0`** = **Désactivé**
+         - **`1`** = **Activé**
 
       - **Bits 1-0 : `TxCKPS<1:0>` – Sélection du Prédiviseur d'Horloge**
          | TxCKPS1 | TxCKPS0 | Valeur du Prédiviseur |
