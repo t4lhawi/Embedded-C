@@ -22,8 +22,8 @@ void main(){
         // Demarrer Conversion (GO=1)
         ADCON0 |= 0x02;
         
-        // Attendre Fin (DONE=1)
-        while((ADCON0 >> 1) & 1);
+        // Attendre Fin Jusqu'à (GO/DONE=0)
+        while(ADCON0 & 0x02);
 
          // Lire valeur ADC 10-bit (0-1023)
         unsigned int CAN = (ADRESH << 8) | ADRESL;

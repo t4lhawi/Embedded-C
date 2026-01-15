@@ -19,9 +19,11 @@ void main(){
         //----------------| AN1 |----------------//
         ADCON0 = 0x05; // CHS=0001 (AN1) | ADON=1 (Activer CAN)
         
-        ADCON0 |= 0x02; // Demarrer Conversion (GO=1)
-        
-        while((ADCON0 >> 1) & 1); // Attendre Fin (DONE=1)
+        // Demarrer Conversion (GO=1)
+        ADCON0 |= 0x02;
+
+        // Attendre Fin Jusqu'à (GO/DONE=0)
+        while(ADCON0 & 0x02);
         
         AN1 = (ADRESH << 8) | ADRESL;
 

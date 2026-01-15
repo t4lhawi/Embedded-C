@@ -21,7 +21,7 @@ void main(){
     while(1){
         ADCON0 |= 0x02; // Demarrer Conversion (GO/DONE=1)
 
-        while(((ADCON0 >> 1) & 1) == 0); // Attendre Fin (GO/DONE=0)
+        while(ADCON0 & 0x02); // Attendre Fin Jusqu'à (GO/DONE=0)
         
         LATB = ADRESL; // 8-bits
         LATC = ADRESH; // 2-bits
@@ -51,6 +51,8 @@ void main(){
 
     while(1){
         ADCON0 |= 0x02; // Demarrer Conversion (GO=1)
+        
+        while(ADCON0 & 0x02); // Attendre Fin Jusqu'à (GO/DONE=0)
     }
 }
 
@@ -58,7 +60,7 @@ void interrupt(){
     if((PIR1 >> 6) & 1){ // Si ADIF=1
         LATB = ADRESL; // 8-bits
         LATC = ADRESH; // 2-bits
-        
+
         PIR1 &= 0xBF; // ADIF=0
     }
 }
