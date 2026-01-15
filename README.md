@@ -1798,8 +1798,8 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
       | **Étape 2 :** Choix du Pré-diviseur    | <div align="left"> • **Timer2/6 : $`\text{Prédiviseur} \in \{1, 4, 16\}`$** <br> • **Timer4 : $`\text{Prédiviseur} \in \{1, 4, 16, 32, 64, 128\}`$**</div> |
       | **Étape 3 :** Période d’un Incrément   | <div align="center">**$`T_{inc} = \text{Prédiviseur} \times T_H`$**</div>         |
       | **Étape 4 :** Post-diviseur (Si Dispo) | <div align="left"> • **Timer2/6 :** **$`\text{Postdiviseur} \in \{1..16\}`$** <br> • **Timer4 : $`\text{Postdiviseur} = 1`$**</div> |
-      | **Étape 5 :** Période Timer Interruption | <div align="center">**$`T_{désiré} = T_{inc} \times \text{Postdiviseur} \times (PRx + 1)`$**</div> |
-      | **Étape 6 :** Valeur Période (`PRx`)     | <div align="center">**$`PRx = \frac{T_{désiré}}{T_{inc} \times Postdiviseur} - 1`$**</div> |
+      | **Étape 5 :** Période Timer Interruption | <div align="center">**$`T_{x} = T_{inc} \times \text{Postdiviseur} \times (PRx + 1)`$**</div> |
+      | **Étape 6 :** Valeur Période (`PRx`)     | <div align="center">**$`PRx = \frac{T_{x}}{T_{inc} \times Postdiviseur} - 1`$**</div> |
 
       > - `PRx` est **sur 8 bits**
       >    - $`0 \le PRx \le 255`$
