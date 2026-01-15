@@ -1800,7 +1800,7 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
       | **Étape 4 :** Post-diviseur (Si Dispo) | <div align="left"> • **Timer2/6 :** **$`\text{Postdiviseur} \in \{1..16\}`$** <br> • **Timer4 : $`\text{Postdiviseur} = 1`$**</div> |
       | **Étape 5 :** Période Timer Interruption | <div align="center">**$`T_{int} = T_{inc} \times \text{Postdiviseur} \times (PRx + 1)`$**</div> |
       | **Étape 6 :** Valeur Période (`PRx`)     | <div align="center">**$`PRx = \frac{T_{désiré}}{T_{inc} \times \text{Postdiviseur}} - 1`$**</div> |
-      | **Formule Finale**                     | <div align="center">**$`T_{x} = (PRx + 1) \times \text{Prédiviseur} \times \text{Postdiviseur} \times \frac{4}{F_{osc}}`$**</div> |
+      | **Formule Finale**                     | <div align="center">**$`T_{x} = (PRx + 1) \times \text{Prédiviseur} \times \text{Postdiviseur} \times T_H`$**</div> |
 
 
    - #### Registres Associés (x = 2, 4, 6)
