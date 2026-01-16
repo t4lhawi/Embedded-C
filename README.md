@@ -1798,7 +1798,7 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
       | **Étape 3 :** Période d’un Incrément   | <div align="center">**$`T_{inc} = \text{Prédiviseur} \times T_H`$**</div>         |
       | **Étape 4 :** Post-diviseur (Si Dispo) | <div align="left"> • **Timer2/6 :** **$`\text{Postdiviseur} \in \{1..16\}`$** <br> • **Timer4 : $`\text{Postdiviseur} = 1`$**</div> |
       | **Étape 5 :** Valeur Période (`PRx`)     | <div align="center">**$`PRx = \frac{T_{désiré}}{T_{inc} \times Postdiviseur} - 1`$**</div> <br> (**$`0 \le PRx \le 255`$**) |
-      | **Étape 6 :** Nombre d’Itérations | <div align="center">**$`N = \frac{T_{désiré}}{T_{donné}}`$**</div>
+      | **Étape 6 :** Nombre d’Itérations | <div align="center">**$`N = \frac{T_{donné}}{T_{désiré}}`$**</div>
 
 
 
