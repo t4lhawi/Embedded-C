@@ -27,11 +27,11 @@ void main() {
     PIR5 &= 0xFE; // TMR4IF=0
 
     // Configuration des Timers 2 (0.5s) et 4 (1.5s)
-    T2CON = 0xCF; // Prediv=16 , Postdiv=10 -> iterations = 50
-    PR2 = 124;
+    T2CON = 0x4E; // 0b01001110 | Prediv=1:16 , Postdiv=1:10 -> iterations = 25
+    PR2 = 249;
 
-    T4CON = 0x87; // Prediv=128 -> iterations = 150
-    PR4 = 155;
+    T4CON = 0x76; // 0b01110110 | Prediv=1:16 , Postdiv=1:15 -> iterations = 50
+    PR4 = 249;
 
     while(1);
 }
