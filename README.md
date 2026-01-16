@@ -1789,20 +1789,17 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
          | 0 | 1 | **1:4** |
          | 1 | x | **1:16** |
 
-   - #### PRx & Période Timer
+   - #### Période de Timer `PRx`
  
       | Étapes                                       | En Mode Timer (`TMRxON = 1`)                                                    |
       |----------------------------------------------|:-------------------------------------------------------------------------------:|
       | **Étape 1 :** Période d’Horloge Interne | <div align="center">**$`T_H = \frac{4}{F_{osc}}`$**</div>                         |
       | **Étape 2 :** Choix du Pré-diviseur    | <div align="left"> • **Timer2/6 : $`\text{Prédiviseur} \in \{1, 4, 16\}`$** <br> • **Timer4 : $`\text{Prédiviseur} \in \{1, 4, 16, 32, 64, 128\}`$**</div> |
-      | **Étape 3 :** Période d’un Incrément   | <div align="center">**$`T_{inc} = \text{Prédiviseur} \times T_H`$**</div>         |
-      | **Étape 4 :** Post-diviseur (Si Dispo) | <div align="left"> • **Timer2/6 :** **$`\text{Postdiviseur} \in \{1..16\}`$** <br> • **Timer4 : $`\text{Postdiviseur} = 1`$**</div> |
-      | **Étape 5 :** Valeur Période (`PRx`)     | <div align="center">**$`PRx = \frac{T_{désiré}}{T_{inc} \times Postdiviseur} - 1`$**</div> <br> (**$`0 \le PRx \le 255`$**) |
-      | **Étape 6 :** Nombre d’Itérations | <div align="center">**$`N = \frac{T_{donné}}{T_{désiré}}`$**</div>
+      | **Étape 3 :** Choix du Post-diviseur (Si Disponible) | <div align="left"> • **Timer2/6 :** **$`\text{Postdiviseur} \in \{1..16\}`$** <br> • **Timer4 : $`\text{Postdiviseur} = 1`$**</div> |
+      | **Étape 4 :** Valeur Période (`PRx`)     | <div align="center">**$`PRx = \frac{T_{int}}{\text{Prédiviseur} \times T_H \times Postdiviseur} - 1`$**</div> |
+      | **Étape 5 :** Nombre d’Itérations | <div align="center">**$`N = \frac{T_{donné}}{T_{int}}`$**</div> |
 
-
-
-
+      > **$`0 \le PRx \le 255`$**) et **$`T_{int}`$** selon votre choix
 
 
    - #### Registres Associés (x = 2, 4, 6)
