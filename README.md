@@ -1794,8 +1794,8 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
       | Étapes                                       | En Mode Timer (`TMRxON = 1`)                                                    |
       |----------------------------------------------|:-------------------------------------------------------------------------------:|
       | **Étape 1 :** Période d’Horloge Interne | <div align="center">**$`T_H = \frac{4}{F_{osc}}`$**</div>                         |
-      | **Étape 2 :** Choix du Pré-diviseur    | <div align="left"> • **Timer2/6 : $`\text{Prédiviseur} \in \{1, 4, 16\}`$** <br> • **Timer4 : $`\text{Prédiviseur} \in \{1, 4, 16, 32, 64, 128\}`$**</div> |
-      | **Étape 3 :** Choix du Post-diviseur (Si Disponible) | <div align="left"> • **Timer2/6 :** **$`\text{Postdiviseur} \in \{1..16\}`$** <br> • **Timer4 : $`\text{Postdiviseur} = 1`$**</div> |
+      | **Étape 2 :** Choix du Pré-diviseur    | <div align="left">**$`\text{Prédiviseur} \in \{1, 4, 16\}`$** |
+      | **Étape 3 :** Choix du Post-diviseur (Si Disponible) | <div align="left">**$`\text{Postdiviseur} \in \{1..16\}`$** |
       | **Étape 4 :** Valeur Période (`PRx`)     | <div align="center">**$`PRx = \frac{T_{x}}{\text{Prédiviseur} \times T_H \times Postdiviseur} - 1`$**</div> |
       | **Étape 5 :** Nombre d’Interruptions | <div align="center">**$`N_x = \frac{T_{donné}}{T_{x}}`$**</div> |
 
