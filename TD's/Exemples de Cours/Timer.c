@@ -52,7 +52,7 @@ void interrupt_low(){
         PIR1 &= 0xFD; // TMR2IF=0
         timer2++;
         if(timer2 >= 50){
-            LATB ^= 0x01; // Basculer RB0
+            LATB = ~LATB; // Basculer RB0
             timer2 = 0;
         }
     }
