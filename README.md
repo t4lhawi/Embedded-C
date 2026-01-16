@@ -1828,11 +1828,11 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
           </tr>
           <tr>
             <td><strong>PRx</strong></td>
-            <td align="center" colspan="8">Valeur de Période du Timerx</td>
+            <td align="center" colspan="8">Période du Timerx <strong>(8-bits)</strong></td>
           </tr>
           <tr>
             <td><strong>TMRx</strong></td>
-            <td align="center" colspan="8">Compteur du Timerx (8 bits)</td>
+            <td align="center" colspan="8">Compteur du Timerx <strong>(8-bits)</strong></td>
           </tr>
         </tbody>
       </table>
