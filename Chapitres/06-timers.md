@@ -479,6 +479,6 @@ Un Timer est un périphérique matériel qui agit comme **un chronomètre** ou *
       </table>
       
       > Consultez les sections suivantes pour la configuration :  
-      > - **[Activation des interruptions (`PIEx`)](#registres-dactivation-pie1-à-pie5)**
-      > - **[Drapeaux d'interruption (`PIRx`)](#registres-de-flags-pir1-à-pir5)**
-      > - **[Priorités d'interruption (`IPRx`)](#registres-de-priorité-ipr1-à-ipr5)**
+      > - **[Activation des interruptions (`PIEx`)](https://github.com/t4lhawi/Embedded-C/blob/main/Chapitres/05-interruptions.md#registres-dactivation-pie1-%C3%A0-pie5)**
+      > - **[Drapeaux d'interruption (`PIRx`)](https://github.com/t4lhawi/Embedded-C/blob/main/Chapitres/05-interruptions.md#registres-de-flags-pir1-%C3%A0-pir5)**
+      > - **[Priorités d'interruption (`IPRx`)](https://github.com/t4lhawi/Embedded-C/blob/main/Chapitres/05-interruptions.md#registres-de-priorit%C3%A9-ipr1-%C3%A0-ipr5)**
