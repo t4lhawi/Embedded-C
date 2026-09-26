@@ -25,7 +25,7 @@ Une interruption est un événement qui provoque l'**arrêt immédiat du program
         </thead>
         <tbody>
           <tr>
-            <td rowspan="3"><strong><a href="#6-gestion-des-timers">Timers</a></strong></td>
+            <td rowspan="3"><strong><a href="https://github.com/t4lhawi/Embedded-C/blob/main/Chapitres/06-timers.md">Timers</a></strong></td>
             <td>Timer 0</td>
             <td>Débordement du Timer0</td>
           </tr>
